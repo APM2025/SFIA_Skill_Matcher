@@ -1,0 +1,306 @@
+{
+  "framework_name": "UK Engineering Council - UK-SPEC",
+  "framework_version": "Fourth Edition 2020",
+  "description": "UK Standard for Professional Engineering Competence defining competency standards for Chartered Engineers, Incorporated Engineers, and Engineering Technicians",
+  "source_url": "https://www.engc.org.uk/standards-guidance/standards/uk-spec/",
+  
+  "registrations": {
+    "CEng": {
+      "title": "Chartered Engineer",
+      "description": "Chartered Engineers develop solutions to engineering problems using new or existing technologies, through innovation, creativity and change. They might develop and apply new technologies, promote advanced designs and design methods, introduce new and more efficient production techniques, marketing and construction concepts, pioneer new engineering services and management methods.",
+      "typical_roles": ["Senior Engineer", "Principal Engineer", "Engineering Manager", "Technical Lead", "Chief Engineer"],
+      "sfia_level_range": [4, 6],
+      
+      "competencies": {
+        "A": {
+          "code": "A",
+          "title": "Use a combination of general and specialist engineering knowledge and understanding",
+          "full_description": "Maintain and extend a sound theoretical approach to good practice in engineering, supported by a breadth and depth of knowledge and understanding from established theories, principles and best practices. Apply appropriate theoretical and practical methods to analyse and solve engineering problems. Identify and apply relevant codes of practice and industry standards.",
+          "indicators": [
+            "Apply appropriate theoretical and practical methods to analyse and solve engineering problems",
+            "Identify and apply relevant codes of practice and industry standards",
+            "Use knowledge of engineering principles to identify, formulate and solve engineering problems",
+            "Model and analyse engineering situations using mathematics and computer-aided tools",
+            "Demonstrate mastery of relevant engineering theory and principles"
+          ],
+          "keywords": ["engineering knowledge", "theory", "principles", "analysis", "problem solving", "codes of practice", "standards", "mathematical methods"]
+        },
+        "B": {
+          "code": "B",
+          "title": "Apply appropriate theoretical and practical methods to design and develop engineering solutions",
+          "full_description": "Design or develop solutions to complex problems that may not have clear answer or standard methodology. Produce designs and specifications with supporting calculations, drawings and documents. Ensure compliance with relevant codes of practice, safety and sustainability requirements. Evaluate outcomes against technical, commercial and sustainability requirements.",
+          "indicators": [
+            "Design or develop credible solutions to engineering problems that have not previously been wholly defined",
+            "Generate innovative and creative design solutions",
+            "Apply systematic approaches to design, including design processes, tools and methods",
+            "Design complex systems, components or processes using appropriate methods",
+            "Evaluate design solutions" against technical, cost, quality, safety, and sustainability requirements"
+          ],
+          "keywords": ["design", "development", "innovation", "creativity", "specifications", "drawings", "sustainability", "evaluation", "complex systems"]
+        },
+        "C": {
+          "code": "C",
+          "title": "Provide technical and commercial management",
+          "full_description": "Plan for effective project implementation including resource allocation, scheduling and risk management. Lead or take responsibility for planning people, technical and other resources. Manage budget, programme and quality. Identify and manage commercial, contractual and legal issues. Assess and manage risks.",
+          "indicators": [
+            "Plan for effective project implementation",
+            "Lead teams and develop staff to meet business objectives",
+            "Plan, manage and lead people and projects",
+            "Manage budgets and resources",
+            "Identify and manage risks",
+            "Manage commercial, contractual and legal arrangements",
+            "Manage quality and ensure compliance with health, safety and environmental requirements"
+          ],
+          "keywords": ["project management", "leadership", "planning", "resource management", "budget", "risk management", "commercial", "contractual", "quality"]
+        },
+        "D": {
+          "code": "D",
+          "title": "Communicate effectively",
+          "full_description": "Present and discuss proposals with a wide range of stakeholders. Communicate in English with different audiences using appropriate methods including written reports, formal presentations and informal discussions. Demonstrate personal and social skills. Be aware of codes of professional conduct.",
+          "indicators": [
+            "Communicate technical matters clearly to different audiences",
+            "Present and discuss technical proposals with stakeholders and colleagues",
+            "Prepare technical reports, specifications, and documentation",
+            "Lead technical discussions and negotiations",
+            "Demonstrate interpersonal and team-working skills",
+            "Exercise responsibilities in an ethical manner"
+          ],
+          "keywords": ["communication", "stakeholder engagement", "presentations", "technical writing", "documentation", "interpersonal skills", "ethics"]
+        },
+        "E": {
+          "code": "E",
+          "title": "Demonstrate commitment to professional development",
+          "full_description": "Undertake professional development to maintain and enhance competence. Plan own development to meet needs of current and future work requirements. Evaluate own professional development outcomes. Help others with their professional development. Demonstrate professional values and judgment.",
+          "indicators": [
+            "Undertake continuing professional development (CPD) activities",
+            "Maintain professional competence",
+            "Develop own and others' competence",
+            "Evaluate own professional development",
+            "Demonstrate awareness of professional obligations",
+            "Exercise sound professional judgment"
+          ],
+          "keywords": ["cpd", "professional development", "continuous learning", "mentoring", "professional judgment", "competence"]
+        }
+      },
+      
+      "commitment_standards": {
+        "1": {
+          "code": "1",
+          "title": "Accuracy and rigour",
+          "description": "Be aware of the limitations of their expertise and where they might seek further advice. Ensure work and the work they are responsible for is accurately and rigorously carried out. Ensure models, analyses and calculations are based on appropriate theories and assumptions. Validate them against sources of reliable data or past experience."
+        },
+        "2": {
+          "code": "2",
+          "title": "Sustainability and public interest",
+          "description": "Understand their ethical responsibilities, manage risk effectively and work to appropriate codes of conduct. Have due regard for public health, safety and the environment. Demonstrate a personal  commitment to sustainable development. Undertake activities in a way that contributes to society and benefits public good."
+        },
+        "3": {
+          "code": "3",
+          "title": "Leadership and teamwork",
+          "description": "Work effectively with others and lead teams. Develop business improvement strategies. Know how to work with diverse teams. Support inclusion and provide leadership."
+        },
+        "4": {
+          "code": "4",
+          "title": "Professional conduct",
+          "description": "Conduct their professional activities in a way that is fair, honest, and with integrity. Avoid corrupt practices, bribery and conflicts of interest. Present themselves in a professional manner and uphold the reputation of the profession. Comply with relevant codes of conduct."
+        }
+      }
+    },
+    
+    "IEng": {
+      "title": "Incorporated Engineer",
+      "description": "Incorporated Engineers maintain and manage applications of current and developing technology, and may undertake engineering design, development, manufacture, construction and operation. They are typically involved in developing, deploying and maintaining engineering systems and services within projects and programmes.",
+      "typical_roles": ["Project Engineer", "System Engineer", "Applications Engineer", "Development Engineer", "Implementation Engineer"],
+      "sfia_level_range": [3, 5],
+      
+      "competencies": {
+        "A": {
+          "code": "A",
+          "title": "Use engineering knowledge and understanding",
+          "full_description": "Maintain and extend sound theoretical and practical knowledge of current technologies and their application. Apply appropriate theoretical and practical methods to design, develop, manufacture, construct, commission, operate and maintain engineering products, processes, systems and services. Have an understanding of engineering principles and good practice.",
+          "indicators": [
+            "Apply relevant engineering principles and knowledge",
+            "Use practical methods to solve engineering problems",
+            "Demonstrate understanding of current technology and applications",
+            "Apply codes of practice and standards",
+            "Understand limitations of engineering approaches"
+          ],
+          "keywords": ["engineering knowledge", "technology", "practical methods", "problem solving", "standards", "applications"]
+        },
+        "B": {
+          "code": "B",
+          "title": "Design and develop engineering solutions",
+          "full_description": "Design or develop maintainable engineering solutions to partially defined or complex problems. Apply engineering techniques that may extend beyond existing standards. Contribute to design solutions using processes, tools, techniques and methods appropriate to the complexity of the context.",
+          "indicators": [
+            "Design practical solutions to engineering problems",
+            "Apply systematic design processes",
+            "Use appropriate tools and techniques",
+            "Implement designs within specifications and standards",
+            "Modify existing designs and processes"
+          ],
+          "keywords": ["design", "development", "implementation", "practical solutions", "tools", "techniques", "specifications"]
+        },
+        "C": {
+          "code": "C",
+          "title": "Provide technical and commercial management",
+          "full_description": "Manage part or all of projects. Participate in management of technical activities. Contribute to project implementation activities such as resource scheduling and monitoring. Manage programme, budget, health and safety. Identify and manage risk.",
+          "indicators": [
+            "Plan and manage project activities and resources",
+            "Monitor and control project progress",
+            "Manage risks within projects",
+            "Work within budgets and quality standards",
+            "Coordinate team activities"
+          ],
+          "keywords": ["project management", "planning", "monitoring", "resource management", "risk management", "coordination"]
+        },
+        "D": {
+          "code": "D",
+          "title": "Communicate and work with others",
+          "full_description": "Communicate technical matters to different audiences. Present technical proposals and findings. Prepare documentation and reports. Work effectively with colleagues and stakeholders. Demonstrate personal and social skills.",
+          "indicators": [
+            "Present technical information clearly",
+            "Produce technical reports and documentation",
+            "Work effectively in teams",
+            "Communicate with stakeholders",
+            "Demonstrate interpersonal skills"
+          ],
+          "keywords": ["communication", "documentation", "teamwork", "stakeholder engagement", "reporting"]
+        },
+        "E": {
+          "code": "E",
+          "title": "Undertake professional development",
+          "full_description": "Maintain and enhance competence through continuing professional development (CPD). Keep technically up to date. Plan and record own development. Support development of others. Demonstrate commitment to professional development.",
+          "indicators": [
+            "Undertake continuing professional development",
+            "Keep knowledge current",
+            "Learn new skills and technologies",
+            "Support colleagues' development",
+            "Reflect on own performance"
+          ],
+          "keywords": ["cpd", "learning", "development", "professional growth", "skills development"]
+        }
+      },
+      
+      "commitment_standards": {
+        "1": {
+          "code": "1",
+          "title": "Accuracy and rigour",
+          "description": "Identify their own areas of competence and where they need guidance. Carry out work accurately and rigorously. Ensure analyses and designs are based on sound engineering principles."
+        },
+        "2": {
+          "code": "2",
+          "title": "Sustainability and public interest",
+          "description": "Understand ethical responsibilities and manage risk. Have regard for public safety and the environment. Contribute to sustainable development."
+        },
+        "3": {
+          "code": "3",
+          "title": "Leadership and teamwork",
+          "description": "Work effectively with others. Participate in team activities. Support colleagues and promote good practice."
+        },
+        "4": {
+          "code": "4",
+          "title": "Professional conduct",
+          "description": "Conduct activities with fairness, honesty and integrity. Comply with codes of conduct. Maintain professional reputation."
+        }
+      }
+    },
+    
+    "EngTech": {
+      "title": "Engineering Technician",
+      "description": "Engineering Technicians are involved in applying proven techniques and procedures to the solution of practical engineering problems. They carry out work which they would be expected to undertake autonomously, working under the general direction of engineers or technologists.",
+      "typical_roles": ["Technical Support Engineer", "Engineering Technician", "Systems Technician", "Test Engineer", "Field Engineer"],
+      "sfia_level_range": [2, 4],
+      
+      "competencies": {
+        "A": {
+          "code": "A",
+          "title": "Use engineering knowledge and understanding",
+          "full_description": "Apply and maintain technical and practical competences in own area of engineering practice. Apply practical engineering knowledge and understanding. Use appropriate codes of practice, standards and procedures.",
+          "indicators": [
+            "Apply practical engineering principles",
+            "Use relevant technical knowledge",
+            "Follow codes of practice and standards",
+            "Understand engineering methods and techniques",
+            "Apply established procedures"
+          ],
+          "keywords": ["technical knowledge", "practical engineering", "standards", "procedures", "technical competence"]
+        },
+        "B": {
+          "code": "B",
+          "title": "Contribute to design and development",
+          "full_description": "Contribute to design, development, manufacture, construction, installation, commissioning or operation of engineering products, processes or services. Apply practical engineering techniques and procedures. Identify where problems occur and seek assistance where needed.",
+          "indicators": [
+            "Implement designs and technical solutions",
+            "Apply proven techniques",
+            "Follow technical specifications",
+            "Identify problems and escalate as needed",
+            "Contribute to technical activities"
+          ],
+          "keywords": ["implementation", "technical work", "specifications", "proven techniques", "problem identification"]
+        },
+        "C": {
+          "code": "C",
+          "title": "Accept responsibility for own work",
+          "full_description": "Accept responsibility and work under direction on defined engineering activities. Organise own resources and time. Work safely and in accordance with good practice. Contribute to management activities such as cost, quality and  time.",
+          "indicators": [
+            "Organize own work activities",
+            "Work under general supervision",
+            "Manage own time and resources",
+            "Follow health and safety requirements",
+            "Contribute to project activities"
+          ],
+          "keywords": ["responsibility", "time management", "supervision", "health and safety", "organization"]
+        },
+        "D": {
+          "code": "D",
+          "title": "Communicate and work with others",
+          "full_description": "Present and discuss technical matters in English with colleagues and other stakeholders. Prepare technical reports and documentation. Work effectively with colleagues. Demonstrate personal and social skills.",
+          "indicators": [
+            "Communicate technical information",
+            "Prepare simple technical documentation",
+            "Work in teams",
+            "Discuss technical matters",
+            "Show interpersonal skills"
+          ],
+          "keywords": ["communication", "documentation", "teamwork", "technical reporting"]
+        },
+        "E": {
+          "code": "E",
+          "title": "Maintain and extend competence",
+          "full_description": "Maintain and extend competence in own area of practice. Keep technically current. Undertake training and professional development. Be aware of professional responsibilities.",
+          "indicators": [
+            "Keep technical knowledge current",
+            "Undertake training",
+            "Learn new techniques",
+            "Maintain competence",
+            "Understand professional responsibilities"
+          ],
+          "keywords": ["training", "learning", "technical currency", "competence", "development"]
+        }
+      },
+      
+      "commitment_standards": {
+        "1": {
+          "code": "1",
+          "title": "Accuracy and rigour",
+          "description": "Recognize limitations of own competence and seek guidance when needed. Carry out work accurately using appropriate practices."
+        },
+        "2": {
+          "code": "2",
+          "title": "Sustainability and public interest",
+          "description": "Be aware of ethical responsibilities. Work safely and with regard for public interest and the environment."
+        },
+        "3": {
+          "code": "3",
+          "title": "Leadership and teamwork",
+          "description": "Work effectively with colleagues. Contribute to team objectives."
+        },
+        "4": {
+          "code": "4",
+          "title": "Professional conduct",
+          "description": "Conduct work with honesty and integrity. Follow codes of conduct."
+        }
+      }
+    }
+  }
+}

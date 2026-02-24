@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework to SFIA Mapper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            min-height: 200px;
+            resize: vertical;
+        }
+
+        .form-group .help-text {
+            font-size: 12px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .competency-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .competency-info.show {
+            display: block;
+        }
+
+        .competency-info h4 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .competency-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .competency-info ul {
+            margin-left: 20px;
+            color: #666;
+        }
+
+        .competency-info ul li {
+            margin-bottom: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .validation-result {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .validation-result.show {
+            display: block;
+        }
+
+        .validation-result.high {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .validation-result.medium {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+
+        .validation-result.low {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .results {
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .skill-match {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .skill-match:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-code {
+            font-size: 14px;
+            color: #999;
+            margin-left: 10px;
+        }
+
+        .skill-score {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .skill-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .skill-level {
+            display: inline-block;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .skill-level strong {
+            color: #333;
+        }
+
+        .skill-rationale {
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        .score-breakdown {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .score-item {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .score-item strong {
+            color: #667eea;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .info-box h4 {
+            color: #1565C0;
+            margin-bottom: 8px;
+        }
+
+        .info-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 Framework to SFIA Mapper</h1>
+            <p>Map your professional framework competencies to SFIA skills. Select your framework, registration level, and competency, then provide evidence to see aligned SFIA skills.</p>
+        </div>
+
+        <div class="card">
+            <h2>Step 1: Select Your Framework & Competency</h2>
+            
+            <div class="form-group">
+                <label for="framework">Professional Framework</label>
+                <select id="framework">
+                    <option value="">Loading...</option>
+                </select>
+                <div class="help-text">Select the professional framework you're working with</div>
+            </div>
+
+            <div class="form-group">
+                <label for="registration">Registration Level</label>
+                <select id="registration" disabled>
+                    <option value="">Select framework first...</option>
+                </select>
+                <div class="help-text">Your professional registration level</div>
+            </div>
+
+            <div class="form-group">
+                <label for="competency">Competency</label>
+                <select id="competency" disabled>
+                    <option value="">Select registration first...</option>
+                </select>
+                <div class="help-text">The specific competency you want to demonstrate</div>
+            </div>
+
+            <div class="competency-info" id="competencyInfo">
+                <h4 id="competencyTitle"></h4>
+                <p id="competencyDescription"></p>
+                <strong>Key Indicators:</strong>
+                <ul id="competencyIndicators"></ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Step 2: Provide Your Evidence</h2>
+            
+            <div class="form-group">
+                <label for="evidence">STAR Evidence</label>
+                <textarea id="evidence" placeholder="Describe your experience using the STAR format:
+
+Situation: What was the context?
+Task: What needed to be done?
+Action: What specific actions did you take?
+Result: What was the outcome?
+
+Be specific about how you demonstrated this competency."></textarea>
+                <div class="help-text">Provide detailed evidence demonstrating the selected competency</div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="validateBtn" disabled>Validate Evidence</button>
+                <button class="btn btn-primary" id="mapBtn" disabled>Map to SFIA Skills</button>
+            </div>
+
+            <div class="validation-result" id="validationResult"></div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+        </div>
+
+        <div class="card results" id="results">
+            <h2>SFIA Skill Matches</h2>
+            <div id="skillMatches"></div>
+        </div>
+
+        <div class="card">
+            <div class="info-box">
+                <h4>💡 How This Works</h4>
+                <p><strong>Dual-Embedding Matching:</strong> Your evidence is validated against the framework competency first, then mapped to SFIA skills using semantic similarity. Both the competency context (60%) and your specific evidence (40%) influence the SFIA skill matching.</p>
+                <p style="margin-top: 10px;"><strong>Evidence Quality:</strong> Provide specific examples with concrete actions and measurable results. The more detailed your evidence, the better the matching accuracy.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let registrations = {};
+        let selectedFramework = '';
+        let selectedRegistration = '';
+        let selectedCompetency = '';
+
+        // Load frameworks on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFrameworks();
+        });
+
+        // Framework selection handler
+        document.getElementById('framework').addEventListener('change', function() {
+            selectedFramework = this.value;
+            if (selectedFramework) {
+                loadRegistrations(selectedFramework);
+            } else {
+                document.getElementById('registration').disabled = true;
+                document.getElementById('competency').disabled = true;
+            }
+        });
+
+        // Registration selection handler
+        document.getElementById('registration').addEventListener('change', function() {
+            selectedRegistration = this.value;
+            if (selectedRegistration) {
+                loadCompetencies(selectedRegistration);
+            } else {
+                document.getElementById('competency').disabled = true;
+            }
+        });
+
+        // Competency selection handler
+        document.getElementById('competency').addEventListener('change', function() {
+            selectedCompetency = this.value;
+            if (selectedCompetency) {
+                loadCompetencyDetails(selectedFramework, selectedRegistration, selectedCompetency);
+                enableValidation();
+            } else {
+                document.getElementById('competencyInfo').classList.remove('show');
+                disableValidation();
+            }
+        });
+
+        // Validate button handler
+        document.getElementById('validateBtn').addEventListener('click', validateEvidence);
+
+        // Map button handler
+        document.getElementById('mapBtn').addEventListener('click', mapToSfia);
+
+        // Load available frameworks
+        function loadFrameworks() {
+            fetch('/api/frameworks')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const select = document.getElementById('framework');
+                        select.innerHTML = '<option value="">Select a framework...</option>';
+                        
+                        for (const [id, framework] of Object.entries(data.frameworks)) {
+                            const option = document.createElement('option');
+                            option.value = id;
+                            option.textContent = framework.name;
+                            select.appendChild(option);
+                        }
+                    }
+                })
+                .catch(error => console.error('Error loading frameworks:', error));
+        }
+
+        // Load registrations for selected framework
+        function loadRegistrations(frameworkId) {
+            fetch(`/api/frameworks/${frameworkId}/registrations`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        registrations = data.registrations;
+                        const select = document.getElementById('registration');
+                        select.innerHTML = '<option value="">Select registration level...</option>';
+                        
+                        for (const [code, reg] of Object.entries(data.registrations)) {
+                            const option = document.createElement('option');
+                            option.value = code;
+                            option.textContent = `${code} - ${reg.title}`;
+                            select.appendChild(option);
+                        }
+                        
+                        select.disabled = false;
+                    }
+                })
+                .catch(error => console.error('Error loading registrations:', error));
+        }
+
+        // Load competencies for selected registration
+        function loadCompetencies(registrationCode) {
+            const reg = registrations[registrationCode];
+            if (reg && reg.competencies) {
+                const select = document.getElementById('competency');
+                select.innerHTML = '<option value="">Select competency...</option>';
+                
+                reg.competencies.forEach(code => {
+                    const option = document.createElement('option');
+                    option.value = code;
+                    option.textContent = `Competency ${code}`;
+                    select.appendChild(option);
+                });
+                
+                select.disabled = false;
+            }
+        }
+
+        // Load detailed information about selected competency
+        function loadCompetencyDetails(frameworkId, registrationCode, competencyCode) {
+            fetch(`/api/frameworks/${frameworkId}/${registrationCode}/${competencyCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const comp = data.competency.competency;
+                        document.getElementById('competencyTitle').textContent = comp.title;
+                        document.getElementById('competencyDescription').textContent = comp.full_description;
+                        
+                        const indicators = document.getElementById('competencyIndicators');
+                        indicators.innerHTML = '';
+                        comp.indicators.forEach(indicator => {
+                            const li = document.createElement('li');
+                            li.textContent = indicator;
+                            indicators.appendChild(li);
+                        });
+                        
+                        document.getElementById('competencyInfo').classList.add('show');
+                    }
+                })
+                .catch(error => console.error('Error loading competency details:', error));
+        }
+
+        // Enable validation when all required fields are set
+        function enableValidation() {
+            const evidence = document.getElementById('evidence').value.trim();
+            if (evidence.length > 50) {
+                document.getElementById('validateBtn').disabled = false;
+                document.getElementById('mapBtn').disabled = false;
+            }
+        }
+
+        function disableValidation() {
+            document.getElementById('validateBtn').disabled = true;
+            document.getElementById('mapBtn').disabled = true;
+        }
+
+        // Monitor evidence input
+        document.getElementById('evidence').addEventListener('input', function() {
+            if (selectedCompetency && this.value.trim().length > 50) {
+                enableValidation();
+            } else {
+                disableValidation();
+            }
+        });
+
+        // Validate evidence against competency
+        function validateEvidence() {
+            const evidence = document.getElementById('evidence').value.trim();
+            
+            if (!evidence || !selectedFramework || !selectedRegistration || !selectedCompetency) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            showLoading();
+
+            fetch('/api/validate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    evidence: evidence,
+                    framework_id: selectedFramework,
+                    registration_code: selectedRegistration,
+                    competency_code: selectedCompetency
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.success) {
+                    displayValidationResult(data.validation);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                hideLoading();
+                console.error('Error:', error);
+                alert('An error occurred during validation');
+            });
+        }
+
+        // Map to SFIA skills
+        function mapToSfia() {
+            const evidence = document.getElementById('evidence').value.trim();
+            
+            if (!evidence || !selectedFramework || !selectedRegistration || !selectedCompetency) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            showLoading();
+
+            fetch('/api/map', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    evidence: evidence,
+                    framework_id: selectedFramework,
+                    registration_code: selectedRegistration,
+                    competency_code: selectedCompetency,
+                    top_k: 10
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideLoading();
+                if (data.success) {
+                    displayValidationResult(data.result.validation);
+                    displaySfiaMatches(data.result.sfia_mappings);
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                hideLoading();
+                console.error('Error:', error);
+                alert('An error occurred during mapping');
+            });
+        }
+
+        // Display validation result
+        function displayValidationResult(validation) {
+            const resultDiv = document.getElementById('validationResult');
+            resultDiv.className = 'validation-result show ' + validation.relevance;
+            resultDiv.innerHTML = `
+                <strong>${validation.relevance.toUpperCase()} Match (${(validation.match_score * 100).toFixed(1)}%)</strong><br>
+                ${validation.feedback}
+                ${validation.keyword_matches.length > 0 ? '<br><br><strong>Matched Keywords:</strong> ' + validation.keyword_matches.join(', ') : ''}
+            `;
+        }
+
+        // Display SFIA skill matches
+        function displaySfiaMatches(matches) {
+            const container = document.getElementById('skillMatches');
+            const resultsDiv = document.getElementById('results');
+            
+            if (matches.length === 0) {
+                container.innerHTML = '<p>No SFIA skill matches found.</p>';
+                resultsDiv.classList.add('show');
+                return;
+            }
+
+            container.innerHTML = '';
+            matches.forEach((match, index) => {
+                const matchDiv = document.createElement('div');
+                matchDiv.className = 'skill-match';
+                matchDiv.innerHTML = `
+                    <div class="skill-header">
+                        <div>
+                            <span class="skill-name">${match.skill_name}</span>
+                            <span class="skill-code">${match.skill_code}</span>
+                        </div>
+                        <div class="skill-score">${(match.overall_score * 100).toFixed(1)}%</div>
+                    </div>
+                    <div class="skill-description">${match.skill_description}</div>
+                    <div>
+                        <span class="skill-level"><strong>Suggested Level:</strong> ${match.suggested_level}</span>
+                        <span class="skill-level"><strong>Confidence:</strong> ${(match.level_confidence * 100).toFixed(0)}%</span>
+                    </div>
+                    <div class="score-breakdown">
+                        <div class="score-item"><strong>Competency Alignment:</strong> ${(match.competency_alignment * 100).toFixed(1)}%</div>
+                        <div class="score-item"><strong>Evidence Match:</strong> ${(match.evidence_score * 100).toFixed(1)}%</div>
+                    </div>
+                    <div class="skill-rationale">${match.rationale}</div>
+                `;
+                container.appendChild(matchDiv);
+            });
+
+            resultsDiv.classList.add('show');
+            resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Show loading spinner
+        function showLoading() {
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('validateBtn').disabled = true;
+            document.getElementById('mapBtn').disabled = true;
+        }
+
+        // Hide loading spinner
+        function hideLoading() {
+            document.getElementById('loading').classList.remove('show');
+            enableValidation();
+        }
+    </script>
+</body>
+</html>
