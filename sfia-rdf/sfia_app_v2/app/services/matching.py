@@ -92,6 +92,63 @@ class MatchingService:
     }
     LEVEL_FAR_PENALTY: float = 0.70   # three or more levels away
 
+    # Multi-factor level detection: distinctive keywords for each level
+    # These provide discriminative signals beyond semantic similarity
+    _LEVEL_INDICATORS: dict[int, dict[str, list[str]]] = {
+        1: {
+            "supervision": ["close supervision", "direct supervision", "constant supervision", 
+                          "closely supervised", "step by step", "detailed guidance"],
+            "authority": ["following instructions", "instructed to", "told to", "guidance", 
+                         "learning", "observing", "shadowing"],
+            "scope": ["routine tasks", "simple tasks", "basic tasks", "assigned tasks"],
+        },
+        2: {
+            "supervision": ["general supervision", "routine supervision", "regular supervision",
+                          "supervised", "oversight"],
+            "authority": ["some discretion", "limited independence", "escalate", "refer to",
+                         "assist", "support", "help"],
+            "scope": ["familiar tasks", "routine problems", "standard procedures"],
+        },
+        3: {
+            "supervision": ["general direction", "minimal supervision", "work independently",
+                          "autonomous", "self-directed"],
+            "authority": ["own initiative", "discretion", "manage own work", "proactive",
+                         "make decisions", "solve problems", "improve"],
+            "scope": ["varied tasks", "non-routine", "complex", "team", "colleagues"],
+        },
+        4: {
+            "supervision": ["broad direction", "strategically directed", "minimal oversight"],
+            "authority": ["lead", "guide others", "delegate", "coordinate", "mentor",
+                         "design solutions", "influence team", "small team"],
+            "scope": ["diverse activities", "team objectives", "multiple projects",
+                     "cross-functional", "3-10 people", "team of"],
+        },
+        5: {
+            "supervision": ["broad direction", "fully autonomous", "strategic autonomy"],
+            "authority": ["accountable", "ensure", "advise", "authoritative guidance",
+                         "define standards", "significant decisions", "advise decision makers",
+                         "stakeholders", "customers", "suppliers", "multiple teams"],
+            "scope": ["significant outcomes", "organisational impact", "department",
+                     "strategic", "policy", "10-30 people", "several teams"],
+        },
+        6: {
+            "supervision": ["complete autonomy", "enterprise leadership"],
+            "authority": ["executive", "director", "senior leadership", "shape policy",
+                         "influence organisation", "high-level decisions", "strategic planning",
+                         "organisational collaboration", "enterprise-wide", "boardroom"],
+            "scope": ["organisational level", "enterprise", "whole organisation",
+                     "cross-organisational", "30+ people", "multiple departments"],
+        },
+        7: {
+            "supervision": ["ultimate authority", "full accountability"],
+            "authority": ["ceo", "cio", "cto", "ciso", "c-suite", "chief", "vision",
+                         "set strategy", "inspire", "mobilise", "industry influence",
+                         "organisational success"],
+            "scope": ["entire organisation", "enterprise-wide", "industry", "sector",
+                     "100+ people", "executive board"],
+        },
+    }
+
     # ------------------------------------------------------------------
     # Keyword boost builder
     # ------------------------------------------------------------------
@@ -624,10 +681,51 @@ class MatchingService:
     # Level analysis
     # ------------------------------------------------------------------
 
+    def _calculate_level_keyword_scores(self, context: str) -> dict[int, float]:
+        """Calculate keyword-based scores for each level.
+        
+        Provides discriminative signal beyond semantic similarity by looking
+        for distinctive phrases that indicate specific responsibility levels.
+        
+        Args:
+            context: The user's responsibility description text (lowercase).
+            
+        Returns:
+            Dict mapping level (1-7) -> keyword match score (0.0-1.0)
+        """
+        context_lower = context.lower()
+        scores = {}
+        
+        for level, indicators in self._LEVEL_INDICATORS.items():
+            matches = 0
+            total_indicators = 0
+            
+            for category, phrases in indicators.items():
+                for phrase in phrases:
+                    total_indicators += 1
+                    if phrase.lower() in context_lower:
+                        matches += 1
+                        # Give extra weight to longer, more specific phrases
+                        if len(phrase.split()) > 2:
+                            matches += 0.5
+            
+            # Normalize to 0-1 range
+            scores[level] = matches / total_indicators if total_indicators > 0 else 0.0
+        
+        return scores
+
     def _analyze_level(
         self, context: str
     ) -> tuple[Optional[int], list[dict], dict[int, float], Optional[str], Optional[int]]:
         """Detect the most likely SFIA level from a responsibility description.
+
+        Uses a multi-factor approach combining:
+        1. Semantic similarity (70% weight) - compares meaning to level descriptions
+        2. Keyword indicators (30% weight) - looks for level-specific phrases
+        
+        This ensemble approach better distinguishes between adjacent levels
+        (e.g., Level 4 vs 5 vs 6) which have semantically similar but
+        contextually different descriptions.
 
         Each of the seven SFIA levels of responsibility is represented by a
         pre-computed embedding.  The user's context string is encoded and its
@@ -666,6 +764,9 @@ class MatchingService:
 
         context_embedding = self.model.encode(context, convert_to_tensor=True)
         level_scores = util.cos_sim(context_embedding, self.level_embeddings)[0]
+        
+        # Calculate keyword-based scores for additional discriminative power
+        keyword_scores = self._calculate_level_keyword_scores(context)
 
         # Encode individual sentences to find the one most responsible for the
         # top-level match (surfaced as an explanatory snippet in the UI)
@@ -691,8 +792,19 @@ class MatchingService:
                 best_sentence_idx = int(chunk_scores.argmax())
                 snippet = sentences[best_sentence_idx]
 
+            # Combine semantic similarity (70%) with keyword matching (30%)
+            semantic_score = float(score)
+            keyword_score = keyword_scores.get(level_val, 0.0)
+            combined_score = (0.70 * semantic_score) + (0.30 * keyword_score)
+
             all_levels.append(
-                {"level": level_val, "score": float(score), "snippet": snippet}
+                {
+                    "level": level_val, 
+                    "score": combined_score,
+                    "semantic_score": semantic_score,
+                    "keyword_score": keyword_score,
+                    "snippet": snippet
+                }
             )
 
         if not all_levels:

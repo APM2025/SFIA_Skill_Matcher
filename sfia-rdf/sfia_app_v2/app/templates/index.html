@@ -453,15 +453,23 @@
                         const levelColor = isSelected ? '#065f46' : '#1e40af';
                         const scoreColor = isSelected ? '#059669' : '#3b82f6';
                         const badge = isSelected ? `<div style="font-size: 0.72rem; color: #065f46; font-weight: 700; margin-bottom: 2px;">✓ Selected</div>` : '';
+                        
+                        // Build tooltip with score breakdown if available
+                        let tooltip = '';
+                        if (l.semantic_score !== undefined && l.keyword_score !== undefined) {
+                            tooltip = `title="Score Breakdown:\n• Semantic Match: ${(l.semantic_score * 100).toFixed(1)}%\n• Keyword Match: ${(l.keyword_score * 100).toFixed(1)}%\n• Combined: ${(l.score * 100).toFixed(1)}% (70% semantic + 30% keywords)"`;
+                        }
+                        
                         html += `
-                            <div style="background: ${bg}; padding: 0.5rem; border-radius: 8px; border: 1px solid ${border}; flex: 1; text-align: center;">
+                            <div ${tooltip} style="background: ${bg}; padding: 0.5rem; border-radius: 8px; border: 1px solid ${border}; flex: 1; text-align: center; cursor: help;">
                                 ${badge}
                                 <div style="font-weight: bold; color: ${levelColor}; font-size: 1.1rem;">Level ${l.level}</div>
-                                <div style="color: ${scoreColor};">${(l.score * 100).toFixed(0)}% Confidence</div>
+                                <div style="color: ${scoreColor};">${(l.score * 100).toFixed(1)}% Confidence</div>
                             </div>
                         `;
                     });
                     html += `</div>`;
+                    html += `<div style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; font-style: italic;">💡 Hover over each level to see the score breakdown (semantic matching + keyword detection)</div>`;
                     levelAnalysis.innerHTML = html;
                     levelAnalysis.style.display = 'block';
                 }
