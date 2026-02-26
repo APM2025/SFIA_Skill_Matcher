@@ -46,3 +46,13 @@ class Config:
     # --- Rate limits (applied per route via Flask-Limiter) ---
     MATCH_RATE_LIMIT = "5 per minute"
     REFINE_RATE_LIMIT = "10 per minute"
+    RATELIMIT_STORAGE_URI = os.environ.get("RATELIMIT_STORAGE_URI", "memory://")
+
+    # --- ML Matching Magic Numbers ---
+    ACTION_WEIGHT = 0.70
+    CONTEXT_WEIGHT = 0.30
+    CLARIFICATION_WEIGHT = 0.80
+    BASE_ACTION_WEIGHT = 0.20
+    TOP_K_ACTION = 60
+    TOP_K_CONTEXT = 40
+    TIEBREAK_MARGIN = 0.05

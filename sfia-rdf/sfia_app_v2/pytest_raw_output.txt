@@ -1,0 +1,233 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.7, pytest-9.0.1, pluggy-1.6.0 -- C:\Users\amyna\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+metadata: {'Python': '3.12.7', 'Platform': 'Windows-11-10.0.26200-SP0', 'Packages': {'pytest': '9.0.1', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.11.0', 'cov': '7.0.0', 'html': '4.1.1', 'metadata': '3.1.1'}}
+rootdir: C:\Users\amyna\OneDrive - University of Warwick\personal admin\repo for sfia\SFIA_Skill_Matcher\SFIA_Skill_Matcher\sfia-rdf\sfia_app_v2
+plugins: anyio-4.11.0, cov-7.0.0, html-4.1.1, metadata-3.1.1
+collecting ... collected 3 items
+
+tests/test_integration.py::test_full_match_pipeline ERROR                [ 33%]
+tests/test_integration.py::test_refine_pipeline ERROR                    [ 66%]
+tests/test_integration.py::test_input_validation ERROR                   [100%]
+
+=================================== ERRORS ====================================
+_________________ ERROR at setup of test_full_match_pipeline __________________
+
+    @pytest.fixture
+    def client():
+>       app = create_app()
+              ^^^^^^^^^^^^
+
+tests\test_integration.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\__init__.py:82: in create_app
+    matching_svc = MatchingService(app.config["MODEL_NAME"], sfia_svc)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <app.services.matching.MatchingService object at 0x000002B7536AABA0>
+model_name = 'all-MiniLM-L6-v2'
+sfia_service = <app.services.sfia.SfiaService object at 0x000002B76ED610D0>
+
+    def __init__(self, model_name: str, sfia_service: SfiaService) -> None:
+        """Load the NLP model and prepare all embeddings.
+    
+        Args:
+            model_name: Sentence-transformer model identifier
+                (e.g. ``"all-MiniLM-L6-v2"``).
+            sfia_service: An already-initialised ``SfiaService`` instance that
+                provides ``sfia_data`` and ``generic_levels``.
+        """
+        # Limit PyTorch to one inter-op thread — reduces per-thread memory
+        # overhead significantly on memory-constrained hosts (e.g. Render free tier).
+>       torch.set_num_threads(1)
+        ^^^^^
+E       NameError: name 'torch' is not defined
+
+app\services\matching.py:216: NameError
+---------------------------- Captured stderr setup ----------------------------
+
+A module that was compiled using NumPy 1.x cannot be run in
+NumPy 2.3.5 as it may crash. To support both 1.x and 2.x
+versions of NumPy, modules must be compiled with NumPy 2.0.
+Some module may need to rebuild instead e.g. with 'pybind11>=2.12'.
+
+If you are a user of the module, the easiest solution will be to
+downgrade to 'numpy<2' or try to upgrade the affected module.
+We expect that some modules will need time to support NumPy 2.
+
+Traceback (most recent call last):  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Scripts\pytest.exe\__main__.py", line 6, in <module>
+    sys.exit(console_main())
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\config\__init__.py", line 221, in console_main
+    code = main()
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\config\__init__.py", line 197, in main
+    ret: ExitCode | int = config.hook.pytest_cmdline_main(config=config)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 365, in pytest_cmdline_main
+    return wrap_session(config, _main)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 318, in wrap_session
+    session.exitstatus = doit(config, session) or 0
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 372, in _main
+    config.hook.pytest_runtestloop(session=session)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\main.py", line 396, in pytest_runtestloop
+    item.config.hook.pytest_runtest_protocol(item=item, nextitem=nextitem)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 118, in pytest_runtest_protocol
+    runtestprotocol(item, nextitem=nextitem)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 131, in runtestprotocol
+    rep = call_and_report(item, "setup", log)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 244, in call_and_report
+    call = CallInfo.from_call(
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 353, in from_call
+    result: TResult | None = func()
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 245, in <lambda>
+    lambda: runtest_hook(item=item, **kwds),
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 165, in pytest_runtest_setup
+    item.session._setupstate.setup(item)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\runner.py", line 523, in setup
+    col.setup()
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\python.py", line 1723, in setup
+    self._request._fillfixtures()
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 707, in _fillfixtures
+    item.funcargs[argname] = self.getfixturevalue(argname)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 539, in getfixturevalue
+    fixturedef = self._get_active_fixturedef(argname)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 627, in _get_active_fixturedef
+    fixturedef.execute(request=subrequest)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 1110, in execute
+    result: FixtureValue = ihook.pytest_fixture_setup(
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_hooks.py", line 512, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\pluggy\_callers.py", line 121, in _multicall
+    res = hook_impl.function(*args)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 1202, in pytest_fixture_setup
+    result = call_fixture_func(fixturefunc, request, kwargs)
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\_pytest\fixtures.py", line 908, in call_fixture_func
+    fixture_result = next(generator)
+  File "C:\Users\amyna\OneDrive - University of Warwick\personal admin\repo for sfia\SFIA_Skill_Matcher\SFIA_Skill_Matcher\sfia-rdf\sfia_app_v2\tests\test_integration.py", line 6, in client
+    app = create_app()
+  File "C:\Users\amyna\OneDrive - University of Warwick\personal admin\repo for sfia\SFIA_Skill_Matcher\SFIA_Skill_Matcher\sfia-rdf\sfia_app_v2\app\__init__.py", line 78, in create_app
+    from app.services.matching import MatchingService
+  File "C:\Users\amyna\OneDrive - University of Warwick\personal admin\repo for sfia\SFIA_Skill_Matcher\SFIA_Skill_Matcher\sfia-rdf\sfia_app_v2\app\services\matching.py", line 25, in <module>
+    from sentence_transformers import SentenceTransformer, util
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\sentence_transformers\__init__.py", line 3, in <module>
+    from .datasets import SentencesDataset, ParallelSentencesDataset
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\sentence_transformers\datasets\__init__.py", line 1, in <module>
+    from .DenoisingAutoEncoderDataset import DenoisingAutoEncoderDataset
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\sentence_transformers\datasets\DenoisingAutoEncoderDataset.py", line 1, in <module>
+    from torch.utils.data import Dataset
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\__init__.py", line 1471, in <module>
+    from .functional import *  # noqa: F403
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\functional.py", line 9, in <module>
+    import torch.nn.functional as F
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\__init__.py", line 1, in <module>
+    from .modules import *  # noqa: F403
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\__init__.py", line 35, in <module>
+    from .transformer import TransformerEncoder, TransformerDecoder, \
+  File "C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\transformer.py", line 20, in <module>
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+___________________ ERROR at setup of test_refine_pipeline ____________________
+
+    @pytest.fixture
+    def client():
+>       app = create_app()
+              ^^^^^^^^^^^^
+
+tests\test_integration.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\__init__.py:82: in create_app
+    matching_svc = MatchingService(app.config["MODEL_NAME"], sfia_svc)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <app.services.matching.MatchingService object at 0x000002B72246F6E0>
+model_name = 'all-MiniLM-L6-v2'
+sfia_service = <app.services.sfia.SfiaService object at 0x000002B7535A1760>
+
+    def __init__(self, model_name: str, sfia_service: SfiaService) -> None:
+        """Load the NLP model and prepare all embeddings.
+    
+        Args:
+            model_name: Sentence-transformer model identifier
+                (e.g. ``"all-MiniLM-L6-v2"``).
+            sfia_service: An already-initialised ``SfiaService`` instance that
+                provides ``sfia_data`` and ``generic_levels``.
+        """
+        # Limit PyTorch to one inter-op thread — reduces per-thread memory
+        # overhead significantly on memory-constrained hosts (e.g. Render free tier).
+>       torch.set_num_threads(1)
+        ^^^^^
+E       NameError: name 'torch' is not defined
+
+app\services\matching.py:216: NameError
+___________________ ERROR at setup of test_input_validation ___________________
+
+    @pytest.fixture
+    def client():
+>       app = create_app()
+              ^^^^^^^^^^^^
+
+tests\test_integration.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+app\__init__.py:82: in create_app
+    matching_svc = MatchingService(app.config["MODEL_NAME"], sfia_svc)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <app.services.matching.MatchingService object at 0x000002B76BCF6AE0>
+model_name = 'all-MiniLM-L6-v2'
+sfia_service = <app.services.sfia.SfiaService object at 0x000002B753878D40>
+
+    def __init__(self, model_name: str, sfia_service: SfiaService) -> None:
+        """Load the NLP model and prepare all embeddings.
+    
+        Args:
+            model_name: Sentence-transformer model identifier
+                (e.g. ``"all-MiniLM-L6-v2"``).
+            sfia_service: An already-initialised ``SfiaService`` instance that
+                provides ``sfia_data`` and ``generic_levels``.
+        """
+        # Limit PyTorch to one inter-op thread — reduces per-thread memory
+        # overhead significantly on memory-constrained hosts (e.g. Render free tier).
+>       torch.set_num_threads(1)
+        ^^^^^
+E       NameError: name 'torch' is not defined
+
+app\services\matching.py:216: NameError
+============================== warnings summary ===============================
+tests/test_integration.py::test_full_match_pipeline
+  C:\Users\amyna\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\transformer.py:20: UserWarning: Failed to initialize NumPy: _ARRAY_API not found (Triggered internally at ..\torch\csrc\utils\tensor_numpy.cpp:84.)
+    device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR tests/test_integration.py::test_full_match_pipeline - NameError: name '...
+ERROR tests/test_integration.py::test_refine_pipeline - NameError: name 'torc...
+ERROR tests/test_integration.py::test_input_validation - NameError: name 'tor...
+======================== 1 warning, 3 errors in 14.00s ========================

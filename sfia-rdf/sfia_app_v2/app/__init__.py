@@ -20,6 +20,7 @@ logger = logging.getLogger(__name__)
 csrf = CSRFProtect()
 limiter = Limiter(
     key_func=get_remote_address,
+    storage_uri=Config.RATELIMIT_STORAGE_URI,
     default_limits=["200 per day", "50 per hour"],
 )
 
@@ -57,8 +58,8 @@ def create_app(config_class=Config) -> Flask:
     # using CSP nonces would allow these to be removed.
     csp = {
         "default-src": ["'self'"],
-        "script-src": ["'self'", "'unsafe-inline'", "https://d3js.org"],
-        "style-src": ["'self'", "'unsafe-inline'"],
+        "script-src": ["'self'", "https://d3js.org"],
+        "style-src": ["'self'"],
     }
     Talisman(app, content_security_policy=csp, force_https=False)
 

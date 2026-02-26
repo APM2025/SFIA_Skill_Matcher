@@ -22,8 +22,8 @@ import re
 from collections import defaultdict
 from typing import Any, Optional
 
-import torch
 from sentence_transformers import SentenceTransformer, util
+from flask import current_app
 
 from app.services.sfia import SfiaService
 
@@ -499,6 +499,11 @@ class MatchingService:
         # ----------------------------------------------------------------
         # Step 2 — Encode embeddings
         # ----------------------------------------------------------------
+        action_weight = current_app.config.get("ACTION_WEIGHT", self.ACTION_WEIGHT)
+        context_weight = current_app.config.get("CONTEXT_WEIGHT", self.CONTEXT_WEIGHT)
+        clarification_weight = current_app.config.get("CLARIFICATION_WEIGHT", self.CLARIFICATION_WEIGHT)
+        base_action_weight = current_app.config.get("BASE_ACTION_WEIGHT", self.BASE_ACTION_WEIGHT)
+        
         action_embedding = self.model.encode(action_text, convert_to_tensor=True)
         if clarification and clarification.strip():
             clarification_embedding = self.model.encode(
@@ -506,8 +511,8 @@ class MatchingService:
             )
             # Blend: clarification dominates so the re-match steers meaningfully
             action_embedding = (
-                self.CLARIFICATION_WEIGHT * clarification_embedding
-                + self.BASE_ACTION_WEIGHT * action_embedding
+                clarification_weight * clarification_embedding
+                + base_action_weight * action_embedding
             )
 
         context_embedding = self.model.encode(context_text, convert_to_tensor=True)
@@ -515,16 +520,19 @@ class MatchingService:
         # ----------------------------------------------------------------
         # Step 3 — Dual semantic search (retrieve candidates)
         # ----------------------------------------------------------------
+        top_k_action = current_app.config.get("TOP_K_ACTION", self.TOP_K_ACTION)
+        top_k_context = current_app.config.get("TOP_K_CONTEXT", self.TOP_K_CONTEXT)
+        
         action_hits = {
             hit["corpus_id"]: hit["score"]
             for hit in util.semantic_search(
-                action_embedding, self.sfia_embeddings, top_k=self.TOP_K_ACTION
+                action_embedding, self.sfia_embeddings, top_k=top_k_action
             )[0]
         }
         context_hits = {
             hit["corpus_id"]: hit["score"]
             for hit in util.semantic_search(
-                context_embedding, self.sfia_embeddings, top_k=self.TOP_K_CONTEXT
+                context_embedding, self.sfia_embeddings, top_k=top_k_context
             )[0]
         }
         all_corpus_ids = set(action_hits.keys()) | set(context_hits.keys())
@@ -565,7 +573,7 @@ class MatchingService:
             # Weighted multi-vector score
             action_score = action_hits.get(corpus_id, 0.0)
             context_score = context_hits.get(corpus_id, 0.0)
-            score = self.ACTION_WEIGHT * action_score + self.CONTEXT_WEIGHT * context_score
+            score = action_weight * action_score + context_weight * context_score
 
             reasons: list[str] = []
 
@@ -574,7 +582,8 @@ class MatchingService:
             if item["code"] in self.KEYWORD_BOOSTS:
                 boost_keywords, boost_multiplier = self.KEYWORD_BOOSTS[item["code"]]
                 for keyword in boost_keywords:
-                    if keyword in action_lower:
+                    # Regex word boundaries to avoid matching substrings incorrectly
+                    if re.search(rf'(?:^|\W){re.escape(keyword)}(?:$|\W)', action_lower):
                         score *= boost_multiplier
                         reasons.append(
                             f"Keyword '{keyword}' (+{int((boost_multiplier - 1) * 100)}%)"
@@ -592,6 +601,9 @@ class MatchingService:
                     f"{'Match' if modifier > 1.0 else 'Mismatch'} "
                     f"({direction}{pct}%)"
                 )
+                
+            # Normalise the score so it does not exceed 1.0
+            score = min(float(score), 1.0)
 
             # Find the evidence chunk most similar to this skill's embedding
             skill_embedding = self.sfia_embeddings[corpus_id]
@@ -615,7 +627,7 @@ class MatchingService:
             )
 
         candidates.sort(key=lambda x: x["score"], reverse=True)
-        top_matches = self._deduplicate(candidates)
+        top_matches = self._deduplicate(candidates, detected_level)
 
         # ----------------------------------------------------------------
         # Step 7 — Assemble result payload
@@ -634,14 +646,14 @@ class MatchingService:
 
                 if level_confidence == "borderline" and beaten_level:
                     confidence_note = (
-                        f" ⚠️ This was a <strong>borderline call</strong> — "
+                        f" ⚠️ This was a borderline call — "
                         f"Level {beaten_level} and Level {detected_level} "
                         f"scored within {int(self.TIEBREAK_MARGIN * 100)}% of each other, "
                         f"so the lower level has been selected as the safer option."
                     )
                 elif level_confidence == "borderline":
                     confidence_note = (
-                        f" ⚠️ This was a <strong>borderline call</strong> — "
+                        f" ⚠️ This was a borderline call — "
                         f"the lower level has been selected as the safer option."
                     )
                 elif level_confidence == "moderate":
@@ -652,8 +664,8 @@ class MatchingService:
                 else:
                     confidence_note = ""
 
-                snippet_html = (
-                    f' The phrase <em>"{triggering_snippet}"</em> most strongly '
+                snippet_text = (
+                    f' The phrase "{triggering_snippet}" most strongly '
                     f"indicated this level."
                     if triggering_snippet
                     and triggering_snippet != "Analysis of overall context string."
@@ -661,14 +673,15 @@ class MatchingService:
                 )
                 level_explanation = (
                     f" Your Level of Responsibility description aligns most closely "
-                    f"with <strong>SFIA Level {detected_level}</strong>."
-                    f"{snippet_html}{confidence_note}"
+                    f"with SFIA Level {detected_level}."
+                    f"{snippet_text}{confidence_note}"
                 )
 
-            best_fit_summary = (
-                f"The best skill match is <strong>{top['label']}</strong> at "
-                f"<strong>Level {top['level']}</strong>.{level_explanation}"
-            )
+            best_fit_summary = {
+                "label": top["label"],
+                "level": top["level"],
+                "explanation": level_explanation.strip() if level_explanation else ""
+            }
 
         return {
             "matches": top_matches,
@@ -817,17 +830,18 @@ class MatchingService:
 
         # Conservative tie-breaking: prefer the lower (safer) level when the
         # margin between the top two is within TIEBREAK_MARGIN
+        tiebreak_margin = current_app.config.get("TIEBREAK_MARGIN", self.TIEBREAK_MARGIN)
         if len(all_levels) > 1:
             runner_score = all_levels[1]["score"]
             runner_level = all_levels[1]["level"]
             margin = top_score - runner_score
-            if margin < self.TIEBREAK_MARGIN and runner_level < top_level:
+            if margin < tiebreak_margin and runner_level < top_level:
                 detected_level = runner_level
                 level_confidence = "borderline"
                 beaten_level = top_level
             else:
                 detected_level = top_level
-                level_confidence = "high" if margin > self.TIEBREAK_MARGIN else "moderate"
+                level_confidence = "high" if margin > tiebreak_margin else "moderate"
         else:
             detected_level = top_level
             level_confidence = "high"
@@ -853,21 +867,29 @@ class MatchingService:
     # Deduplication
     # ------------------------------------------------------------------
 
-    def _deduplicate(self, candidates: list[dict]) -> list[dict]:
+    def _deduplicate(self, candidates: list[dict], detected_level: Optional[int]) -> list[dict]:
         """Return at most 5 candidates, keeping only the top result per skill code.
+        If a detected_level is provided, pick the candidate for each skill code whose
+        level is closest to the detected_level.
 
         Args:
             candidates: Score-sorted list of candidate dicts.
+            detected_level: The user's detected level of responsibility.
 
         Returns:
             Deduplicated list of up to 5 entries.
         """
-        seen: set[str] = set()
-        unique: list[dict] = []
+        by_code: dict[str, list[dict]] = defaultdict(list)
         for candidate in candidates:
-            if candidate["code"] not in seen:
-                unique.append(candidate)
-                seen.add(candidate["code"])
-            if len(unique) >= 5:
-                break
-        return unique
+            by_code[candidate["code"]].append(candidate)
+            
+        unique: list[dict] = []
+        for code, group in by_code.items():
+            if detected_level is not None:
+                group.sort(key=lambda x: (abs(x["level"] - detected_level), -x["score"]))
+            else:
+                group.sort(key=lambda x: -x["score"])
+            unique.append(group[0])
+            
+        unique.sort(key=lambda x: x["score"], reverse=True)
+        return unique[:5]

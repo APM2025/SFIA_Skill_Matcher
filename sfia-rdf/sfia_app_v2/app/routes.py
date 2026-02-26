@@ -38,6 +38,14 @@ def _sanitise(text: str) -> str:
     return _CONTROL_CHAR_RE.sub("", text)
 
 
+def _safe_get_string(data: dict[str, Any], key: str, default: str = "") -> str:
+    """Safely extract a value from a dict and ensure it is a string."""
+    val = data.get(key, default)
+    if val is None:
+        return default
+    return str(val).strip()
+
+
 def _build_evidence(data: dict[str, Any]) -> str:
     """Assemble a labelled STAR evidence string from a request payload.
 
@@ -54,10 +62,10 @@ def _build_evidence(data: dict[str, Any]) -> str:
     Returns:
         A multi-line string with STAR section headings, or a plain text blob.
     """
-    situation = _sanitise(data.get("situation", "").strip())
-    task = _sanitise(data.get("task", "").strip())
-    action = _sanitise(data.get("action", "").strip())
-    result_text = _sanitise(data.get("result", "").strip())
+    situation = _sanitise(_safe_get_string(data, "situation"))
+    task = _sanitise(_safe_get_string(data, "task"))
+    action = _sanitise(_safe_get_string(data, "action"))
+    result_text = _sanitise(_safe_get_string(data, "result"))
 
     if action:
         return "\n\n".join(
@@ -72,7 +80,7 @@ def _build_evidence(data: dict[str, Any]) -> str:
             )
         )
     # Legacy fallback: single blob of text
-    return _sanitise(data.get("evidence", "").strip())
+    return _sanitise(_safe_get_string(data, "evidence"))
 
 
 def _get_matcher():
@@ -118,7 +126,7 @@ def match():
     max_len = current_app.config["EVIDENCE_MAX_LENGTH"]
 
     evidence = _build_evidence(data)
-    level_context = _sanitise(data.get("level_context", "").strip())
+    level_context = _sanitise(_safe_get_string(data, "level_context"))
 
     if not evidence:
         return jsonify({"error": "Please fill in at least the Action field"}), 400
@@ -157,8 +165,8 @@ def refine():
     max_len = current_app.config["EVIDENCE_MAX_LENGTH"]
 
     evidence = _build_evidence(data)
-    level_context = _sanitise(data.get("level_context", "").strip())
-    clarification = _sanitise(data.get("clarification", "").strip())
+    level_context = _sanitise(_safe_get_string(data, "level_context"))
+    clarification = _sanitise(_safe_get_string(data, "clarification"))
 
     if not evidence:
         return jsonify({"error": "No evidence provided"}), 400
