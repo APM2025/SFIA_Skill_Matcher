@@ -23,6 +23,7 @@ from collections import defaultdict
 from typing import Any, Optional
 
 from sentence_transformers import SentenceTransformer, util
+import torch
 from flask import current_app
 
 from app.services.sfia import SfiaService

@@ -19,6 +19,14 @@ logger = logging.getLogger(__name__)
 bp = Blueprint('main', __name__)
 
 
+def _safe_get_string(data: dict, key: str, default: str = "") -> str:
+    """Safely extract and convert a value to a stripped string."""
+    val = data.get(key)
+    if val is None:
+        return default
+    return str(val).strip()
+
+
 @bp.route('/')
 def index():
     """Main page for framework-to-SFIA mapping."""
@@ -130,83 +138,27 @@ def get_competency_details(framework_id: str, registration_code: str, competency
         }), 500
 
 
-@bp.route('/api/validate', methods=['POST'])
-def validate_evidence():
-    """Validate evidence against a framework competency.
-    
-    Request JSON:
-        {
-            "evidence": "STAR evidence text",
-            "framework_id": "ukeng",
-            "registration_code": "CEng",
-            "competency_code": "A"
-        }
-    
-    Returns:
-        JSON with validation results
-    """
-    try:
-        data = request.get_json()
-        
-        # Validate input
-        required_fields = ['evidence', 'framework_id', 'registration_code', 'competency_code']
-        for field in required_fields:
-            if field not in data:
-                return jsonify({
-                    'success': False,
-                    'error': f'Missing required field: {field}'
-                }), 400
-        
-        # Perform validation
-        service = get_framework_matching_service()
-        validation = service.validate_evidence_for_competency(
-            evidence=data['evidence'],
-            framework_id=data['framework_id'],
-            registration_code=data['registration_code'],
-            competency_code=data['competency_code']
-        )
-        
-        return jsonify({
-            'success': True,
-            'validation': {
-                'competency_code': validation.competency_code,
-                'competency_title': validation.competency_title,
-                'match_score': validation.match_score,
-                'relevance': validation.evidence_relevance,
-                'keyword_matches': validation.keyword_matches,
-                'feedback': _get_validation_feedback(validation)
-            }
-        })
-    
-    except Exception as e:
-        logger.error(f"Error validating evidence: {e}", exc_info=True)
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
-
-
 @bp.route('/api/map', methods=['POST'])
 def map_to_sfia():
-    """Map framework competency + evidence to SFIA skills.
+    """Map framework competency directly to SFIA skills.
     
     Request JSON:
         {
-            "evidence": "STAR evidence text",
             "framework_id": "ukeng",
             "registration_code": "CEng",
             "competency_code": "A",
+            "cyber_context": true,
             "top_k": 10
         }
     
     Returns:
-        JSON with validation + SFIA skill mappings
+        JSON with SFIA skill mappings
     """
     try:
         data = request.get_json()
         
         # Validate input
-        required_fields = ['evidence', 'framework_id', 'registration_code', 'competency_code']
+        required_fields = ['framework_id', 'registration_code', 'competency_code']
         for field in required_fields:
             if field not in data:
                 return jsonify({
@@ -215,20 +167,24 @@ def map_to_sfia():
                 }), 400
         
         top_k = data.get('top_k', 10)
+        try:
+            top_k = int(top_k)
+        except (ValueError, TypeError):
+            top_k = 10
+            
+        cyber_context = bool(data.get('cyber_context', False))
+        framework_id_str = _safe_get_string(data, 'framework_id')
+        reg_code_str = _safe_get_string(data, 'registration_code')
+        comp_code_str = _safe_get_string(data, 'competency_code')
         
         # Execute full mapping workflow
         service = get_framework_matching_service()
         result = service.get_full_mapping_workflow(
-            evidence=data['evidence'],
-            framework_id=data['framework_id'],
-            registration_code=data['registration_code'],
-            competency_code=data['competency_code'],
+            framework_id=framework_id_str,
+            registration_code=reg_code_str,
+            competency_code=comp_code_str,
+            cyber_context=cyber_context,
             top_k=top_k
-        )
-        
-        # Add feedback to validation
-        result['validation']['feedback'] = _get_validation_feedback_from_dict(
-            result['validation']
         )
         
         return jsonify({
@@ -242,49 +198,3 @@ def map_to_sfia():
             'success': False,
             'error': str(e)
         }), 500
-
-
-def _get_validation_feedback(validation) -> str:
-    """Generate user-friendly feedback based on validation results."""
-    relevance = validation.evidence_relevance
-    score = validation.match_score
-    
-    if relevance == 'high':
-        return (
-            f"✓ Strong match! Your evidence demonstrates {validation.competency_title} well. "
-            f"({score:.0%} match with {len(validation.keyword_matches)} key indicators)"
-        )
-    elif relevance == 'medium':
-        return (
-            f"⚠ Moderate match. Your evidence shows some alignment with {validation.competency_title}, "
-            f"but could be strengthened. ({score:.0%} match)"
-        )
-    else:
-        return (
-            f"✗ Weak match. Your evidence may not strongly demonstrate {validation.competency_title}. "
-            f"Consider providing more specific examples. ({score:.0%} match)"
-        )
-
-
-def _get_validation_feedback_from_dict(validation_dict: dict) -> str:
-    """Generate feedback from validation dict."""
-    relevance = validation_dict['relevance']
-    score = validation_dict['match_score']
-    title = validation_dict['competency_title']
-    keywords = len(validation_dict['keyword_matches'])
-    
-    if relevance == 'high':
-        return (
-            f"✓ Strong match! Your evidence demonstrates {title} well. "
-            f"({score:.0%} match with {keywords} key indicators)"
-        )
-    elif relevance == 'medium':
-        return (
-            f"⚠ Moderate match. Your evidence shows some alignment with {title}, "
-            f"but could be strengthened. ({score:.0%} match)"
-        )
-    else:
-        return (
-            f"✗ Weak match. Your evidence may not strongly demonstrate {title}. "
-            f"Consider providing more specific examples. ({score:.0%} match)"
-        )

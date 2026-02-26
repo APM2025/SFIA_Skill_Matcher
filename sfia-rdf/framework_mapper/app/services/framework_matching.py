@@ -14,8 +14,10 @@ import logging
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 
+import re
 import torch
 from sentence_transformers import SentenceTransformer, util
+from flask import current_app
 
 from app.services.framework_parser import FrameworkParser, Competency
 
@@ -58,7 +60,7 @@ class FrameworkMatchingService:
     4. System maps: (competency context + evidence) → SFIA skills
     """
     
-    # Validation thresholds
+    # Set default values
     COMPETENCY_MATCH_HIGH_THRESHOLD = 0.65
     COMPETENCY_MATCH_MEDIUM_THRESHOLD = 0.50
     
@@ -70,7 +72,7 @@ class FrameworkMatchingService:
         self,
         model_name: str = 'sentence-transformers/all-MiniLM-L6-v2',
         framework_parser: Optional[FrameworkParser] = None,
-        sfia_service: Optional[SfiaService] = None,
+        sfia_service: Optional['SfiaService'] = None,
         sfia_ttl_path: Optional[str] = None
     ):
         """
@@ -88,11 +90,20 @@ class FrameworkMatchingService:
         # Add sfia_app_v2 to path if needed
         parent_dir = Path(__file__).resolve().parent.parent.parent.parent
         sfia_app_path = parent_dir / 'sfia_app_v2'
-        if str(sfia_app_path) not in sys.path:
-            sys.path.insert(0, str(sfia_app_path))
+        # Dynamically import SFIA service without clashing with the local 'app' module
+        import importlib.util
+        import sys
         
-        # Import SFIA service from sfia_app_v2
-        from app.services.sfia import SfiaService as SfiaServiceV2
+        sfia_service_path = sfia_app_path / 'app' / 'services' / 'sfia.py'
+        if sfia_service_path.exists():
+            spec = importlib.util.spec_from_file_location("sfia_v2_service", sfia_service_path)
+            sfia_module = importlib.util.module_from_spec(spec)
+            sys.modules["sfia_v2_service"] = sfia_module
+            spec.loader.exec_module(sfia_module)
+            SfiaServiceV2 = sfia_module.SfiaService
+        else:
+            logger.error(f"Could not find SFIA service at {sfia_service_path}")
+            SfiaServiceV2 = None
         
         self.model = SentenceTransformer(model_name)
         self.framework_parser = framework_parser or FrameworkParser()
@@ -121,224 +132,82 @@ class FrameworkMatchingService:
         
         logger.info(f"Framework matching service initialized with model: {model_name}")
     
-    def _get_competency_embedding(
+    def _get_text_embedding(
         self,
-        framework_id: str,
-        registration_code: str,
-        competency_code: str
-    ) -> Optional[torch.Tensor]:
-        """Get or compute embedding for a framework competency."""
-        cache_key = f"{framework_id}_{registration_code}_{competency_code}"
-        
-        if cache_key in self.competency_embeddings:
-            return self.competency_embeddings[cache_key]
-        
-        # Get competency context
-        context = self.framework_parser.get_competency_context(
-            framework_id, registration_code, competency_code
-        )
-        
-        if not context:
-            logger.warning(f"Competency not found: {cache_key}")
-            return None
-        
-        # Create rich text representation for embedding
-        comp = context['competency']
-        text = comp['full_text']
+        text: str,
+        cyber_context: bool = False
+    ) -> torch.Tensor:
+        """Get or compute embedding for any text."""
+        # Inject Cyber Security Context if requested
+        if cyber_context:
+            text = "In the context of Information and Cyber Security job families, security operations, governance, risk, and compliance: " + text
         
         # Encode
         embedding = self.model.encode(text, convert_to_tensor=True, normalize_embeddings=True)
-        self.competency_embeddings[cache_key] = embedding
-        
-        logger.debug(f"Computed embedding for {cache_key}")
         return embedding
     
-    def validate_evidence_for_competency(
+    def map_indicator_to_sfia_skills(
         self,
-        evidence: str,
-        framework_id: str,
-        registration_code: str,
-        competency_code: str
-    ) -> CompetencyMatch:
-        """
-        Validate that provided evidence is relevant to the claimed competency.
-        
-        This is the first step: before mapping to SFIA, ensure the evidence
-        actually demonstrates the framework competency the user selected.
-        
-        Args:
-            evidence: User's STAR evidence text
-            framework_id: Framework identifier (e.g., 'ukeng')
-            registration_code: Registration level (e.g., 'CEng')
-            competency_code: Competency code (e.g., 'A')
-        
-        Returns:
-            CompetencyMatch with validation score and details
-        """
-        # Get competency embedding
-        comp_embedding = self._get_competency_embedding(
-            framework_id, registration_code, competency_code
-        )
-        
-        if comp_embedding is None:
-            return CompetencyMatch(
-                competency_code=competency_code,
-                competency_title="Unknown",
-                match_score=0.0,
-                evidence_relevance="low",
-                keyword_matches=[]
-            )
-        
-        # Get competency context for keywords
-        context = self.framework_parser.get_competency_context(
-            framework_id, registration_code, competency_code
-        )
-        comp_keywords = context['competency']['keywords']
-        comp_title = context['competency']['title']
-        
-        # Encode evidence
-        evidence_embedding = self.model.encode(
-            evidence, 
-            convert_to_tensor=True, 
-            normalize_embeddings=True
-        )
-        
-        # Semantic similarity
-        semantic_score = util.pytorch_cos_sim(evidence_embedding, comp_embedding).item()
-        
-        # Keyword matching (binary: present or not)
-        evidence_lower = evidence.lower()
-        keyword_matches = [kw for kw in comp_keywords if kw in evidence_lower]
-        keyword_boost = min(len(keyword_matches) * 0.03, 0.15)  # Up to +15%
-        
-        # Combined score
-        total_score = semantic_score + keyword_boost
-        
-        # Determine relevance level
-        if total_score >= self.COMPETENCY_MATCH_HIGH_THRESHOLD:
-            relevance = "high"
-        elif total_score >= self.COMPETENCY_MATCH_MEDIUM_THRESHOLD:
-            relevance = "medium"
-        else:
-            relevance = "low"
-        
-        logger.info(
-            f"Competency validation: {competency_code} - "
-            f"semantic={semantic_score:.3f}, keywords={len(keyword_matches)}, "
-            f"total={total_score:.3f}, relevance={relevance}"
-        )
-        
-        return CompetencyMatch(
-            competency_code=competency_code,
-            competency_title=comp_title,
-            match_score=total_score,
-            evidence_relevance=relevance,
-            keyword_matches=keyword_matches
-        )
-    
-    def map_to_sfia_skills(
-        self,
-        evidence: str,
-        framework_id: str,
-        registration_code: str,
-        competency_code: str,
+        indicator_text: str,
+        competency_title: str,
+        sfia_level_range: Tuple[int, int],
+        cyber_context: bool = False,
         top_k: int = 10
     ) -> List[FrameworkSfiaMatch]:
         """
-        Map framework competency + evidence to SFIA skills.
-        
-        This is the second step: given validated evidence for a framework competency,
-        find the most relevant SFIA skills that align with both the competency
-        context and the specific evidence provided.
-        
-        Args:
-            evidence: User's STAR evidence text
-            framework_id: Framework identifier
-            registration_code: Registration level
-            competency_code: Competency code
-            top_k: Number of top SFIA skill matches to return
-        
-        Returns:
-            List of FrameworkSfiaMatch objects ranked by relevance
+        Map a single framework indicator string directly to SFIA skills, deduplicated by name.
         """
-        # Get competency context and embedding
-        comp_embedding = self._get_competency_embedding(
-            framework_id, registration_code, competency_code
-        )
-        
-        context = self.framework_parser.get_competency_context(
-            framework_id, registration_code, competency_code
-        )
-        
-        if comp_embedding is None or context is None:
-            logger.error(f"Failed to get competency context: {competency_code}")
-            return []
-        
-        # Encode evidence
-        evidence_embedding = self.model.encode(
-            evidence,
-            convert_to_tensor=True,
-            normalize_embeddings=True
-        )
+        comp_embedding = self._get_text_embedding(indicator_text, cyber_context)
         
         # Get all SFIA skills with embeddings from sfia_service
-        # Note: We'll need to adapt this based on actual sfia_service interface
         sfia_skills = self._get_sfia_skills_with_embeddings()
         
         # Score each SFIA skill
         matches = []
         for skill in sfia_skills:
-            # Competency alignment: how well SFIA skill matches framework competency
+            # Competency alignment: how well SFIA skill matches framework competency directly
             comp_score = util.pytorch_cos_sim(
                 skill['embedding'], 
                 comp_embedding
             ).item()
             
-            # Evidence alignment: how well SFIA skill matches user's evidence
-            ev_score = util.pytorch_cos_sim(
-                skill['embedding'],
-                evidence_embedding
-            ).item()
-            
-            # Weighted combination
-            overall_score = (
-                self.COMPETENCY_CONTEXT_WEIGHT * comp_score + 
-                self.EVIDENCE_WEIGHT * ev_score
-            )
-            
             # Level suggestion based on registration range
-            sfia_level_range = context['registration']['sfia_level_range']
             suggested_level = int((sfia_level_range[0] + sfia_level_range[1]) / 2)
             
             # Generate rationale
             rationale = self._generate_rationale(
                 skill['name'],
-                context['competency']['title'],
-                comp_score,
-                ev_score
+                competency_title,
+                comp_score
             )
             
             matches.append(FrameworkSfiaMatch(
                 skill_code=skill['code'],
                 skill_name=skill['name'],
                 skill_description=skill['description'],
-                overall_score=overall_score,
+                overall_score=comp_score,
                 competency_alignment_score=comp_score,
-                evidence_score=ev_score,
+                evidence_score=0.0, # N/A for standard-to-standard
                 suggested_level=suggested_level,
-                level_confidence=0.7,  # Placeholder for now
+                level_confidence=0.7,
                 rationale=rationale
             ))
         
-        # Sort by overall score and return top-k
+        # Sort by overall score
         matches.sort(key=lambda x: x.overall_score, reverse=True)
         
-        logger.info(
-            f"Mapped {competency_code} to {len(matches)} SFIA skills, "
-            f"returning top {top_k}"
-        )
+        # Deduplicate by skill_name
+        deduped_matches = []
+        seen_skills = set()
         
-        return matches[:top_k]
+        for match in matches:
+            if match.skill_name not in seen_skills:
+                deduped_matches.append(match)
+                seen_skills.add(match.skill_name)
+            if len(deduped_matches) >= top_k:
+                break
+                
+        return deduped_matches
     
     def _compute_sfia_embeddings(self):
         """Compute embeddings for all SFIA skills."""
@@ -384,68 +253,114 @@ class FrameworkMatchingService:
         self,
         skill_name: str,
         competency_title: str,
-        comp_score: float,
-        ev_score: float
+        comp_score: float
     ) -> str:
         """Generate human-readable explanation for the mapping."""
-        if comp_score > 0.7 and ev_score > 0.7:
+        if comp_score > 0.6:
             strength = "Strong"
-        elif comp_score > 0.6 or ev_score > 0.6:
+        elif comp_score > 0.45:
             strength = "Good"
         else:
             strength = "Moderate"
         
         return (
-            f"{strength} alignment between {skill_name} and {competency_title}. "
-            f"Competency match: {comp_score:.0%}, Evidence match: {ev_score:.0%}."
+            f"{strength} conceptual alignment between SFIA {skill_name} and "
+            f"UK-SPEC {competency_title}. "
+            f"(Match score: {comp_score:.0%})"
         )
     
     def get_full_mapping_workflow(
         self,
-        evidence: str,
         framework_id: str,
         registration_code: str,
         competency_code: str,
+        cyber_context: bool = False,
         top_k: int = 10
     ) -> Dict:
         """
-        Execute complete workflow: validate evidence → map to SFIA.
+        Execute complete workflow mapping standard-to-standard by indicators.
         
         Returns:
-            Dictionary with validation results and SFIA mappings
+            Dictionary with conceptual context and SFIA indicator mappings
         """
-        # Step 1: Validate evidence
-        validation = self.validate_evidence_for_competency(
-            evidence, framework_id, registration_code, competency_code
+        # Get the context for display
+        context = self.framework_parser.get_competency_context(
+            framework_id, registration_code, competency_code
         )
         
-        # Step 2: Map to SFIA (proceed regardless of validation for now)
-        sfia_matches = self.map_to_sfia_skills(
-            evidence, framework_id, registration_code, competency_code, top_k
-        )
+        if not context:
+            return {}
+            
+        comp = context['competency']
+        sfia_level_range = context['registration']['sfia_level_range']
+        
+        indicator_mappings = []
+        
+        if comp.get('sub_competencies'):
+            for sc in comp['sub_competencies']:
+                indicator_id = sc['code']
+                indicator_text = f"{comp['title']}. {sc['semantic_text']}"
+                
+                sfia_matches = self.map_indicator_to_sfia_skills(
+                    indicator_text, comp['title'], sfia_level_range, cyber_context, top_k
+                )
+                
+                indicator_mappings.append({
+                    'indicator_id': indicator_id,
+                    'indicator_text': sc['description'],
+                    'sfia_mappings': [
+                        {
+                            'skill_code': match.skill_code,
+                            'skill_name': match.skill_name,
+                            'skill_description': match.skill_description,
+                            'overall_score': match.overall_score,
+                            'competency_alignment': match.competency_alignment_score,
+                            'evidence_score': match.evidence_score,
+                            'suggested_level': match.suggested_level,
+                            'level_confidence': match.level_confidence,
+                            'rationale': match.rationale
+                        }
+                        for match in sfia_matches
+                    ]
+                })
+        else:
+            for i, indicator in enumerate(comp.get('indicators', [])):
+                indicator_id = f"{competency_code}{i+1}"
+                indicator_text = f"{comp['title']}. {indicator}"
+                
+                sfia_matches = self.map_indicator_to_sfia_skills(
+                    indicator_text, comp['title'], sfia_level_range, cyber_context, top_k
+                )
+                
+                indicator_mappings.append({
+                    'indicator_id': indicator_id,
+                    'indicator_text': indicator,
+                    'sfia_mappings': [
+                        {
+                            'skill_code': match.skill_code,
+                            'skill_name': match.skill_name,
+                            'skill_description': match.skill_description,
+                            'overall_score': match.overall_score,
+                            'competency_alignment': match.competency_alignment_score,
+                            'evidence_score': match.evidence_score,
+                            'suggested_level': match.suggested_level,
+                            'level_confidence': match.level_confidence,
+                            'rationale': match.rationale
+                        }
+                        for match in sfia_matches
+                    ]
+                })
         
         return {
             'validation': {
-                'competency_code': validation.competency_code,
-                'competency_title': validation.competency_title,
-                'match_score': validation.match_score,
-                'relevance': validation.evidence_relevance,
-                'keyword_matches': validation.keyword_matches
+                'competency_code': competency_code,
+                'competency_title': comp['title'],
+                'match_score': 1.0,  # Legacy field placeholder
+                'relevance': 'high', # Legacy field placeholder
+                'keyword_matches': [],
+                'cyber_context_applied': cyber_context
             },
-            'sfia_mappings': [
-                {
-                    'skill_code': match.skill_code,
-                    'skill_name': match.skill_name,
-                    'skill_description': match.skill_description,
-                    'overall_score': match.overall_score,
-                    'competency_alignment': match.competency_alignment_score,
-                    'evidence_score': match.evidence_score,
-                    'suggested_level': match.suggested_level,
-                    'level_confidence': match.level_confidence,
-                    'rationale': match.rationale
-                }
-                for match in sfia_matches
-            ]
+            'indicator_mappings': indicator_mappings
         }
 
 

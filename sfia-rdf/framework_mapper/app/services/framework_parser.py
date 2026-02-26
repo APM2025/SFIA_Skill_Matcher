@@ -15,6 +15,18 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
+class SubCompetency:
+    """Represents a specific sub-competency (e.g., A1, A2) and its evidence."""
+    code: str
+    description: str
+    evidence_examples: List[str]
+    
+    def get_semantic_text(self) -> str:
+        """Get complete text for embedding generation."""
+        return f"{self.code}: {self.description} Examples of evidence: {', '.join(self.evidence_examples)}"
+
+
+@dataclass
 class Competency:
     """Represents a single competency within a framework."""
     code: str
@@ -22,6 +34,11 @@ class Competency:
     full_description: str
     indicators: List[str]
     keywords: List[str]
+    sub_competencies: List[SubCompetency] = None
+    
+    def __post_init__(self):
+        if self.sub_competencies is None:
+            self.sub_competencies = []
     
     def get_full_text(self) -> str:
         """Get complete text for embedding generation."""
@@ -86,8 +103,8 @@ class FrameworkParser:
                            Defaults to frameworks/ subdirectory.
         """
         if frameworks_dir is None:
-            # Default to frameworks directory relative to this file
-            frameworks_dir = Path(__file__).parent.parent / 'frameworks'
+            # Default to frameworks directory relative to this file (in the project root)
+            frameworks_dir = Path(__file__).resolve().parent.parent.parent / 'frameworks'
         
         self.frameworks_dir = Path(frameworks_dir)
         self.loaded_frameworks: Dict[str, Framework] = {}
@@ -112,12 +129,22 @@ class FrameworkParser:
             # Parse competencies
             competencies = {}
             for comp_code, comp_data in reg_data['competencies'].items():
+                parsed_sub_comps = []
+                if 'sub_competencies' in comp_data:
+                    for sc in comp_data['sub_competencies']:
+                        parsed_sub_comps.append(SubCompetency(
+                            code=sc['code'],
+                            description=sc['description'],
+                            evidence_examples=sc.get('evidence_examples', [])
+                        ))
+                        
                 competencies[comp_code] = Competency(
                     code=comp_data['code'],
                     title=comp_data['title'],
                     full_description=comp_data['full_description'],
-                    indicators=comp_data['indicators'],
-                    keywords=comp_data['keywords']
+                    indicators=comp_data.get('indicators', []),
+                    keywords=comp_data.get('keywords', []),
+                    sub_competencies=parsed_sub_comps
                 )
             
             registrations[reg_code] = Registration(
@@ -190,6 +217,14 @@ class FrameworkParser:
                 'title': competency.title,
                 'full_description': competency.full_description,
                 'indicators': competency.indicators,
+                'sub_competencies': [
+                    {
+                        'code': sc.code,
+                        'description': sc.description,
+                        'evidence_examples': sc.evidence_examples,
+                        'semantic_text': sc.get_semantic_text()
+                    } for sc in competency.sub_competencies
+                ],
                 'keywords': competency.keywords,
                 'full_text': competency.get_full_text()
             }

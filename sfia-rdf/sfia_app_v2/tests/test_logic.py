@@ -34,6 +34,8 @@ MOCK_GENERIC_LEVELS = [
 ]
 
 
+from flask import Flask
+
 @pytest.fixture(scope="module")
 def matching_service():
     """Initialise a MatchingService with mock SFIA data.
@@ -41,10 +43,12 @@ def matching_service():
     The real NLP model is loaded so that embedding-based logic is exercised.
     The SFIA data is kept minimal to keep startup fast.
     """
-    mock_sfia = MagicMock()
-    mock_sfia.sfia_data = MOCK_SFIA_DATA
-    mock_sfia.generic_levels = MOCK_GENERIC_LEVELS
-    return MatchingService("all-MiniLM-L6-v2", mock_sfia)
+    app = Flask(__name__)
+    with app.app_context():
+        mock_sfia = MagicMock()
+        mock_sfia.sfia_data = MOCK_SFIA_DATA
+        mock_sfia.generic_levels = MOCK_GENERIC_LEVELS
+        yield MatchingService("all-MiniLM-L6-v2", mock_sfia)
 
 
 # ---------------------------------------------------------------------------
@@ -52,37 +56,38 @@ def matching_service():
 # ---------------------------------------------------------------------------
 
 def test_analyze_level_returns_four_values(matching_service):
-    """_analyze_level must return (detected_level, breakdown, penalties, confidence)."""
+    """_analyze_level must return (detected_level, breakdown, penalties, confidence, beaten_level)."""
     result = matching_service._analyze_level("I set strategy for the whole organisation.")
-    assert len(result) == 4, "Expected a 4-tuple: (detected_level, breakdown, penalties, confidence)"
+    assert len(result) == 5, "Expected a 5-tuple: (detected_level, breakdown, penalties, confidence, beaten_level)"
 
 
 def test_analyze_level_high_level_context(matching_service):
     """Strong strategy/vision language should resolve to level 6 or 7."""
     context = "I set strategy for the whole organisation. Vision and culture."
-    detected, breakdown, penalties, confidence = matching_service._analyze_level(context)
+    detected, breakdown, penalties, confidence, beaten_level = matching_service._analyze_level(context)
     assert detected in [6, 7], f"Expected level 6 or 7 for executive language, got {detected}"
 
 
 def test_analyze_level_detected_level_has_boost(matching_service):
     """The penalty dict must give the detected level a score modifier > 1.0."""
     context = "I set strategy for the whole organisation. Vision and culture."
-    detected, breakdown, penalties, confidence = matching_service._analyze_level(context)
+    detected, breakdown, penalties, confidence, beaten_level = matching_service._analyze_level(context)
     assert penalties[detected] > 1.0, "Detected level should have a score boost (modifier > 1.0)"
 
 
 def test_analyze_level_returns_none_for_short_context(matching_service):
     """Context shorter than 10 characters should return no detected level."""
-    detected, breakdown, penalties, confidence = matching_service._analyze_level("hi")
+    detected, breakdown, penalties, confidence, beaten_level = matching_service._analyze_level("hi")
     assert detected is None
     assert breakdown == []
     assert confidence is None
+    assert beaten_level is None
 
 
 def test_analyze_level_confidence_values(matching_service):
     """Confidence must be one of the expected string values or None."""
     context = "I lead a small team and take responsibility for delivery."
-    detected, breakdown, penalties, confidence = matching_service._analyze_level(context)
+    detected, breakdown, penalties, confidence, beaten_level = matching_service._analyze_level(context)
     assert confidence in {"high", "moderate", "borderline", None}
 
 

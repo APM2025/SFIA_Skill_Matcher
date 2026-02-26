@@ -1,0 +1,2410 @@
+\n--- PAGE 1 ---\nThe UK Standard for 
+Professional Engineering 
+Competence and 
+Commitment  
+(UK-SPEC)
+Fourth edition
+Published August 2020\n\n--- PAGE 2 ---\n2
+Hierarchy of regulations and standards
+The Engineering Council is the UK’s regulatory body for the 
+engineering profession. It operates under a Royal Charter and 
+is governed by a Board that represents UK Licensees as well 
+as individuals from industries and sectors with an interest in the 
+regulation of the profession.  
+This document is one in a series of closely related publications:
+ •Regulations for Registration (RfR)
+ •Regulations for Licensing (RfL)
+ •The UK Standard for Professional Engineering 
+Competence and Commitment (UK-SPEC)
+ •Information and Communications Technology Technician 
+Standard (ICT Tech  Standard)
+ •Approval and Accreditation of Qualifications and 
+Apprenticeships (AAQA)
+ •Accreditation of Higher Education Programmes (AHEP)
+The Engineering Council publishes these documents on behalf of 
+the UK engineering profession, with whom they were developed 
+and are kept under review. The relationship between these 
+publications is:\n\n--- PAGE 3 ---\n3
+The Engineering Council also publishes policy statements, guidance for institutions and guidance for individuals.  
+These, along with all the publications listed above, are available on the Engineering Council website : www.engc.org.ukRoyal Charter
+UK-SPEC and the ICT Tech  Standard are 
+reference Standards that, with reference 
+to RfR, set out the competence and 
+commitment required for registration as 
+CEng, IEng, EngTech and ICT Tech .
+AAQA and AHEP are reference Standards that, with 
+reference to RfR, set out the policy, context, rules and 
+procedures for recognising learning and development 
+programmes that help develop the competence and 
+commitment set out in UK-SPEC and ICT Tech Standard.The Royal Charter is an instrument of incorporation 
+granted by the UK monarch. It confers independent  
+legal personality on the Engineering Council and  
+defines its objectives, constitution and powers to  
+govern its own affairs.
+The Bye-laws are the rules by which the 
+Engineering Council regulates itself.
+The regulations (including RfR and RfL) set out the 
+rules Licensees must adhere to when carrying out 
+processes regulated by the Engineering Council. Bye-laws
+Regulations
+UK-SPECICTTech 
+StandardAAQA AHEP
+Recognised 
+StandardsRecognised Standards are derived from 
+UK-SPEC by the Engineering Council, 
+Licensees, or a third party. 
+www.engc.org.uk/recognisedstandards\n\n--- PAGE 4 ---\n4
+Foreword
+Engineers and technicians respond to the needs of both society 
+and business, solving complex challenges. Engineers and 
+technicians work in the art and practice of changing our world,  
+enhancing welfare, health and safety while paying due regard to 
+the environment. 
+Society places great faith in the engineering profession, trusting its 
+members to regulate themselves. By achieving and demonstrating 
+professional competence and commitment for the purpose of 
+registration, engineers and technicians demonstrate that they are 
+worthy of that trust.
+This document forms part of the Standard used by the UK 
+engineering profession to assess the competence and commitment 
+of individual engineers and technicians. It was developed 
+collaboratively in consultation with engineers representing the 
+breadth of the profession, from industry, academia and many 
+different disciplines and specialisms. Contents
+Foreword        4
+Welcome        5
+What is professional registration?     6
+How to become professionally registered    10
+The Engineering Technician (EngTech) Standard   19
+The Incorporated Engineer (IEng) Standard    24
+The Chartered Engineer (CEng) Standard    31
+Comparison table for EngTech, IEng and CEng Standards 40
+Continuing Professional Development     46
+Professional and Ethical Behaviour     47
+Glossary        49\n\n--- PAGE 5 ---\n5
+Welcome
+ •Employers of engineers and technicians
+ •People responsible for engineers’ education or training
+Key information
+Throughout this document some key information, terms and 
+crucial points will be picked out in boxed text like this to help 
+navigation. The purpose of UK-SPEC
+This document is the UK Standard for Professional Engineering 
+Competence and Commitment (UK-SPEC).  
+The primary purpose of UK-SPEC is to explain the competence 
+and commitment requirements that people must meet and 
+demonstrate to be registered in each of these registration 
+categories:
+ •Engineering Technician (EngTech)
+ •Incorporated Engineer (IEng)
+ •Chartered Engineer (CEng) 
+This document also explains:
+ •Why professional registration is important
+ •How to achieve professional registration
+ •What engineers and technicians must do to maintain 
+professional registration, including:
+ the requirement to maintain and enhance competence
+ the obligation to act with integrity and in the public interest
+ membership of a Licensee
+Who UK-SPEC is for 
+Many different users will find this document useful. However, it has 
+been written pr imarily for these audiences:
+ •Individuals who are thinking about becoming professionally 
+registered
+ •Licensees and Professional Affiliates through which engineers 
+and technicians become registered Licensee
+Throughout this document the term ‘Licensee’ is used to 
+describe the engineering institutions that have been licensed 
+by the Engineering Council board to assess individuals for 
+professional registration. To become Licensees organisations 
+must pass a rigorous process demonstrating, to the satisfaction 
+of the Engineering Council Board, that they are competent to 
+perform this task and to regulate the conduct of their members. 
+Additionally, Licensees can also be licensed to approve 
+or accredit programmes of learning to specific standards. 
+Licensees are sometimes known informally as Professional 
+Engineering Institutions, or PEIs.
+Glossary
+At the end of UK-SPEC there is a glossary that explains some of 
+terms we use. \n\n--- PAGE 6 ---\n6
+What is professional registration?
+Professional registration verifies that an individual can meet 
+the engineering and technological needs of today, while also 
+anticipating the needs of, and impact on, future generations.  
+Both in the UK and overseas, professional registration gives 
+employers, government and society confidence in the engineering 
+industry. In this way, professional registration offers safeguarding 
+assurances. 
+Registration demonstrates that an engineer or technician has 
+reached a set standard of knowledge, understanding and 
+occupational competence. It also demonstrates an individual’s 
+commitment to professional standards and to developing and 
+enhancing through Continuing Professional Development (CPD). 
+People who gain further qualifications or experience over the 
+course of their careers can be assessed for another registration 
+title. Many people continue to develop their competence to enable 
+them to move from EngTech to IEng or CEng, or from IEng to 
+CEng.  UK-SPEC covers three professional registration categories 
+which are set out in Table 1 on page 7.Why register?
+Benefits for individuals: recognition, career development, 
+earning potential
+Professional registration sets individual engineers and technicians 
+apart from those who are not registered. Gaining a professional 
+title establishes a person’s proven knowledge, understanding and 
+competence to a set standard and demonstrates their commitment 
+to developing and enhancing competence. 
+Registration increases a person’s earning potential and 
+establishes credibility with peers across the profession. The 
+professional qualifications of EngTech, IEng and CEng are 
+internationally recognised. 
+Maintaining registration requires continued membership of a 
+Licensee. Licensees, in turn, can help registrants find development 
+opportunities through exposure to new developments, training or 
+networking opportunities. 
+In addition, the criteria of the UK-SPEC provide a useful framework 
+for CPD, particularly for engineers and technicians aiming for a 
+professional registration title. Achievement of registration can 
+demonstrate a person’s readiness for promotion or help them 
+secure new roles or contracts. 
+Further benefits for individuals are available at:  
+www.engc.org.uk/benefits\n\n--- PAGE 7 ---\n7
+Table 1: Overview of professional registration titles 
+Title Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+Descriptor Applies proven techniques and 
+procedures to solve practical 
+engineering problems. Applies safe 
+systems of work.Maintains and manages applications 
+of current and developing technology, 
+and may undertake engineering design, 
+development, manufacture, construction 
+and operation.Develops solutions to engineering 
+problems using new or existing 
+technologies, through innovation, 
+creativity and change. May be 
+accountable for complex systems with 
+significant levels of risk.
+Key 
+attributes:1. Contribution to either the 
+design, development, manufacture, 
+commissioning, decommissioning, 
+operation or maintenance of products, 
+equipment, processes or services 
+2. Supervisory or technical responsibility
+3. Effective interpersonal skills in 
+communicating technical matters
+4. Commitment to professional 
+engineering values1. The theoretical knowledge to solve 
+problems in developed technologies 
+using well proven analytical techniques 
+2. Successful application of their 
+knowledge to deliver engineering 
+projects or services using established 
+technologies and methods 
+3. Contribution to project and financial 
+planning and management together 
+with some responsibility for leading and 
+developing other professional staff
+4. Effective interpersonal skills in 
+communicating technical matters
+5. Commitment to professional 
+engineering values1. The theoretical knowledge to solve 
+problems in new technologies and 
+develop new analytical techniques 
+2. Successful application of the 
+knowledge to deliver innovative 
+products and services and/or  
+take technical responsibility for complex 
+engineering systems 
+3. Responsibility for financial and 
+planning aspects of projects, sub-
+projects or tasks
+4. Leading and developing other 
+professional staff through management, 
+mentoring or coaching
+5. Effective interpersonal skills in 
+communicating technical matters 
+6. Commitment to professional 
+engineering values\n\n--- PAGE 8 ---\n8
+professionally registered engineers and technicians working in 
+other countries. The professional titles EngTech, IEng and CEng 
+are recognised widely around the world. Professional registration, 
+as defined in UK-SPEC, reflects the requirements of global 
+engineering. 
+Engineers who have developed their professional engineering 
+competence in countries outside of the United Kingdom are 
+welcome to join the Engineering Council register, subject to 
+meeting the assessment criteria.  
+ 
+For further information see: www.engc.org.uk/international
+What is engineering competence? 
+Competence is defined as a professional’s ability to carry out 
+engineering tasks successfully and safely within their field of 
+practice. This includes having the individual skills, knowledge and 
+understanding, personal behaviour and approach, to be able to 
+work collaboratively with others to achieve the intended outcomes. 
+Competence includes the ability to make professional judgments 
+and an awareness of the limits of one’s own ability and knowledge 
+in order to seek assistance when required.Benefits for employers: assurance of quality
+Each registration title requires demonstrations of competence in 
+five broad areas: 
+A. Knowledge and understanding
+B. Design, development and solving engineering problems
+C. Responsibility, management and leadership
+D. Communication and interpersonal skills
+E. Professional commitment Employers of professionally registered engineers and technicians 
+can be assured that registered engineers and technicians have:
+ •had their competence and credentials independently assessed 
+ •had their credentials verified to an internationally recognised 
+standard, and 
+ •made a commitment to their CPD. 
+Employing registered professionals can help mitigate against 
+risks and liabilities, as registrants are governed by a Code of 
+Professional Conduct. 
+Maintaining registration requires continued membership of a 
+Licensee and a commitment to CPD. This means employers 
+can be reassured that registered employees are developing 
+and enhancing their competence and will be exposed to new 
+developments in their profession. 
+Some employers find the framework of the UK-SPEC a useful 
+basis for their own organisational needs, such as to structure 
+CPD. Others rely on achievement of registration to demonstrate an 
+employee's readiness for promotion. In some cases, both in the UK 
+and internationally, the awarding of contracts will require evidence 
+that organisations employ professionally registered engineers.
+Further benefits for employers are available at:  
+www.engc.org.uk/employers
+International context
+The Engineering Council is committed to supporting its \n\n--- PAGE 9 ---\n9
+What is professional commitment? 
+Registered engineering professionals are required to demonstrate 
+a personal and professional commitment to society, to the 
+environment and to their profession. As part of demonstrating 
+overall competence, it is mandatory to show that they have 
+adopted a set of values and conduct that maintains and enhances 
+the reputation of the profession. This includes:
+ •Maintaining public and employee safety
+ •Undertaking work in a way that protects the environment and 
+contributes to sustainable development
+ •Complying with codes of conduct, codes of practice and the 
+legal and regulatory framework
+ •Managing, applying and improving safe systems of work
+ •Carrying out the CPD necessary to maintain and enhance 
+competence in relation to duties and responsibilities
+ •Exercising responsibilities in an ethical manner
+ •Recognising inclusivity and diversity
+ •Adopting a security-minded approach
+ •Actively participating within the profession
+The Engineering Council has published a CPD Code for Registrants, 
+(see page 46), as well as guidance on risk, sustainability, 
+whistleblowing and security (see  page 47).
+Ethical standards
+Together with the Royal Academy of Engineering, the Engineering 
+Council developed The Statement of Ethical Principles. This 
+document outlines how members of the profession should conduct 
+themselves in their working habits and relationships. The values it is based on should apply in every situation in which engineers and 
+technicians exercise their judgment. 
+The Statement of Ethical Principles is available at:  
+www.engc.org.uk/ethics
+Further information on the required Standards is available from 
+a variety of sources. Each Licensee will have its own Code of 
+Professional Conduct, in line with the framework on Professional 
+and Ethical Behaviour on page 47  of this document, and 
+supporting guidance. \n\n--- PAGE 10 ---\n10
+How to become professionally registered 
+registration. These Professional Affiliate members may then apply 
+for registration through the Licensee. 
+The current list of Professional Affiliates, including those which 
+have registration agreements, is available at:  
+www.engc.org.uk/affiliates
+How are applicants assessed? 
+Pages  19–45 list the requirements for all three professional 
+titles. Once a person is confident that they meet all the criteria for a 
+professional title, they should make an application for assessment 
+through their chosen Licensee. The assessment process is known 
+as a Professional Review. The Licensee will provide a detailed 
+description of the requirements and format for this. 
+Applicants will need to submit formal documented evidence of any 
+relevant qualifications, experience or training and show how this 
+relates to the required competences and commitment set out in 
+pages  19–45 of this document.
+For EngTech qualifications, depending on the Licensee, there may 
+be an interview, or it may simply be a one-stage process assessing 
+an applicant’s submitted written evidence.
+For CEng and IEng titles the Professional Review process has two 
+stages: an assessment of written evidence and then an interview. 
+In some engineering disciplines Licensees may specify additional 
+methods of assessing competence and commitment.Professional registration is open to all engineers and technicians 
+who: 
+ •Can satisfy the requirements for underpinning knowledge and 
+understanding
+ •Can demonstrate competence and commitment to meet the 
+necessary standard
+ •Are members of a Licensee relevant to their discipline
+What are the requirements for registration? 
+The Engineering Council sets the Standards which need to be 
+met for EngTech, IEng and CEng. P ages 19 –45 show the 
+requirements for all three titles. However, it is the Licensee that 
+will carry out an assessment of an applicant’s competence and 
+commitment. The Licensee will act as the awarding body for 
+professional registration as EngTech, IEng or CEng.  
+Applicants need to apply for professional registration through a 
+Licensee relevant to their discipline. The Licensee will be able 
+to provide details about registration, including the process and 
+typical timescales. 
+ 
+The list of Licensees licensed by the Engineering Council is 
+available at: www.engc.org.uk/licensees
+A Professional Affiliate is an engineering institution which is 
+closely associated with the Engineering Council but is not licensed 
+to assess applicants or award registration. Some Professional 
+Affiliates will have a registration agreement with a Licensee so that 
+the Licensee can assess members of the Professional Affiliate for \n\n--- PAGE 11 ---\n11
+Meeting the requirements for registration
+Knowledge, understanding and skills form an essential part 
+of competence. This provides the necessary foundation of 
+underpinning logic and analytical capabilities. Knowledge, 
+understanding and skills ensure that decisions are based on a full 
+understanding of engineering practices and standards, rather than 
+relying on instructions. 
+Formal education is one way of demonstrating the necessary 
+underpinning knowledge and understanding (see Recognised 
+Qualifications, pages  13–15), but it is not the only way (see 
+Individual Assessment, page 16 ). \n\n--- PAGE 12 ---\n12
+Recognised qualifications
+For applicants who have achieved the required learning 
+outcomes through recognised qualifications. Qualifications 
+which provide the required level of knowledge and 
+understanding are:  
+ •EngTech: Level 3 qualification as part of an approved 
+apprenticeship scheme
+ •IEng: an accredited Bachelors degree
+ •CEng: an accredited integrated Masters degree or a 
+combination of accredited Bachelors and Masters degreesProfessional Review of competence and 
+commitment
+Applicants are assessed against the UK-SPEC 
+standard of competence which sets the minimum 
+requirements. Licensees may add requirements which 
+relate to their particular engineering discipline.
+An expert panel, consisting of registered engineers 
+from the Licensee, will review an applicant’s portfolio 
+of evidence against the requirements. This is followed 
+by:
+Professional Review Interview (PRI)
+All IEng and CEng applicants will be interviewed by a 
+panel of registered engineers who are also members 
+of the Licensee. EngTech applicants may need to 
+attend a Professional Review Interview.  
+The panel will then make a recommendation on 
+whether the applicant meets the requirements for their 
+chosen registration category.Individual assessment 
+Applicants who do not have the recognised qualifications will 
+instead have an individual assessment of their qualifications 
+and any other relevant learning such as: 
+ •formal academic programmes
+ •in-employment training
+ •experiential learning
+ •self-directed learning 
+Applicants may be also asked to write a technical report or 
+attend a technical interview. 
+The assessment will be carried out by registrants who are 
+also members of the Licensee. The exact process is set out 
+by the Licensee.Figure 1: Assessment process\n\n--- PAGE 13 ---\n13
+Professional registration
+The recommendation from the Professional Review is reviewed by the 
+Licensee’s relevant committee. The applicant will achieve professional 
+registration if:
+ •The expert panel recommends that the applicant has met the 
+requirements
+ •All are satisfied that all stages of the process have been completed, 
+and
+ •The Licensee’s relevant committee endorses the recommendation.
+The applicant then becomes a registrant and is able to use the relevant  
+post-nominal. 
+As a condition of continued registration, the individual commits to:
+ •Maintain their competence through CPD and membership of their 
+Licensee, and 
+ •Adhere to their Licensee’s Code of Professional Conduct.
+If an applicant has been unsuccessful the Licensee will provide some 
+guidance on what further learning and/or competence development 
+would be beneficial to achieve registration.
+When all the above steps are completed to the satisfaction of the 
+Licensee’s relevant committee, the applicant achieves professional 
+registration. They commit to maintain their CPD and membership of 
+their Licensee and to adhere to their Licensee’s Code of Professional 
+Conduct. Figure 1 (continued)\n\n--- PAGE 14 ---\n14
+Recognised qualifications 
+The underpinning knowledge and understanding for each 
+registration category can be developed from recognised 
+qualifications that deliver the appropriate learning outcomes. 
+The recognised qualifications for each registration category are set 
+out in Table 2 . The learning outcomes are set out in detail in the 
+Engineering Council publications Accreditation of Higher Education 
+Programmes (AHEP) and the Approval and Accreditation of 
+Qualifications and Apprenticeships (AAQA) Standards.  \n\n--- PAGE 15 ---\n15
+Table 2: Recognised qualifications 
+Engineering Technician (EngTech)  
+One of the following:Incorporated Engineer (IEng)  
+One of the following:Chartered Engineer (CEng)  
+One of the following:
+ •Successful completion of an apprenticeship 
+or other work-based learning programme 
+approved by a Licensee
+ •Alongside appropriate working experience, 
+holding a qualification, approved by a 
+Licensee, in engineering or construction set 
+at either:
+ level 3 (or above) in the Regulated 
+Qualifications Framework or National 
+Qualifications Framework for England 
+and Northern Ireland
+ level 6 (or above) in the Scottish Credit 
+and Qualifications Framework
+ level 3 (or above) in the Credit and 
+Qualifications Framework for Wales
+ •Alongside appropriate working experience, 
+holding equivalent qualifications or 
+apprenticeships accredited or approved 
+by a Licensee, or at an equivalent level 
+in a relevant national or international 
+qualifications framework† •An accredited Bachelors or honours 
+degree in engineering or technology
+ •An accredited Higher National Certificate 
+(HNC) or Higher National Diploma (HND) 
+in engineering or technology started before 
+September 1999
+ •An HNC or HND started after September 
+1999 (but before September 2010 in 
+the case of the HNC) or a Foundation 
+Degree in engineering or technology, plus 
+appropriate further learning to degree level
+ •A National Vocational Qualification (NVQ) 
+or Scottish Vocational Qualification (SVQ) 
+at level 4 that has been approved by a 
+Licensee, plus appropriate further learning 
+to degree level *
+ •Equivalent qualifications or 
+apprenticeships accredited or approved 
+by a Licensee, or at an equivalent level 
+in a relevant national or international 
+qualifications framework†  •An accredited Bachelors degree 
+with honours in engineering 
+or technology, plus either an 
+appropriate Masters degree or 
+engineering doctorate accredited by 
+a Licensee, or appropriate further 
+learning to Masters level *
+ •An accredited integrated MEng 
+degree
+ •An accredited Bachelors degree 
+with honours in engineering 
+or technology started before 
+September 1999
+ •Equivalent qualifications or 
+apprenticeships accredited 
+or approved by a Licensee, 
+or at an equivalent level in a 
+relevant national or international 
+qualifications framework† 
+* See: www.engc.org.uk/ukspec4th  for qualification levels and HE reference points.
+† For example, UNESCO’s International Standard Classification of Education (ISCED) framework. 
+The Engineering Council maintains a publicly accessible recognised course search database, which is available at:  
+www.engc.org.uk/courses\n\n--- PAGE 16 ---\n16
+Preparing for registration
+Pages  19–45 of this document set out the competence and 
+commitment Standards for registration as an EngTech, IEng or 
+CEng. 
+Engineers seeking registration should review the competence 
+and commitment statements and use the examples to help 
+them identify where they already have an appropriate level 
+of competence, as well as what evidence they can present to 
+demonstrate this. They should also identify areas where they 
+currently lack the appropriate competence, in order to formulate 
+plans to develop to the required level.
+Pages  19–39 also include some examples of the kind of 
+evidence which would contribute to demonstrating competence 
+and commitment to the required Standards. However, the list 
+of examples is only for guidance: it is not exhaustive, and the 
+examples are not requirements for achieving professional 
+registration.
+For all categories, those seeking registration after completing 
+their early career training should present a detailed record of their 
+professional development, responsibilities and experience. To 
+enable applicants to provide the best evidence for the Professional 
+Review, this record should be verified by supervisors or mentors. 
+Professional Review: assessing competence and 
+commitment 
+To become professionally registered, applicants must have their 
+competence and commitment assessed through a Professional Individual assessment 
+This process includes assessment of the applicant’s prior learning 
+and underpinning knowledge needed to successfully perform 
+their role. Applicants should submit information covering their 
+education, career history and training record. It may also be helpful 
+for applicants to include evidence of employer recognition of their 
+competences and relevant skills.
+If the Licensee considers, after this initial assessment, that it needs 
+additional evidence of knowledge and understanding it will advise 
+the applicant on the nature and extent of this. An applicant can 
+demonstrate knowledge and understanding in a number of ways, 
+such as:
+ •Successfully completing further qualifications, either in whole or 
+in part,
+ •Providing a record of having completed work-based or 
+experiential learning, 
+ •Writing a technical report, based on experience, which 
+demonstrates the applicant’s knowledge and understanding of 
+engineering principles, or
+ •Any combination of these.Many potential registrants have not had formal training to the 
+required level but are able to demonstrate they have acquired 
+the necessary underpinning knowledge through substantial work 
+experience. Applicants who have acquired their underpinning 
+knowledge and understanding through experiential learning or 
+other qualifications can submit the relevant information to their 
+Licensee for an initial assessment. \n\n--- PAGE 17 ---\n17
+Review, overseen by the Licensee. This peer review process is 
+carried out by registrants who are competent and trained to carry 
+out this kind of assessment.
+Applicants are assessed against the Standards listed in pages  
+19–45 of this document, which may be adapted by the Licensee 
+to relate specifically to the particular technologies or industries it is 
+concerned with. There is no prescribed time period or minimum age 
+requirement for the development of competence and commitment. 
+The length of time it takes depends on many factors such as a 
+person’s prior qualifications or experience, their job role, as well as 
+personal circumstances such as career breaks or part time working. 
+Scrutiny of qualifications
+The first stage of the Professional Review is an assessment of 
+the documented evidence which the applicant has submitted. 
+The applicant’s Licensee will specify the requirements for this 
+submission. The Licensee will examine the examples of evidence 
+and assess how they meet the underpinning knowledge, 
+understanding and competence requirements. 
+Applicants will need to submit evidence in support of their 
+application such as their:
+ •Educational record and qualifications
+ •Professional qualifications awarded by other national, regional 
+or international authorities
+ •Structured or other professional development
+ •Areas of responsibility, management and leadership
+ •Evidence of effective interpersonal skills
+ •A plan for future professional developmentProfessional Review
+After the submitted evidence has been reviewed, the Licensee will 
+decide whether the applicant is ready to proceed to Professional 
+Review. The Licensee will be able to advise applicants how to 
+best present their evidence of training and experience. If there are 
+shortfalls in evidence, Licensees will usually be able to suggest 
+ways in which the applicant can address them. This may involve 
+further learning, training or additional experience.
+Once the submitted evidence has been accepted as a basis for the 
+review, the next stage is a Professional Review Interview (PRI). 
+This is mandatory for IEng and CEng applicants. For EngTech 
+applicants there may be an interview, at the discretion of the 
+Licensee, or the Professional Review may be based solely on the 
+submitted documents.
+When the Professional Review has been completed, the peer 
+reviewers will make a recommendation to the Licensee’s 
+designated committee. The committee will then make a decision 
+on whether the applicant has demonstrated that they meet the 
+required standards. A positive decision will result in registration of 
+the applicant as an EngTech, IEng or CEng. Where the applicant 
+has been unsuccessful the Licensee will provide feedback to help 
+the applicant overcome any shortfalls in competence. \n\n--- PAGE 18 ---\n18
+Retention of the title requires:
+ •Continued membership of either:
+ a Licensee licensed for that title or 
+ a Professional Affiliate which has a registration agreement 
+with a Licensee licensed for that title, 
+and:
+ •Payment of an annual fee, 
+and: 
+ •Undertaking and recording Continuing Professional 
+Development (CPD).
+For more information please see: www.engc.org.uk/cpd  \n\n--- PAGE 19 ---\n19
+The Engineering Technician (EngTech) Standard 
+Engineering Technicians apply proven techniques and 
+procedures to the solution of practical engineering problems. 
+Engineering Technicians shall demonstrate:
+ •Engineering knowledge and understanding to apply technical 
+and practical skills
+ •Evidence of their contribution to the design, development, 
+manufacture, commissioning, decommissioning, operation or 
+maintenance of products, equipment, processes or services 
+ •Supervisory or technical responsibility 
+ •Effective interpersonal skills in communicating technical 
+matters
+ •The ability to operate in accordance with safe systems of 
+work and to demonstrate appropriate understanding of the 
+principles of sustainability 
+ •Commitment to professional engineering values
+An Engineering Technician will be able to demonstrate their 
+competence in all of the areas listed, but the depth and extent of 
+their experience and competence will vary with the context, nature 
+and requirements of their role. They will demonstrate a level of 
+competence and commitment in each area, (A1–E5), at a level 
+which is consistent with their specific role. It is to be expected that 
+they will have a higher level of competence in some areas than 
+others and their role may provide limited experience in certain 
+areas. However, they need to demonstrate an understanding 
+of, and familiarity with, the key aspects of competence in those areas of limited experience as a minimum requirement while 
+demonstrating higher levels of competence in those areas 
+which are critical to their role. Overall, they will demonstrate 
+an appropriate balance of competences to perform their role 
+effectively at Engineering Technician level. 
+The examples of evidence are intended as guidance to help 
+identify activities that might demonstrate the required competence 
+and commitment for Engineering Technician registration. They 
+are intended as examples only as the most appropriate evidence 
+will vary with each individual role. The list is not exhaustive and 
+other types of evidence might be valid. There is no requirement 
+to provide multiple examples of evidence for each area of 
+competence, but examples from two or three projects or tasks 
+would be useful. \n\n--- PAGE 20 ---\n20
+Competence Examples of evidence
+A. Knowledge and understanding 
+Engineering Technicians shall 
+use engineering knowledge and 
+understanding to apply technical and 
+practical skills.
+This competence is about having 
+knowledge of the technologies, standards 
+and practices relevant to the applicant’s 
+area of work and having evidence of 
+maintaining and applying this knowledge.The applicant shall 
+demonstrate that they: 
+1. Review and select appropriate 
+techniques, procedures and 
+methods to undertake tasks •Evaluating potential methods of carrying out an 
+engineering task and selecting the most appropriate 
+solution
+ •Recognising a difficulty and then identifying an 
+approach to resolve it
+ •Identifying an improvement in a technique, procedure, 
+process or method 
+ •Interpreting and carrying out test procedures
+2. Use appropriate scientific, 
+technical or engineering 
+principles. •Drawing on your technical knowledge to complete a 
+task
+ •Performing calculations using standard formulae 
+ •Analysing performance or test data or comparing 
+performance information with published material
+B. Design, development and solving 
+engineering problems
+Engineering Technicians shall 
+contribute to the design, development, 
+manufacture, construction, 
+commissioning, decommissioning, 
+operation or maintenance of products, 
+equipment, processes, systems or 
+services.
+This competence is about the ability to 
+apply engineering knowledge effectively 
+and efficiently to the individual tasks which 
+need to be undertaken in the applicant’s 
+role. The applicant shall 
+demonstrate that they:
+1. Identify problems and apply 
+appropriate methods to identify 
+causes and achieve satisfactory 
+solutions •Using knowledge to identify a problem or an 
+opportunity for improvement
+ •Investigating a problem to identify the underlying cause
+ •Identifying a solution to a problem or an improvement 
+opportunity
+ •Contributing to the design of an item or process
+2.  Identify, organise and use 
+resources effectively to complete 
+tasks, with consideration for 
+cost, quality, safety, security and 
+environmental impact. •Balancing these factors in selecting appropriate 
+materials 
+ •Identifying precautions as a result of evaluating risks 
+and other factors
+ •Considering how waste can be minimised, recycled or 
+disposed of safely if recycling is not possible
+ •Contributing to best practice methods of continuous 
+improvement
+ •Improving the quality of an operation or process\n\n--- PAGE 21 ---\n21
+Competence Examples of evidence
+C. Responsibility, management and 
+leadership
+Engineering Technicians shall accept 
+and exercise personal responsibility.
+This competence is about the ability to 
+plan and manage the applicant’s own 
+work effectively and efficiently. It is also 
+about the ability to consider and identify 
+improvements to maintain quality in their 
+work.The applicant shall 
+demonstrate that they: 
+1. Work reliably and effectively 
+without close supervision, to the 
+appropriate codes of practice •Completing challenging tasks successfully within your 
+area of work
+ •Identifying issues which fall outside of your current 
+knowledge and seeking advice
+ •Identifying standards and codes of practice relevant to 
+a new task
+2. Accept responsibility for the 
+work of themselves or others •Fully understanding drawings, permits to work, 
+instructions or other similar documents after 
+appropriate checking, and identifying issues
+ •Inspecting work carried out by others 
+ •Checking the status of equipment, the work 
+environment and facilities and taking appropriate 
+actions before commencing work
+3. Accept, allocate and 
+supervise technical and other 
+tasks. •Ensuring that the scope of a task is clear before 
+accepting and/or allocating it to others
+ •Querying any aspect of a task which is not clear and/or 
+providing an explanation if a query is raised by others
+ •Learning from your own experience and/or providing 
+constructive feedback when supervising or working 
+with others\n\n--- PAGE 22 ---\n22
+Competence Examples of evidence
+D. Communication and 
+interpersonal skills
+Engineering Technicians shall 
+use effective communication and 
+interpersonal skills. 
+This is the ability to work with others 
+constructively, to explain ideas and 
+proposals clearly and to discuss issues 
+objectively and constructively.The applicant shall 
+demonstrate that they: 
+1. Communicate effectively with 
+others, at all levels, in English •Contributing to meetings and discussions 
+ •Preparing communications, documents and reports  
+on technical matters 
+ •Exchanging information and providing advice to 
+technical and non-technical colleagues
+2. Work effectively with 
+colleagues, clients, suppliers or 
+the public •Contributing constructively as part of a team
+ •Successfully resolving issues in discussions with team 
+members, suppliers, clients and/or others
+ •Persuading others to accept suggestions or 
+recommendations
+ •Identifying, agreeing and working towards collective 
+goals
+3. Demonstrate personal and 
+social skills and awareness of 
+diversity and inclusion issues. •Knowing and managing own emotions, strengths and 
+weaknesses
+ •Being confident and flexible in dealing with new and 
+changing interpersonal situations
+ •Creating, maintaining and enhancing productive 
+working relationships, and resolving conflicts
+ •Being supportive of the needs and concerns of others, 
+especially where this relates to diversity and inclusion\n\n--- PAGE 23 ---\n23
+Competence Examples of evidence
+E. Personal and professional 
+commitment
+Engineering Technicians shall 
+demonstrate commitment to an 
+appropriate code of professional 
+conduct, recognising obligations 
+to society, the profession and the 
+environment.
+This competence is about ensuring that 
+the applicant is acting in a professional 
+manner in their work and in their dealings 
+with others. An Engineering Technician 
+should set a standard and example to 
+others with regard to professionalism.This shall include the ability 
+to:
+1. Understand and comply with 
+relevant codes of conduct •Demonstrating compliance with your Licensee’s Code of 
+Professional Conduct
+ •Working within all relevant legislative and regulatory 
+frameworks, including social and employment legislatio n 
+2. Understand the safety 
+implications of their role and 
+apply safe systems of work •Providing evidence of applying current safety 
+requirements, such as risk assessment and other 
+examples of good practice you adopt in your work 
+ •A sound knowledge of health and safety legislation,  
+for example: HASAW 1974, CDM regulations, ISO 
+45001 and company safety policies
+3. Understand the principles of 
+sustainable development and 
+apply them in their work •Recognising how sustainability principles, as described 
+in the Guidance on Sustainability on page 48 ,  
+can be applied in your day-to-day work
+ •Identifying actions that you can and have taken to 
+improve sustainability 
+4. Carry out and record the 
+Continuing Professional 
+Development (CPD) necessary 
+to maintain and enhance 
+competence in their own area of 
+practice  •Undertaking reviews of your own development needs
+ •Planning how to meet personal and organisational 
+objectives
+ •Carrying out and recording planned and unplanned 
+CPD activities
+ •Maintaining evidence of competence development
+ •Evaluating CPD outcomes against any plans made
+ •Assisting others with their own CPD
+5. Understand the ethical issues 
+that may arise in their role and 
+carry out their responsibilities in 
+an ethical manner.  •Understanding the ethical issues that you may 
+encounter in your role
+ •Giving an example of where you have applied ethical 
+principles as described in the Statement of Ethical 
+Principles on page 47
+ •Giving an example of where you have applied 
+or upheld ethical principles as defined by your 
+organisation or company\n\n--- PAGE 24 ---\n24
+Incorporated Engineers maintain and manage applications 
+of current and developing technology, and may undertake 
+engineering design, development, manufacture, construction 
+and operation.
+Incorporated Engineers shall demonstrate:
+ •The theoretical knowledge to solve problems in established 
+technologies using well proven analytical techniques
+ •Successful application of the knowledge to deliver 
+engineering tasks or services using established technologies 
+and methods
+ •Contribution to the financial and planning aspects of projects 
+or tasks and contribution to leading and developing other 
+professional staff
+ •Effective interpersonal skills in communicating technical 
+matters
+ •The ability to specify and operate to safe systems of 
+work and to demonstrate appropriate consideration of the 
+principles of sustainability 
+ •Commitment to professional engineering valuesThe Incorporated Engineer (IEng) Standard 
+An Incorporated Engineer will be able to demonstrate their 
+competence in all of the areas listed, but the depth and extent 
+of their experience and competence will vary with the nature 
+and requirements of their role. They will demonstrate a level of 
+competence and commitment in each area (A1–E5) at a level 
+which is consistent with their specific role. It is to be expected that 
+they will have a higher level of competence in some areas than others and their role may provide limited experience in certain 
+areas. However, they need to demonstrate an understanding of, 
+and familiarity with, the key aspects of competence in all areas 
+as a minimum requirement while demonstrating higher levels of 
+competence in those areas which are critical to their role. Overall, 
+they must demonstrate an appropriate balance of competences to 
+perform their role effectively at Incorporated Engineer level. 
+The examples of evidence are intended as guidance to help 
+identify activities that might demonstrate the required competence 
+and commitment for Incorporated Engineer registration. They 
+are intended as examples only as the most appropriate evidence 
+will vary with each individual role. The list is not exhaustive and 
+other types of evidence might be valid. There is no requirement 
+to provide multiple examples of evidence for each area of 
+competence, but examples from two or three projects or tasks 
+would be useful. \n\n--- PAGE 25 ---\n25
+Competence Examples of evidence
+A. Knowledge and understanding
+Incorporated Engineers shall use 
+a combination of general and 
+specialist engineering knowledge and 
+understanding to apply existing and 
+emerging technology.
+This competence is about having 
+knowledge of the technologies, 
+standards and practices relevant to the 
+applicant’s area of practice and having 
+evidence of maintaining and applying 
+this knowledge.The applicant shall 
+demonstrate that they: 
+1. Have maintained and 
+extended a sound theoretical 
+approach to the application 
+of technology in engineering 
+practice •Identifying the limits of your knowledge and skills
+ •Taking steps to develop and extend personal knowledge 
+of appropriate technology, both current and emerging
+ •Applying newly gained knowledge successfully in a task 
+or project
+ •Reviewing current procedures and processes and 
+recommended improvements or changes to reflect best 
+practice 
+ •Developing knowledge needed to work in a new industry 
+area or discipline
+2. Use a sound evidence-
+based approach to problem-
+solving and contribute to 
+continuous improvement. •Applying knowledge and experience to investigate and 
+solve problems arising during engineering tasks and 
+implementing corrective action
+ •Identifying opportunities for improvements and how these 
+have been (or could be) implemented
+ •Using an established process to analyse issues and 
+establish priorities\n\n--- PAGE 26 ---\n26
+Competence Examples of evidence
+B. Design, development and 
+solving engineering problems
+Incorporated Engineers shall apply 
+appropriate theoretical and practical 
+methods to design, develop, 
+manufacture, construct, commission, 
+operate, maintain, decommission 
+and recycle engineering processes, 
+systems, services and products.
+This competence is about the ability 
+to identify appropriate methods and 
+approaches to use to undertake a task 
+within their area of practice and to 
+make a significant contribution to the 
+development of a design or process or 
+the maintenance of operations.The applicant shall 
+demonstrate that they: 
+1. Identify, review and select 
+techniques, procedures 
+and methods to undertake 
+engineering tasks •Establishing the engineering steps needed to carry out a 
+task efficiently
+ •Identifying the available products or processes needed to 
+undertake an engineering task and establishing a means 
+of identifying the most suitable solution
+ •Preparing technical specifications
+ •Reviewing and comparing responses to the technical 
+aspects of tender invitations
+ •Establishing user requirements for improvements
+2. Contribute to the design and 
+development of engineering 
+solutions •Contributing to the identification and specification of 
+design and development requirements for engineering 
+products, processes, systems and services
+ •Identifying operational risks and evaluating possible 
+engineering solutions, taking account of cost, quality, 
+safety, reliability, accessibility, appearance, fitness 
+for purpose, security (including cyber security), 
+intellectual property constraints and opportunities, and 
+environmental impact
+ •Collecting and analysing results
+ •Carrying out necessary tests 
+3. Implement design solutions 
+for equipment or processes and 
+contribute to their evaluation. •Identifying the resources required for implementation
+ •Implementing design solutions, taking account of 
+critical constraints, including due concern for safety and 
+sustainability 
+ •Identifying problems during implementation and taking 
+corrective action
+ •Contributing to recommendations for improvement and 
+actively learning from feedback on results\n\n--- PAGE 27 ---\n27
+Competence Examples of evidence
+C. Responsibility, management 
+and leadership
+Incorporated Engineers shall 
+provide technical and commercial 
+management.
+This competence is about the ability 
+to plan the applicant’s own work and 
+manage or specify the work of others 
+effectively, efficiently and in a way which 
+provides leadership at an appropriate 
+level, whether technical or commercial. 
+Leadership is not necessarily about 
+having a formal line management role. 
+In matrix management and other types 
+of organisational structure, where 
+Incorporated Engineers are working 
+within complex and varied working 
+relationships, they will provide leadership 
+to achieve objectives. This competence 
+is also about the ability to consider and 
+identify improvements to quality. The applicant shall 
+demonstrate that they: 
+1. Plan the work and resources 
+needed to enable effective 
+implementation of engineering 
+tasks and projects •Identifying factors affecting the project implementation
+ •Carrying out holistic and systematic risk identification, 
+assessment and management
+ •Preparing and agreeing implementation plans and method 
+statements
+ •Securing the necessary resources and confirming roles in 
+a project team
+ •Applying the necessary contractual arrangements with 
+other stakeholders (clients, subcontractors, suppliers, etc)
+2. Manage (organise, direct 
+and control), programme or 
+schedule, budget and resource 
+elements of engineering tasks 
+or projects •Operating appropriate management systems
+ •Working to the agreed quality standards, programme and 
+budget, within legal and statutory requirements
+ •Managing work teams, coordinating project activities
+ •Identifying variations from quality standards, programme 
+and budgets, and taking corrective action 
+ •Evaluating performance and recommending improvements
+3. Manage teams, or the input 
+of others, into own work and 
+assist others to meet changing 
+technical and management 
+needs •Agreeing objectives and work plans with teams and 
+individuals
+ •Reinforcing team commitment to professional standards
+ •Leading and supporting team and individual development
+ •Assessing team and individual performance, and 
+providing feedback
+ •Seeking input from other teams or specialists where 
+needed and managing the relationship 
+4. Take an active role 
+in continuous quality 
+improvement. •Ensuring the application of quality management 
+principles by team members and colleagues
+ •Managing operations to maintain quality standards  
+eg ISO 9000, EQFM 
+ •Evaluating projects and making recommendations for 
+improvement
+ •Implementing and sharing the results of lessons learned\n\n--- PAGE 28 ---\n28
+Competence Examples of evidence
+D. Communication and 
+interpersonal skills
+Incorporated Engineers shall 
+demonstrate effective communication 
+and interpersonal skills.
+This is the ability to work with others 
+constructively, to explain ideas and 
+proposals clearly and to discuss issues 
+objectively and constructively. The applicant shall 
+demonstrate that they: 
+1. Communicate effectively 
+with others, at all levels, in 
+English •Contributing to, chairing and recording meetings and 
+discussions
+ •Preparing communications, documents and reports on 
+technical matters
+ •Exchanging information and providing advice to technical 
+and non-technical colleagues
+ •Engaging or interacting with professional networks
+2. Clearly present and discuss 
+proposals, justifications and 
+conclusions •Preparing and delivering appropriate presentations
+ •Managing debates with audiences
+ •Feeding the results back to improve the proposals
+ •Contributing to the awareness of risk
+3. Demonstrate personal and 
+social skills and awareness of 
+diversity and inclusion issues. •Knowing and managing own emotions, strengths and 
+weaknesses
+ •Being confident and flexible in dealing with new and 
+changing interpersonal situations
+ •Identifying, agreeing and working towards collective 
+goals
+ •Creating, maintaining and enhancing productive working 
+relationships, and resolving conflicts
+ •Being supportive of the needs and concerns of others, 
+especially where this relates to diversity and inclusion\n\n--- PAGE 29 ---\n29
+Competence Examples of evidence
+E. Personal and professional 
+commitment
+Incorporated Engineers shall 
+demonstrate a personal commitment 
+to professional standards, 
+recognising obligations to society, the 
+profession and the environment.
+This competence is about ensuring that 
+the applicant is acting in a professional 
+manner in their work and in their dealings 
+with others. An Incorporated Engineer 
+should set a standard and example to 
+others with regard to professionalism. The applicant shall 
+demonstrate that they: 
+1. Understand and comply with 
+relevant codes of conduct •Demonstrating compliance with your Licensee’s Code of 
+Professional Conduct 
+ •Identifying aspects of the Code particularly relevant to 
+your role
+ •Managing work within all relevant legislative and 
+regulatory frameworks, including social and employment 
+legislation
+2. Understand the safety 
+implications of their role and 
+manage, apply and improve 
+safe systems of work •Identifying and taking responsibility for your own 
+obligations for health, safety and welfare issues
+ •Managing systems that satisfy health, safety and welfare 
+requirements 
+ •Developing and implementing appropriate hazard 
+identification and risk management systems and culture
+ •Managing, evaluating and improving these systems
+ •Applying a sound knowledge of health and safety 
+legislation, for example: HASAW 1974, CDM regulations, 
+ISO 45001 and company safety policies
+3. Understand the principles of 
+sustainable development and 
+apply them in their work  •Operating and acting responsibly, taking account of the 
+need to progress environmental, social and economic 
+outcomes simultaneously
+ •Recognising how sustainability principles, as described 
+in the Guidance on Sustainability on page 48  can be 
+applied in your day-to-day work
+ •Providing products and services which maintain and 
+enhance the quality of the environment and community, 
+and meet financial objectives
+ •Understanding and encouraging stakeholder involvement 
+in sustainable development
+ •Using resources efficiently and effectively
+ •Taking action to minimise environmental impact in your 
+area of responsibility\n\n--- PAGE 30 ---\n30
+Competence Examples of evidence
+E. Personal and professional 
+commitment (continued)The applicant shall 
+demonstrate that they:
+4. Carry out and record the 
+Continuing Professional 
+Development (CPD) necessary 
+to maintain and enhance 
+competence in their own area 
+of practice  •Undertaking reviews of your own development needs
+ •Planning how to meet personal and organisational 
+objectives
+ •Carrying out and recording planned and unplanned CPD 
+activities
+ •Maintaining evidence of competence development
+ •Evaluating CPD outcomes against any plans made 
+ •Assisting others with their own CPD
+5. Understand the ethical 
+issues that may arise in 
+their role and carry out their 
+responsibilities in an ethical 
+manner.  •Understanding the ethical issues that you may encounter 
+in your role
+ •Giving an example of where you have applied ethical 
+principles as described in the Statement of Ethical 
+Principles on page 47
+ •Giving an example of where you have applied or upheld 
+ethical principles as defined by your organisation or 
+company\n\n--- PAGE 31 ---\n31
+The Chartered Engineer (CEng) Standard 
+Chartered Engineers develop solutions to complex engineering 
+problems using new or existing technologies, and through 
+innovation, creativity and technical analysis.
+Chartered Engineers shall demonstrate:
+ •The theoretical knowledge to solve problems in new and 
+established technologies and to develop new analytical 
+techniques
+ •Successful application of the knowledge to deliver innovative 
+products and services or taking technical responsibility for 
+complex engineering systems 
+ •Responsibility for the financial and planning aspects of 
+projects, sub-projects or tasks
+ •Leadership and development of other professional staff 
+through management, mentoring or coaching
+ •Effective interpersonal skills in communicating technical 
+matters
+ •Understanding of the safety and sustainability implications of 
+their work, seeking to improve aspects where feasible
+ •Commitment to professional engineering values
+A Chartered Engineer will be able to demonstrate their 
+competence in all of the areas listed, but the depth and extent 
+of their experience and competence will vary with the nature 
+and requirements of their role. They will demonstrate a level of 
+competence and commitment in each area, (A1–E5), at a level 
+which is consistent with their specific role. It is to be expected that they will have a higher level of competence in some areas than 
+others and their role may provide limited experience in certain 
+areas. However, they need to demonstrate an understanding of, 
+and familiarity with, the key aspects of competence in all areas 
+as a minimum requirement while demonstrating higher levels of 
+competence in those areas which are critical to their role. Overall, 
+they will demonstrate an appropriate balance of competences to 
+perform their role effectively at Chartered Engineer level. 
+The examples of evidence are intended as guidance to help 
+identify activities that might demonstrate the required competence 
+and commitment for Chartered Engineer registration. They are 
+intended as examples only as the most appropriate evidence 
+will vary with each individual role. The list is not exhaustive and 
+other types of evidence might be valid. There is no requirement 
+to provide multiple examples of evidence for each area of 
+competence, but examples from two or three projects or tasks 
+would be useful. \n\n--- PAGE 32 ---\n32
+Competence Examples of evidence
+A. Knowledge and understanding
+Chartered Engineers shall use 
+a combination of general and 
+specialist engineering knowledge and 
+understanding to optimise the application 
+of advanced and complex systems.
+This competence is about the ability to 
+understand underpinning technical principles 
+relevant to the applicant’s area of practice 
+and applying them to develop technical 
+solutions. This could involve technical 
+solutions for novel problems or dealing 
+with significant technical complexity. This 
+may involve the integration of a range of 
+technologies and consideration of other 
+factors. This competence requires that an 
+applicant is maintaining and developing their 
+knowledge in their field of practice and not 
+just that required for specific tasks.The applicant shall 
+demonstrate that they: 
+1. Have maintained and 
+extended a sound theoretical 
+approach to enable them to 
+develop their particular role •Formal training related to your role 
+ •Learning and developing new engineering 
+knowledge in a different industry or role 
+ •Understanding the current and emerging 
+technology and technical best practice in your area 
+of expertise
+ •Developing a broader and deeper knowledge base 
+through research and experimentation
+ •Learning and developing new engineering theories 
+and techniques in the workplace
+2. Are developing technological 
+solutions to unusual or 
+challenging problems, using their 
+knowledge and understanding 
+and/or dealing with complex 
+technical issues or situations 
+with significant levels of risk. •Carrying out technical research and development
+ •Developing new designs, processes or systems 
+based on new or evolving technology
+ •Carrying out complex and/or non-standard technical 
+analyses
+ •Developing solutions involving complex or multi-
+disciplinary technology
+ •Developing and evaluating continuous improvement 
+systems
+ •Developing solutions in safety-critical industries or 
+applications\n\n--- PAGE 33 ---\n33
+Competence Examples of evidence
+B. Design, development and solving 
+engineering problems
+Chartered Engineers shall apply 
+appropriate theoretical and practical 
+methods to the analysis and solution of 
+engineering problems.
+This competence is about the ability to 
+apply engineering knowledge effectively and 
+efficiently to the individual tasks which need 
+to be undertaken in the applicant’s role. The applicant shall 
+demonstrate that they: 
+1. Take an active role in the 
+identification and definition of 
+project requirements, problems 
+and opportunities •Identifying projects or technical improvements to 
+products, processes or systems
+ •Preparing specifications, taking account of 
+functional and other requirements
+ •Establishing user requirements
+ •Reviewing specifications and tenders to identify 
+technical issues and potential improvements
+ •Carrying out technical risk analysis and identifying 
+mitigation measures
+ •Considering and implementing new and emerging 
+technologies 
+2. Can identify the appropriate 
+investigations and research 
+needed to undertake the 
+design, development and 
+analysis required to complete an 
+engineering task and conduct 
+these activities effectively •Identifying and agreeing appropriate research 
+methodologies
+ •Investigating a technical issue, identifying potential 
+solutions and determining the factors needed to 
+compare them
+ •Identifying and carrying out physical tests or trials 
+and analysing and evaluating the results
+ •Carrying out technical simulations or analysis
+ •Preparing, presenting and agreeing design 
+recommendations, with appropriate analysis of risk, 
+and taking account of cost, quality, safety, reliability, 
+accessibility, appearance, fitness for purpose, 
+security (including cyber security), intellectual 
+property constraints and opportunities, and 
+environmental impact\n\n--- PAGE 34 ---\n34
+Competence Examples of evidence
+B. Design, development and solving 
+engineering problems (continued)The applicant shall 
+demonstrate that they: 
+3. Can implement engineering 
+tasks and evaluate the 
+effectiveness of engineering 
+solutions. •Ensuring that the application of the design results in 
+the appropriate practical outcome
+ •Implementing design solutions, taking account of 
+critical constraints, including due concern for safety, 
+sustainability and disposal or decommissioning 
+ •Identifying and implementing lessons learned
+ •Evaluating existing designs or processes and 
+identifying faults or potential improvements 
+including risk, safety and life cycle considerations
+ •Actively learning from feedback on results to 
+improve future design solutions and build best 
+practice\n\n--- PAGE 35 ---\n35
+Competence Examples of evidence
+C. Responsibility, management and 
+leadership
+Chartered Engineers shall demonstrate 
+technical and commercial leadership.
+This competence is about the ability to 
+plan the applicant’s own work and manage 
+or specify the work of others effectively, 
+efficiently, and in a way which provides 
+leadership at an appropriate level, whether 
+technical or commercial. Leadership is 
+not necessarily about having a formal line 
+management role. In matrix management 
+and other types of organisational structure, 
+where Chartered Engineers are working 
+within complex and varied working 
+relationships, they will provide leadership 
+to achieve objectives. This competence is 
+also about the ability to consider and identify 
+improvements to quality. The applicant shall 
+demonstrate that they: 
+1. Plan the work and resources 
+needed to enable effective 
+implementation of a significant 
+engineering task or project •Preparing budgets and associated work 
+programmes for projects or tasks
+ •Systematically reviewing the factors affecting 
+the project implementation including safety, 
+sustainability and disposal or decommissioning 
+considerations
+ •Carrying out a task or project risk assessment and 
+identifying mitigation measures
+ •Leading on preparing and agreeing implementation 
+plans and method statements
+ •Negotiating and agreeing arrangements with 
+customers, colleagues, contractors and other 
+stakeholders, including regulatory bodies
+ •Ensuring that information flow is appropriate and 
+effective
+2. Manage (organise, direct and 
+control), programme or schedule, 
+budget and resource elements of 
+a significant engineering task or 
+project •Operating or defining appropriate management 
+systems including risk registers and contingency 
+systems
+ •Managing the balance between quality, cost and 
+time
+ •Monitoring progress and associated costs and cost 
+forecasts, taking appropriate actions when required
+ •Establishing and maintaining appropriate quality 
+standards within legal and statutory requirements
+ •Interfacing effectively with customers, contractors 
+and other stakeholders\n\n--- PAGE 36 ---\n36
+Competence Examples of evidence
+C. Responsibility, management and 
+leadership (continued)The applicant shall 
+demonstrate that they:
+3. Lead teams or technical 
+specialisms and assist others 
+to meet changing technical and 
+managerial needs •Agreeing objectives and work plans with teams and 
+individuals
+ •Reinforcing team commitment to professional 
+standards
+ •Leading and supporting team and individual 
+development
+ •Assessing team and individual performance, and 
+providing feedback
+ •Seeking input from other teams or specialists where 
+needed and managing the relationship 
+ •Providing specialist knowledge, guidance and input 
+in your specialism to engineering teams, engineers, 
+customers, management and relevant stakeholders
+ •Developing and delivering a teaching module at 
+Masters level, or leading a University research 
+programme
+4. Bring about continuous quality 
+improvement and promote best 
+practice. •Promoting quality throughout the organisation as 
+well as its customer and supplier networks
+ •Developing and maintaining operations to meet 
+quality standards eg ISO 9000, EQFM
+ •Supporting or directing project evaluation and 
+proposing recommendations for improvement
+ •Implementing and sharing the results of lessons 
+learned\n\n--- PAGE 37 ---\n37
+Competence Examples of evidence
+D. Communication and interpersonal 
+skills
+Chartered Engineers shall demonstrate 
+effective communication and 
+interpersonal skills.
+This is the ability to work with others 
+constructively, to explain ideas and 
+proposals clearly and to discuss issues 
+objectively and constructively.The applicant shall 
+demonstrate that they: 
+1. Communicate effectively with 
+others, at all levels, in English •Preparing reports, drawings, specifications and 
+other documentation on complex matters
+ •Leading, chairing, contributing to and recording 
+meetings and discussions
+ •Exchanging information and providing advice to 
+technical and non-technical colleagues
+ •Engaging or interacting with professional networks
+2. Clearly present and discuss 
+proposals, justifications and 
+conclusions •Contributing to scientific papers or articles as an 
+author
+ •Preparing and delivering presentations on strategic 
+matters
+ •Preparing bids, proposals or studies
+ •Identifying, agreeing and leading work towards 
+collective goals
+3. Demonstrate personal and 
+social skills and awareness of 
+diversity and inclusion issues. •Knowing and managing own emotions, strengths 
+and weaknesses
+ •Being confident and flexible in dealing with new and 
+changing interpersonal situations
+ •Identifying, agreeing and working towards collective 
+goals
+ •Creating, maintaining and enhancing productive 
+working relationships, and resolving conflicts
+ •Being supportive of the needs and concerns of 
+others, especially where this relates to diversity and 
+inclusion\n\n--- PAGE 38 ---\n38
+Competence Examples of evidence
+E. Personal and professional 
+commitment
+Chartered Engineers shall demonstrate 
+a personal commitment to professional 
+standards, recognising obligations 
+to society, the profession and the 
+environment.
+This competence is about ensuring that the 
+applicant is acting in a professional manner 
+in their work and in their dealings with 
+others. A Chartered Engineer should set a 
+standard and example to others with regard 
+to professionalism.The applicant shall 
+demonstrate that they: 
+1. Understand and comply with 
+relevant codes of conduct •Demonstrating compliance with your Licensee’s 
+Code of Professional Conduct 
+ •Identifying aspects of the Code which are 
+particularly relevant to your role
+ •Being aware of the legislative and regulatory 
+frameworks relevant to your role and how they 
+conform to them
+ •Leading work within relevant legislation and 
+regulatory frameworks, including social and 
+employment legislation
+2. Understand the safety 
+implications of their role and 
+manage, apply and improve safe 
+systems of work •Identifying and taking responsibility for your own 
+obligations and ensuring that others assume similar 
+responsibility for health, safety and welfare issues
+ •Ensuring that systems satisfy health, safety and 
+welfare requirements
+ •Developing and implementing appropriate hazard 
+identification and risk management systems and 
+culture
+ •Managing, evaluating and improving these systems
+ •Applying a sound knowledge of health and safety 
+legislation, for example: HASAW 1974, CDM 
+regulations, ISO 45001 and company safety 
+policies\n\n--- PAGE 39 ---\n39
+Competence Examples of evidence
+E. Personal and professional 
+commitment (continued)The applicant shall 
+demonstrate that they: 
+3. Understand the principles of 
+sustainable development and 
+apply them in their work •Operating and acting responsibly, taking account 
+of the need to progress environmental, social and 
+economic outcomes simultaneously
+ •Providing products and services which maintain 
+and enhance the quality of the environment and 
+community, and meet financial objectives
+ •Recognising how sustainability principles, as 
+described in the Guidance on Sustainability on 
+page 48 , can be applied in your day-to-day work
+ •Understanding and securing stakeholder involvement 
+in sustainable development
+ •Using resources efficiently and effectively in all 
+activities
+ •Taking action to minimise environmental impact in 
+your area of responsibility 
+4. Carry out and record the 
+Continuing Professional 
+Development (CPD) necessary 
+to maintain and enhance 
+competence in their own area of 
+practice  •Undertaking reviews of your own development needs
+ •Planning how to meet personal and organisational 
+objectives
+ •Carrying out planned and unplanned CPD activities
+ •Maintaining evidence of competence development
+ •Evaluating CPD outcomes against any plans made
+ •Assisting others with their own CPD
+5. Understand the ethical issues 
+that may arise in their role and 
+carry out their responsibilities in 
+an ethical manner.  •Understanding the ethical issues that you may 
+encounter in your role
+ •Giving an example of where you have applied 
+ethical principles as described in the Statement of 
+Ethical Principles on page 47
+ •Giving an example of where you have applied 
+or upheld ethical principles as defined by your 
+organisation or company\n\n--- PAGE 40 ---\n40
+Comparison table for EngTech, IEng and CEng Standards
+This table can also be downloaded as a PDF, along with a version which includes examples of the types of evidence. 
+Please see: www.engc.org.uk/ukspec
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+Engineering Technicians apply proven 
+techniques and procedures to the solution 
+of practical engineering problems. 
+Engineering Technicians shall 
+demonstrate:
+ •Engineering knowledge and 
+understanding to apply technical and 
+practical skills
+ •Evidence of their contribution to 
+either the design, development, 
+manufacture, commissioning, 
+decommissioning, operation or 
+maintenance of products, equipment, 
+processes or services 
+ •Supervisory or technical responsibility 
+ •Effective interpersonal skills in 
+communicating technical matters
+ •The ability to operate in accordance 
+with safe systems of work and 
+to demonstrate appropriate 
+understanding of the principles of 
+sustainability 
+ •Commitment to professional 
+engineering values.Incorporated Engineers maintain and 
+manage applications of current and 
+developing technology, and may undertake 
+engineering design, development, 
+manufacture, construction and operation.
+Incorporated Engineers shall demonstrate:
+ •The theoretical knowledge to solve 
+problems in developed technologies 
+using well proven analytical techniques
+ •Successful application of their 
+knowledge to deliver engineering 
+projects or services using established 
+technologies and methods
+ •Contribution to the financial and 
+planning aspects of projects or tasks 
+and to leading and developing other 
+professional staff
+ •Effective interpersonal skills in 
+communicating technical matters
+ •The ability to specify and operate 
+to safe systems of work and to 
+demonstrate appropriate consideration 
+of the principles of sustainability 
+ •Commitment to professional 
+engineering values.Chartered Engineers develop solutions to 
+complex engineering problems using new or 
+existing technologies, and through innovation, 
+creativity and technical analysis.
+Chartered Engineers shall demonstrate:
+ •The theoretical knowledge to solve 
+problems in new and established 
+technologies and to develop new analytical 
+techniques
+ •Successful application of the knowledge 
+to deliver innovative products and services 
+and/or taking technical responsibility for 
+complex engineering systems 
+ •Responsibility for the financial and planning 
+aspects of projects, sub-projects or tasks
+ •Leadership and development of other 
+professional staff through management, 
+mentoring or coaching
+ •Effective interpersonal skills in 
+communicating technical matters
+ •Understanding of the safety and 
+sustainability implications of their work, 
+seeking to improve aspects where feasible
+ •Commitment to professional engineering 
+values.\n\n--- PAGE 41 ---\n41
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+The Competence and Commitment 
+Standard for Engineering Technicians
+ 
+For guidance and examples of types of 
+evidence that demonstrate the required 
+competence and commitment for 
+registration as an Engineering Technician, 
+see the table on pages  20–23.
+Engineering Technicians must be 
+competent throughout their working life, 
+by virtue of their education, training and 
+experience in the following ways:The Competence and Commitment 
+Standard for Incorporated Engineers
+ 
+For guidance and examples of types of 
+evidence that demonstrate the required 
+competence and commitment for 
+registration as an Incorporated Engineer, 
+see the table on pages  25–30.
+Incorporated Engineers must be competent 
+throughout their working life, by virtue of 
+their education, training and experience in 
+the following ways:The Competence and Commitment Standard 
+for Chartered Engineers
+ 
+For guidance and examples of types of 
+evidence that demonstrate the required 
+competence and commitment for registration as 
+a Chartered Engineer, see the table on pages 
+32–39. 
+Chartered Engineers must be competent 
+throughout their working life, by virtue of their 
+education, training and experience in the 
+following ways:
+A. Knowledge and understanding
+Engineering Technicians shall 
+use engineering knowledge and 
+understanding to apply technical and 
+practical skills.
+The applicant shall demonstrate that they:
+1. Review and select appropriate 
+techniques, procedures and methods to 
+undertake tasks
+2. Use appropriate scientific, technical or 
+engineering principles.A. Knowledge and understanding
+Incorporated Engineers shall use 
+a combination of general and 
+specialist engineering knowledge and 
+understanding to apply existing and 
+emerging technology .
+The applicant shall demonstrate that they: 
+1. Have maintained and extended a sound 
+theoretical approach to the application of 
+technology in engineering practice
+2. Use a sound evidence-based approach 
+to problem-solving and contribute to 
+continuous improvement.A. Knowledge and understanding
+Chartered Engineers shall use a 
+combination of general and specialist 
+engineering knowledge and understanding 
+to optimise the application of advanced and 
+complex systems .
+The applicant shall demonstrate that they: 
+1. Have maintained and extended a sound 
+theoretical approach to enable them to develop 
+their particular role
+2. Are developing technological solutions to 
+unusual or challenging problems, using their 
+knowledge and understanding and/or dealing 
+with complex technical issues or situations with 
+significant levels of risk.\n\n--- PAGE 42 ---\n42
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+B. Design, development and solving 
+engineering problems 
+Engineering Technicians shall 
+contribute to the design, development, 
+manufacture, construction, 
+commissioning, decommissioning, 
+operation or maintenance of products, 
+equipment, processes, systems or 
+services.
+The applicant shall demonstrate that they: 
+1. Identify problems and apply 
+appropriate methods to identify causes 
+and achieve satisfactory solutions
+2. Identify, organise and use resources 
+effectively to complete tasks, with 
+consideration for cost, quality, safety, 
+security and environmental impact.B. Design, development and solving 
+engineering problems
+Incorporated Engineers shall apply 
+appropriate theoretical and practical 
+methods to design, develop, 
+manufacture, construct, commission, 
+operate, maintain, decommission 
+and recycle engineering processes, 
+systems, services and products.
+The applicant shall demonstrate that they:
+1. Identify, review and select techniques, 
+procedures and methods to undertake 
+engineering tasks
+2. Contribute to the design and 
+development of engineering solutions 
+3. Implement design solutions for 
+equipment or processes and contribute to 
+their evaluation.B. Design, development and solving 
+engineering problems
+Chartered Engineers shall apply appropriate 
+theoretical and practical methods to the 
+analysis and solution of engineering 
+problems.
+The applicant shall demonstrate that they:
+1. Take an active role in the identification and 
+definition of project requirements, problems and 
+opportunities
+2. Can identify the appropriate investigations 
+and research needed to undertake the design, 
+development and analysis required to complete 
+an engineering task and conduct these 
+activities effectively
+3. Can implement engineering tasks and 
+evaluate the effectiveness of engineering 
+solutions.\n\n--- PAGE 43 ---\n43
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+C. Responsibility, management and 
+leadership
+Engineering Technicians shall accept 
+and exercise personal responsibility.
+The applicant shall demonstrate that they:
+1. Work reliably and effectively without 
+close supervision, to the appropriate 
+codes of practice
+2. Accept responsibility for the work of 
+themselves or others
+3. Accept, allocate and supervise 
+technical and other tasks.C. Responsibility, management and 
+leadership
+Incorporated Engineers shall provide 
+technical and commercial management.
+The applicant shall demonstrate that they:
+1. Plan the work and resources needed 
+to enable effective implementation of 
+engineering tasks and projects
+2. Manage (organise, direct and control), 
+programme or schedule, budget and 
+resource elements of engineering tasks or 
+projects
+3. Manage teams, or the input of others, 
+into own work and assist others to meet 
+changing technical and management 
+needs
+4. Take an active role in continuous quality 
+improvement.C. Responsibility, management and 
+leadership
+Chartered Engineers shall provide technical 
+and commercial leadership.
+The applicant shall demonstrate that they: 
+1. Plan the work and resources needed to 
+enable effective implementation of a significant 
+engineering task or project
+2. Manage (organise, direct and control), 
+programme or schedule, budget and resource 
+elements of a significant engineering task or 
+project
+3. Lead teams or technical specialisms and 
+assist others to meet changing technical and 
+managerial needs
+4. Bring about continuous quality improvement 
+and promote best practice.\n\n--- PAGE 44 ---\n44
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+D. Communication and 
+interpersonal skills
+Engineering Technicians shall 
+use effective communication and 
+interpersonal skills.
+The applicant shall demonstrate that they: 
+1. Communicate effectively with others, at 
+all levels, in English
+2. Work effectively with colleagues, 
+clients, suppliers or the public
+3. Demonstrate personal and social skills 
+and awareness of diversity and inclusion 
+issues.D. Communication and interpersonal 
+skills
+Incorporated Engineers shall 
+demonstrate effective communication 
+and interpersonal skills.
+The applicant shall demonstrate that they: 
+1. Communicate effectively with others, at 
+all levels, in English
+2. Clearly present and discuss proposals, 
+justifications and conclusions
+3. Demonstrate personal and social skills 
+and awareness of diversity and inclusion 
+issues.D. Communication and interpersonal 
+skills
+Chartered Engineers shall demonstrate 
+effective communication and interpersonal 
+skills.
+The applicant shall demonstrate that they: 
+1. Communicate effectively with others, at all 
+levels, in English
+2. Clearly present and discuss proposals, 
+justifications and conclusions
+3. Demonstrate personal and social skills and 
+awareness of diversity and inclusion issues.\n\n--- PAGE 45 ---\n45
+Engineering Technician (EngTech) Incorporated Engineer (IEng) Chartered Engineer (CEng)
+E. Personal and professional 
+commitment
+Engineering Technicians shall 
+demonstrate a personal commitment 
+to an appropriate code of professional 
+conduct, recognising obligations 
+to society, the profession and the 
+environment.
+The applicant shall demonstrate that they:
+1. Understand and comply with relevant 
+codes of conduct
+2. Understand the safety implications of 
+their role and apply safe systems of work 
+3. Understand the principles of 
+sustainable development and apply them 
+in their work
+4. Carry out and record the Continuing 
+Professional Development (CPD) 
+necessary to maintain and enhance 
+competence in their own area of practice 
+5. Understand the ethical issues that 
+may arise in their role and carry out their 
+responsibilities in an ethical manner.E. Personal and professional 
+commitment
+Incorporated Engineers shall 
+demonstrate a personal commitment 
+to professional standards, recognising 
+obligations to society, the profession 
+and the environment.
+The applicant shall demonstrate that they: 
+1. Understand and comply with relevant 
+codes of conduct
+2. Understand the safety implications of 
+their role and manage, apply and improve 
+safe systems of work
+3. Understand the principles of sustainable 
+development and apply them in their work 
+4. Carry out and record the Continuing 
+Professional Development (CPD) 
+necessary to maintain and enhance 
+competence in their own area of practice 
+5. Understand the ethical issues that 
+may arise in their role and carry out their 
+responsibilities in an ethical manner.E. Personal and professional 
+commitment
+Chartered Engineers shall demonstrate 
+a personal commitment to professional 
+standards, recognising obligations to 
+society, the profession and the environment.
+The applicant shall demonstrate that they: 
+1. Understand and comply with relevant codes 
+of conduct
+2. Understand the safety implications of their 
+role and manage, apply and improve safe 
+systems of work
+3. Understand the principles of sustainable 
+development and apply them in their work
+4. Carry out and record the Continuing 
+Professional Development (CPD) necessary to 
+maintain and enhance competence in their own 
+area of practice 
+5. Understand the ethical issues that may arise 
+in their role and carry out their responsibilities in 
+an ethical manner.\n\n--- PAGE 46 ---\n46
+Continuing Professional Development 
+opportunities which might arise
+ •Record their CPD activities
+ •Reflect on what they have learned or achieved through their 
+CPD activities and record these reflections
+ •Evaluate their CPD activities against any objectives they have 
+set and record this evaluation
+ •Review their learning and development plan regularly, following 
+reflection and assessment of future needs
+ •Support the learning and development of others through 
+activities such as mentoring and sharing professional expertise 
+and knowledge
+At Professional Review, all applicants will need to demonstrate 
+how they meet their CPD obligations and show that they 
+understand that this requires an ongoing commitment.
+Sampling registrants’ CPD records 
+The Licensees undertake annual random samples of professionally 
+active registrants’ CPD records and provide appropriate feedback, 
+as described in the Engineering Council’s Regulations for 
+Registration (RfR).
+Registrants who are not professionally active (eg retired or on a 
+career break) may request exemption from a sample. The intention 
+behind CPD sampling is not to police registrants, but to encourage 
+a culture in which registrants will naturally engage in CPD and take 
+ownership of their own learning and development.Continuing professional development (CPD) is essential for 
+maintaining and enhancing the required competence and 
+commitment, as well as for developing new competences. This 
+obligation underpins the value of the professional titles of EngTech, 
+IEng and CEng, and enables society to have confidence in the 
+engineering profession.
+CPD has several purposes:
+ •To assure continuing competence in a current job
+ •To prepare for a different role
+ •To follow a longer-term career development plan
+ •To enhance professionalism in a wider context than a specific 
+job role. 
+More details on the nature, purpose and value of CPD can be 
+found in the CPD Policy Statement. 
+For more information please see: www.engc.org.uk/cpd
+CPD Code for Registrants
+Engineering professionals should take all necessary steps 
+to maintain and enhance their competence through CPD. In 
+particular, they should:
+ •Take ownership of their learning and development needs 
+and develop a plan to indicate how they might meet these, in 
+discussion with their employer, as appropriate
+ •Carry out a variety of development activities, both in 
+accordance with this plan and in response to other \n\n--- PAGE 47 ---\n47
+Recording evidence of CPD undertaken is a requirement of 
+professional registration. Professionally active registrants who 
+persistently do not respond to or engage with requests for CPD 
+Guidance for Licensee Codes of 
+Professional Conduct 
+All registrants are expected to observe the requirements of the 
+Code of Professional Conduct (the Code) of the Licensee they 
+have joined. This Code of Professional Conduct places a personal 
+obligation on its members to act with integrity and in the public 
+interest, in accordance with the Statement of Ethical Principles.
+Each Licensee will have appropriate disciplinary processes in 
+place to address breaches of their Code of Professional Conduct.
+For more information please see: www.engc.org.uk/conduct
+Guidance on Risk
+This guidance, published by the Engineering Council, lists six 
+principles to guide and motivate professional engineers and 
+technicians in identifying, assessing, managing and communicating 
+about risk. 
+For more information please see: www.engc.org.uk/riskrecords from a Licensee will be removed from the Engineering 
+Council Register. 
+Professional and Ethical Behaviour 
+Statement of Ethical Principles
+Engineering professionals work to enhance the wellbeing of 
+society. In doing so they are required to maintain and promote high 
+ethical standards and challenge unethical behaviour. 
+This Statement of Ethical Principles, published by the Engineering 
+Council and the Royal Academy of Engineering, lists four 
+fundamental principles to guide engineers and technicians in their 
+professional life:
+ •Honesty and integrity 
+ •Respect for life, law, the environment and public good 
+ •Accuracy and rigour 
+ •Leadership and communication 
+These express the beliefs and values of the profession and are 
+explained in the Statement of Ethical Principles. 
+For more information please see: www.engc.org.uk/ethics\n\n--- PAGE 48 ---\n48
+Guidance on Sustainability
+This guidance, published by the Engineering Council, lists six 
+principles to guide and motivate professional engineers and 
+technicians when making decisions for clients, employers and 
+society which affect sustainability. 
+For more information please see: www.engc.org.uk/sustainability
+Guidance on Whistleblowing 
+This guidance, published by the Engineering Council, explains 
+what whistleblowing is and the processes that engineers and 
+technicians should follow when confronted with a potential 
+whistleblowing situation: 
+For more information please see: www.engc.org.uk/whistleblowing
+Guidance on Security 
+This guidance, published by the Engineering Council, lists six 
+key principles to guide engineers and technicians in identifying, 
+assessing, managing and communicating issues about security. 
+For more information please see: www.engc.org.uk/securityInternational Activity
+To ensure that professionally registered engineers’ skills are 
+recognised internationally, the Engineering Council is active within 
+a number of multilateral mutual recognition agreements with 
+other national engineering bodies. These agreements establish 
+internationally benchmarked standards which allow signatory 
+bodies to recognise each other’s academic and professional 
+qualifications, aiding mobility. In particular, the Engineering 
+Council was a founder member of the Washington Accord and has 
+subsequently worked with international partners to develop further 
+agreements. The governance of these sits within the International 
+Engineering Alliance (IEA).  
+ 
+The Engineering Council is a member of: 
+ •The Agreement for International Engineering Technicians (AIET)
+ •The Dublin Accord (DA)
+ •The International Engineering Technologists Agreement (IETA)
+ •The International Professional Engineers Agreement (IPEA)
+ •The Sydney Accord (SA)
+ •The Washington Accord (WA)
+The Engineering Council is a member of the European Network of 
+Accreditation of Engineering Education (ENAEE), which authorises 
+accreditation and quality assurance agencies to award the EUR-
+ACE® label to accredited engineering degree programmes. In 
+addition, the Engineering Council works within the European 
+Federation of National Engineering Associations (FEANI) to 
+strengthen the voice of engineers at the European level. 
+For more information please see: www.engc.org.uk/internationalThe Engineering Council reviews its guidance periodically and 
+welcomes comments about this. Licensees may use this to 
+assist them in developing guidance for their members. 
+For the latest information please see the Engineering Council 
+website: www.engc.org.uk\n\n--- PAGE 49 ---\n49
+Glossary
+AAQA Approval and Accreditation of 
+Qualifications and Apprenticeships . One 
+of the Standards which the Engineering 
+Council  publishes, along with AHEP , 
+ICTTech  Standard , RfR and UK-SPEC . 
+AQAA sets out the standards and learning 
+outcomes which must be met for qualifications 
+and apprenticeships to be approved  for 
+registration  at all levels, ie EngTech  or 
+ICTTech , IEng  and CEng . Previously known 
+as AQAH (Approval of Qualifications and 
+Apprenticeships Handbook).  
+See: www.engc.org.uk/aaqa
+Accredited /
+AccreditationA process of peer review of a programme 
+in a specified location against published 
+learning outcomes and/or competences , 
+including a review of delivery, assessment and 
+facilities. This usually applies to programmes 
+that are not assured externally. This usually 
+involves a visit from a team of professional 
+engineers nominated by Licensees . See also: 
+Approved / Approval .AHEP Accreditation of Higher Education 
+Programmes . One of the Standards which 
+the Engineering Council  publishes, along 
+with AAQA , the ICTTech  Standard , RfR and 
+UK-SPEC . Working in line  with  
+UK-SPEC , AHEP sets out the standards 
+for the accreditation  of higher education 
+programmes in engineering. It also outlines 
+the application process for universities that 
+wish to secure or maintain accreditation of 
+their programmes. Accreditation is carried 
+out by  Licensees  in accordance with these 
+requirements. See: www.engc.org.uk/ahep
+AIET The Agreement for International 
+Engineering Technicians  is an agreement 
+which works to ensure that professionally 
+registered Engineering Technicians’ 
+competence  is recognised internationally. 
+See International Activity on page 48  or 
+www.ieagreements.org/aiet   
+Approved /
+ApprovalThe process of peer reviewing a programme 
+against published learning outcomes. This 
+involves a review of a qualification or an 
+apprenticeship programme by a number of 
+professionally registered engineers. See 
+also: Accredited / Accreditation
+AQAH See AAQA . \n\n--- PAGE 50 ---\n50
+CDM 
+Regulations Construction (Design and Management) 
+Regulations 2015 , known as CDM 
+Regulations or CDM 2015, are UK regulations 
+governing construction projects of any 
+type and size. CDM Regulations define 
+responsibilities and place legal duties, 
+enforceable by criminal law, on all parties 
+involved in a construction project.
+Chartered 
+Engineer 
+(CEng)One of the professional titles available to 
+individuals who meet the required standards 
+of competence and commitment . See page 
+31 or www.engc.org.uk/ceng
+Code of 
+Professional 
+Conduct Every Licensee  and Professional Affiliate 
+which is licensed by the Engineering Council  
+will have its own Code of Professional 
+Conduct. One of the requirements of 
+professional registration  is demonstrating 
+compliance with the appropriate organisation’s 
+Code. See page 47 .
+Commitment A set of values, rules of conduct, and 
+obligations that maintain and enhance the 
+reputation of the engineering profession 
+and the individual. Demonstrating both 
+competence  and commitment is part of 
+the requirement to become professionally 
+registered  with the Engineering Council .Competence The ability to carry out appropriate tasks to 
+an effective standard. Achieving competence 
+requires the right level of underpinning 
+knowledge, understanding and skill, as well 
+as a professional attitude. Demonstrating 
+both competence and commitment  is part of 
+the requirement to become professionally 
+registered  with the  Engineering Council . 
+CPD Continuing Professional Development.  The 
+systematic acquisition of knowledge and skills, 
+and the development of personal qualities, 
+to maintain and enhance professional 
+competence  for current and future roles. All 
+members of Licensees  have an obligation to 
+carry out CPD and to support the learning of 
+others. See: www.engc.org.uk/cpd
+Credit and 
+Qualifications 
+Framework for 
+WalesThe Credit and Qualifications Framework 
+for Wales covers learning from the very 
+initial stages (Entry 1, 2 and 3) to the most 
+advanced (Level 8). It is managed by a 
+strategic operational partnership comprising 
+the Welsh Government, Higher Education 
+Funding Council for Wales (HEFCW) and 
+Qualifications Wales.
+Documented 
+EvidenceThe written and documented evidence 
+of experience and qualifications which is 
+submitted for a Professional Review  when 
+applying for professional registration.\n\n--- PAGE 51 ---\n51
+Dublin Accord 
+(DA)An international agreement among the bodies 
+responsible for recognising programmes and 
+qualifications for Engineering Technicians . 
+It establishes a benchmark for Engineering 
+Technician education across those bodies, 
+and recognises the equivalence of accredited  
+or approved  Engineering Technician 
+programmes. See International Activity on 
+page 48  or www.ieagreements.org/dublin
+Engineering 
+CouncilThe UK regulatory body for the engineering 
+profession. The Engineering Council sets and 
+maintains internationally recognised standards 
+of professional competence and ethics 
+and holds the UK register of professional 
+engineers and technicians. 
+Engineering 
+Technician 
+(EngTech)One of the professional titles available to 
+individuals who meet the required standards 
+of competence  and commitment . See page 
+19 or www.engc.org.uk/engtech
+EQFM The European Quality Foundation Model  
+for continuous improvement.
+EUR-ACE® A European quality label for recognising 
+accredited  engineering degree programmes 
+at Bachelors and Masters level. The 
+Engineering Council  is authorised to award 
+the EUR-ACE® label. See: 
+www.enaee.eu/eur-ace-systemFEANI The European Federation of National 
+Engineering Associations . The  Engineering 
+Council  is the UK member of FEANI. See: 
+www.feani.org
+HASAW Health and Safety at Work . Specifically, 
+the 1974 Health and Safety at Work Act, the 
+primary legislation covering occupational 
+health and safety in the UK.
+HNC Higher National Certificate . 
+HND  Higher National Diploma .
+ICTTech Information and Communications Technology 
+Technician. One of the professional titles 
+available to individuals who meet the required 
+standards of competence  and commitment . 
+See: www.engc.org.uk/icttech
+IEA International Engineering Alliance . A 
+partnership of international organisations 
+across seven agreements that aim to facilitate 
+the recognition of engineering educational 
+qualifications and professional competence . 
+See International Activity on page 48  or  
+www.ieagreements.org  
+IETA The International Engineering 
+Technologists Agreement  is an agreement 
+which works to ensure that professionally 
+registered engineering technologists’ 
+competence  is recognised internationally.  
+See International Activity on page 48  or  
+www.ieagreements.org/ieta\n\n--- PAGE 52 ---\n52
+Incorporated 
+Engineer (IEng)One of the professional titles available to 
+individuals who meet the required standards 
+of competence  and commitment . See page 
+24 or www.engc.org.uk/ieng
+Individual 
+AssessmentThe route to professional registration  for 
+individuals without recognised qualifications. 
+See page 16 . The other way to achieve 
+professional registration is through 
+Recognised Qualifications . 
+International 
+Professional 
+Engineers 
+Agreement The International Professional Engineers 
+Agreement is an international agreement 
+for the purposes of recognising substantial 
+equivalence of professional competence  
+in engineering. See International Activity on 
+page 48  or www.ieagreements.org/ipea
+ISO The International Organization for 
+Standardization . ISO publishes documents 
+such as ISO 45001 the international standard 
+for occupational health and safety and ISO 
+9000, the international quality standards on 
+quality management and quality assurance.Licensee An engineering membership organisation 
+which is licensed by the Engineering Council  
+to assess applicants for  professional 
+registration . Some Licensees are also 
+licensed to approve or accredit programmes 
+of learning. Licensees are sometimes known 
+informally as Professional Engineering 
+Institutions or PEIs. For a full and current list 
+of Licensees see: www.engc.org.uk/licensees
+May In the context of the requirements set out 
+in the Standards, ‘may’ indicates there is 
+permission to do something.
+National 
+Engineering 
+BodiesNational engineering bodies responsible 
+for regulation of the profession, such as 
+the Engineering Council , or the national 
+academy such as the Royal Academy of 
+Engineering .
+NVQ National Vocational Qualification . NVQs 
+are qualifications developed and accredited  
+according to criteria set out nationally, and 
+that are achieved through assessment and 
+training. In Scotland, they are known as 
+Scottish Vocational Qualification ( SVQ ). 
+To achieve an NVQ, applicants must prove 
+they have the ability to carry out their job 
+to the required standard. NVQs are based 
+on National Occupational Standards that 
+describe the ‘competencies’ expected in any 
+given job role. \n\n--- PAGE 53 ---\n53
+PEI 
+(Professional 
+Engineering 
+Institution)See Licensee .
+Post-nominal Letters placed after a person’s name which 
+indicate that the person holds a certain 
+position, academic degree, professional 
+accreditation , office or honour. Examples of 
+engineering post-nominals include ICTTech , 
+EngTech , IEng  or CEng . 
+Professional 
+AffiliateAn incorporated body or engineering 
+institution which is closely associated with, but 
+not licensed by, the Engineering Council . It 
+may enter into an agreement with a Licensee 
+to process its members for professional 
+registration . For a full and current list of 
+Professional Affiliates see:  
+www.engc.org.uk/affiliates
+Professional 
+developmentThe process by which an individual gains 
+professional competence . It may take place 
+through formal and informal learning, and 
+workplace training and experience. Professional 
+registrationThe process in which an individual is admitted 
+to the Engineering Council ’s Register as 
+an Engineering Technician  (EngTech), 
+Incorporated Engineer (IEng),  Chartered 
+Engineer  (CEng) or an Information and 
+Communications Technology Technician 
+(ICTTech ). To achieve professional 
+registration  the individual must demonstrate, 
+via a peer review process by a Licensee , that 
+they have met the profession’s Standards of 
+commitment  and competence . Individuals 
+who have been awarded a professional 
+registration title may use the relevant  
+post-nominal .
+Professional 
+ReviewA peer assessment process to decide whether 
+an individual has met the requirements for 
+registration . Professional Review is a holistic 
+assessment of the applicant’s competence  
+and commitment  against the relevant 
+sections of UK-SPEC . See page 16 –17. \n\n--- PAGE 54 ---\n54
+Professional 
+Review 
+InterviewA peer assessment process to assess 
+whether an individual has met the 
+requirements for professional registration . 
+It is a holistic assessment of the applicant’s 
+competence  and commitment against 
+the relevant sections of UK-SPEC . The 
+Professional Review Interview is conducted 
+by suitably qualified registrants , who make 
+a recommendation whether the applicant has 
+demonstrated the necessary competencies to 
+achieve professional registration. See page 
+17. 
+Recognised 
+QualificationsQualifications that are recognised as 
+delivering the appropriate learning outcomes 
+to develop an individual’s underpinning 
+knowledge and understanding  for 
+professional registration .
+Registrant An individual who holds a professional 
+registration  title such as ICTTech , EngTech , 
+IEng  or CEng . 
+Registration See Professional Registration .
+RfR Regulations for Registration . One of the 
+Standards which the  Engineering Council  
+publishes, along with AAQA , AHEP , ICTTech 
+Standard  and UK-SPEC . RfR sets out the 
+rules, for Licensees , on the process of 
+awarding professional registration  titles 
+such as  ICTTech , EngTech , IEng  or CEng .  Royal Academy 
+of Engineering 
+(RAEng)The UK’s national academy for engineering 
+that works to advance and promote 
+excellence in engineering. RAEng provides 
+analysis and policy support relating to 
+business and education, invests in the UK’s 
+research base to underpin innovation, and 
+works to improve public awareness and 
+understanding of engineering. See:  
+www.raeng.org.uk
+Royal Charter A formal document issued by the monarch 
+granting rights and powers to an individual or 
+an organisation. 
+SCQF The Scottish Credit and Qualifications 
+Framework . For more information see:  
+www.scqf.org.uk
+Shall In the context of the requirements set out 
+in the Standards, ‘shall’ indicates there 
+is a requirement to do something (ie it is 
+mandatory). 
+Should  In the context of the requirements set 
+out in the Standards, ‘should’ indicates a 
+recommendation to do something. 
+Statement 
+of Ethical 
+PrinciplesPublished by the Engineering Council  
+and the Royal Academy of Engineering. 
+Engineering  professionals should  read the 
+Statement of Ethical Principles in conjunction 
+with their relevant Code of Professional 
+Conduct . See page 47  or  
+www.engc.org.uk/ethics   \n\n--- PAGE 55 ---\n55
+SVQ Scottish Vocational Qualification. See also 
+NVQ .
+Sydney Accord 
+(SA)An international agreement among the bodies 
+responsible for accrediting  engineering 
+technologist degree ( IEng ) programmes. It 
+establishes a benchmark for engineering 
+technologist education across those bodies, 
+and recognises the equivalence of accredited  
+engineering technologist programmes. See 
+International Activity on page 48  or  
+www.ieagreements.org/sydney
+UK-SPEC UK Standard for Professional Engineering 
+Competence and Commitment . This 
+document, which sets out the competence  
+and commitment  requirements for 
+registration  as an EngTech , IEng  or CEng . 
+UK-SPEC is one of the Standards which the 
+Engineering Council  publishes, along with 
+AAQA , AHEP , the ICTTech  Standard  and 
+RfR. 
+Underpinning 
+Knowledge and 
+UnderstandingThe knowledge and understanding of the 
+principles of science, mathematics and 
+engineering theory that are required to form 
+the basis of engineering competence  at a 
+professional level.Washington 
+Accord (WA)An international agreement among the bodies 
+responsible for accrediting  engineering 
+degree ( CEng ) programmes. It establishes 
+and benchmarks the standard for professional 
+engineering education across those 
+bodies, and recognises the equivalence of 
+accredited  engineering progrogrammes.' See 
+International Activity on page 48  or  
+www.ieagreements.org/washington\n\n--- PAGE 56 ---\nT +44 (0)20 3206 0500
+F +44 (0)20 3206 0501 
+info@engc.org.uk 
+www.engc.org.uk
+Registered Charity: 286142 
+© Engineering Council 2020 (edition 4.1 with updated hierarchy diagram September 2022). First published 2003. Reviewed 2008 and 2013. 
+Please refer to the Engineering Council website, www.engc.org.uk  for the most up-to-date version.
+The Engineering Council encourages publication of extracts from this Standard, subject to attribution to the Engineering Council.\n
