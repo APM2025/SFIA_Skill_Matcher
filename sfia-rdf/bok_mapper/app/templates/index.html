@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body of Knowledge to SFIA Mapper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Body of Knowledge Mapper</h1>
+            <p>Map structured knowledge areas from professional Bodies of Knowledge (like CyBOK) directly to SFIA
+                skills.</p>
+        </div>
+
+        <div class="card">
+            <h2>Step 1: Select Your Knowledge Area</h2>
+
+            <div class="form-group">
+                <label for="bokSelect">Body of Knowledge</label>
+                <select id="bokSelect">
+                    <option value="">Loading...</option>
+                </select>
+                <div class="help-text">Select the Body of Knowledge (e.g., CyBOK)</div>
+            </div>
+
+            <div class="form-group">
+                <label for="kaSelect">Knowledge Area</label>
+                <select id="kaSelect" disabled>
+                    <option value="">Select BoK first...</option>
+                </select>
+                <div class="help-text">The specific Knowledge Area to evaluate</div>
+            </div>
+
+            <div class="competency-info" id="kaInfo">
+                <h4 id="kaTitle"></h4>
+                <p id="kaDescription"></p>
+                <strong>Key Topics:</strong>
+                <ul id="kaTopics"></ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Step 2: Mapping Context</h2>
+
+            <div class="form-group" style="padding: 10px 0;">
+                <label style="display: flex; align-items: center; cursor: pointer; font-weight: 500;">
+                    <input type="checkbox" id="cyberContext" checked
+                        style="margin-right: 10px; width: 18px; height: 18px;">
+                    Apply Information and Cyber Security Context
+                </label>
+                <div class="help-text" style="margin-top: 5px;">Instructs the semantic matcher to map knowledge areas
+                    specifically to cyber security, risk, and governance SFIA skills. Default is checked for CyBOK.
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" id="mapBtn" disabled>Map Knowledge Area to SFIA Skills</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Processing...</p>
+            </div>
+        </div>
+
+        <div class="card results" id="results">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">SFIA Skill Matches</h2>
+                <button class="btn btn-secondary" id="exportBtn"
+                    style="display: none; padding: 8px 16px; font-size: 14px;">Export to JSON</button>
+            </div>
+            <div id="skillMatches"></div>
+        </div>
+
+        <div class="card">
+            <div class="info-box">
+                <h4>💡 How This Works</h4>
+                <p><strong>Topic-to-Standard Mapping:</strong> The Knowledge Area is mapped directly to SFIA
+                    skills using semantic similarity based on their published descriptions and topic curriculums.</p>
+                <p style="margin-top: 10px;"><strong>Context Injection:</strong> Toggling the Cyber Security context
+                    prepends a specialized focus to the text prior to embedding, guiding the AI to find
+                    alignment with SFIA's dedicated cyber security, risk, and governance skills.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,949 @@
+{
+    "bok_id": "cybok",
+    "name": "CyBOK – The Cyber Security Body of Knowledge",
+    "version": "1.1",
+    "description": "CyBOK is a comprehensive, structured body of knowledge covering the foundational concepts and skills of cyber security.",
+    "knowledge_areas": [
+        {
+            "id": "RMG",
+            "title": "Risk Management & Governance",
+            "category": "Human, Organisational & Regulatory Aspects",
+            "description": "Covers frameworks, principles, and practices to identify, assess, and manage cyber security risks at an organisational and strategic level.",
+            "topics": [
+                "Risk assessment",
+                "Governance",
+                "ISMS",
+                "Third-party risk",
+                "Risk quantification"
+            ],
+            "chapters": [
+                {
+                    "id": "RMG-1",
+                    "title": "Introduction to Risk",
+                    "description": "Foundational concepts of cyber risk including definitions, risk appetite, tolerance, and the difference between threat, vulnerability, and impact."
+                },
+                {
+                    "id": "RMG-2",
+                    "title": "Risk Assessment",
+                    "description": "Methodologies for identifying and assessing cyber security risks including qualitative, quantitative, and hybrid approaches. Covers ISO 27005, NIST RMF, FAIR."
+                },
+                {
+                    "id": "RMG-3",
+                    "title": "Risk Treatment",
+                    "description": "Options for responding to identified risks: avoidance, transfer, mitigation, and acceptance. Includes security control selection and implementation."
+                },
+                {
+                    "id": "RMG-4",
+                    "title": "Governance Frameworks",
+                    "description": "Organisational governance over information security, including board-level accountability, security strategy, and standards such as ISO 27001/2 and COBIT."
+                },
+                {
+                    "id": "RMG-5",
+                    "title": "Business Continuity and Resilience",
+                    "description": "Planning for continuity of operations during a cyber incident, including BCP, DRP, and resilience engineering."
+                },
+                {
+                    "id": "RMG-6",
+                    "title": "Third-Party and Supply Chain Risk",
+                    "description": "Managing risks introduced by vendors, suppliers, and third-party integrations, including due diligence, contracts, and monitoring."
+                }
+            ]
+        },
+        {
+            "id": "LAW",
+            "title": "Law & Regulation",
+            "category": "Human, Organisational & Regulatory Aspects",
+            "description": "Examines legal frameworks, regulatory requirements, and compliance obligations relevant to cyber security.",
+            "topics": [
+                "Computer misuse law",
+                "Data protection",
+                "GDPR",
+                "Compliance",
+                "Cyber law"
+            ],
+            "chapters": [
+                {
+                    "id": "LAW-1",
+                    "title": "Cybercrime and Computer Misuse",
+                    "description": "Criminal law relating to unauthorised access, computer misuse, and cybercrime offences. Covers the Computer Misuse Act, CFAA, and international equivalents."
+                },
+                {
+                    "id": "LAW-2",
+                    "title": "Data Protection and Privacy Law",
+                    "description": "Legal frameworks governing how personal data is collected, stored and processed. Focuses on GDPR, UK DPA 2018, and principles such as lawful basis and data subject rights."
+                },
+                {
+                    "id": "LAW-3",
+                    "title": "Sector-Specific Regulation",
+                    "description": "Regulatory obligations specific to sectors such as finance (FCA, PCI-DSS), healthcare (HIPAA), and critical infrastructure (NIS/NIS2 Directive)."
+                },
+                {
+                    "id": "LAW-4",
+                    "title": "Intellectual Property and Cyber",
+                    "description": "IP law as it applies to software, security research, vulnerability disclosure, and reverse engineering."
+                },
+                {
+                    "id": "LAW-5",
+                    "title": "Jurisdiction and International Law",
+                    "description": "Cross-border application of cyber law, mutual legal assistance treaties, and the Budapest Convention on Cybercrime."
+                },
+                {
+                    "id": "LAW-6",
+                    "title": "Liability and Contracts",
+                    "description": "Contractual and tortious liability for cyber security failures, including SLAs, indemnities, and professional regulatory exposure."
+                }
+            ]
+        },
+        {
+            "id": "HF",
+            "title": "Human Factors",
+            "category": "Human, Organisational & Regulatory Aspects",
+            "description": "Covers the role of human behaviour, psychology, and organisational culture in cyber security.",
+            "topics": [
+                "Usable security",
+                "Awareness",
+                "Social engineering",
+                "Insider threats",
+                "Culture"
+            ],
+            "chapters": [
+                {
+                    "id": "HF-1",
+                    "title": "Usable Security",
+                    "description": "Designing security systems that are both effective and usable, including security UX principles, warnings, and password systems."
+                },
+                {
+                    "id": "HF-2",
+                    "title": "Security Awareness and Training",
+                    "description": "Methods for building a security-aware workforce, including awareness campaigns, training effectiveness measurement, and phishing simulations."
+                },
+                {
+                    "id": "HF-3",
+                    "title": "Social Engineering",
+                    "description": "Psychological manipulation techniques used by attackers including phishing, vishing, pretexting, and physical intrusion."
+                },
+                {
+                    "id": "HF-4",
+                    "title": "Insider Threats",
+                    "description": "Risks from employees, contractors, and trusted insiders. Covers detection strategies, behavioural analytics, and mitigation approaches."
+                },
+                {
+                    "id": "HF-5",
+                    "title": "Organisational Culture",
+                    "description": "How security culture, leadership, norms, and incentive structures influence security outcomes in organisations."
+                },
+                {
+                    "id": "HF-6",
+                    "title": "Cognitive Biases and Decision-Making",
+                    "description": "How cognitive biases and heuristics affect security decisions by both end users and security professionals."
+                }
+            ]
+        },
+        {
+            "id": "POR",
+            "title": "Privacy & Online Rights",
+            "category": "Human, Organisational & Regulatory Aspects",
+            "description": "Addresses principles, technologies, and legal dimensions of individual privacy and civil liberties in the digital world.",
+            "topics": [
+                "Privacy by design",
+                "Anonymity",
+                "Surveillance",
+                "PETs",
+                "Online rights"
+            ],
+            "chapters": [
+                {
+                    "id": "POR-1",
+                    "title": "Privacy Concepts and Theory",
+                    "description": "Theoretical foundations of privacy, including definitions, taxonomies of privacy violations, and philosophical underpinnings."
+                },
+                {
+                    "id": "POR-2",
+                    "title": "Privacy-Enhancing Technologies",
+                    "description": "Technical tools for achieving privacy goals, including Tor, mix nets, differential privacy, and privacy-preserving computation."
+                },
+                {
+                    "id": "POR-3",
+                    "title": "Online Tracking and Profiling",
+                    "description": "Methods by which individuals are tracked online, including cookies, fingerprinting, and data brokers, and corresponding defences."
+                },
+                {
+                    "id": "POR-4",
+                    "title": "Surveillance and Government Interception",
+                    "description": "State surveillance capabilities, interception laws, lawful access requirements, and the tension between privacy and national security."
+                },
+                {
+                    "id": "POR-5",
+                    "title": "Anonymity and Censorship Resistance",
+                    "description": "Technologies enabling anonymous communication and access to censored content, including Tor, I2P, and circumvention tools."
+                },
+                {
+                    "id": "POR-6",
+                    "title": "Automated Decision Making and Biometrics",
+                    "description": "Privacy implications of AI-driven decisions and biometric data collection, including facial recognition and algorithmic scoring."
+                }
+            ]
+        },
+        {
+            "id": "MAT",
+            "title": "Malware & Attack Technologies",
+            "category": "Attacks & Defences",
+            "description": "Covers techniques, tools, and technologies used by attackers to compromise systems.",
+            "topics": [
+                "Malware types",
+                "Exploits",
+                "Rootkits",
+                "C2 infrastructure",
+                "APTs"
+            ],
+            "chapters": [
+                {
+                    "id": "MAT-1",
+                    "title": "Malware Classification and Lifecycle",
+                    "description": "Categories of malware including viruses, worms, Trojans, ransomware, spyware, and adware. Covers the infection and propagation lifecycle."
+                },
+                {
+                    "id": "MAT-2",
+                    "title": "Exploitation Techniques",
+                    "description": "Vulnerability exploitation methods including buffer overflows, heap exploitation, use-after-free, format string bugs, and return-oriented programming (ROP)."
+                },
+                {
+                    "id": "MAT-3",
+                    "title": "Persistence and Evasion",
+                    "description": "Techniques attackers use to maintain access and evade detection, including rootkits, bootkits, registry persistence, fileless malware, and anti-analysis."
+                },
+                {
+                    "id": "MAT-4",
+                    "title": "Command and Control Infrastructure",
+                    "description": "How attackers manage compromised systems remotely. Covers C2 protocols, domain generation algorithms, and peer-to-peer botnet architectures."
+                },
+                {
+                    "id": "MAT-5",
+                    "title": "Ransomware and Cyber Extortion",
+                    "description": "Technical and operational mechanics of ransomware attacks, including encryption methods, payment infrastructure, and double-extortion techniques."
+                },
+                {
+                    "id": "MAT-6",
+                    "title": "Advanced Persistent Threats",
+                    "description": "Long-running, targeted attack campaigns typically associated with nation-state actors. Covers APT tactics, zero-day exploitation, and campaign examples."
+                }
+            ]
+        },
+        {
+            "id": "AB",
+            "title": "Adversarial Behaviours",
+            "category": "Attacks & Defences",
+            "description": "Focuses on understanding attacker motivations, tactics, techniques, and procedures (TTPs).",
+            "topics": [
+                "Threat actors",
+                "MITRE ATT&CK",
+                "Kill chain",
+                "Threat intelligence",
+                "Supply chain attacks"
+            ],
+            "chapters": [
+                {
+                    "id": "AB-1",
+                    "title": "Threat Actor Taxonomy",
+                    "description": "Classification of adversaries by motivation (financial, espionage, hacktivism, sabotage) and capability, including nation-state, cybercriminal, and insider threat actors."
+                },
+                {
+                    "id": "AB-2",
+                    "title": "Attack Frameworks and Kill Chain",
+                    "description": "Models for understanding the stages of a cyber attack, including the Lockheed Martin Cyber Kill Chain and MITRE ATT&CK framework."
+                },
+                {
+                    "id": "AB-3",
+                    "title": "Lateral Movement and Post-Exploitation",
+                    "description": "Techniques attackers use to move through a network after initial compromise, including privilege escalation, pass-the-hash, and Kerberoasting."
+                },
+                {
+                    "id": "AB-4",
+                    "title": "Cyber Threat Intelligence",
+                    "description": "Collecting, analysing, and actioning intelligence about threats and adversaries. Covers IoCs, TTPs, and structured sharing formats like STIX/TAXII."
+                },
+                {
+                    "id": "AB-5",
+                    "title": "Supply Chain Attacks",
+                    "description": "Targeting the software or hardware supply chain as an attack vector, including build system compromise, malicious packages, and firmware implants."
+                },
+                {
+                    "id": "AB-6",
+                    "title": "Disinformation and Influence Operations",
+                    "description": "Cognitive and information operations conducted by adversaries, including fake news, influence campaigns, and hybrid warfare."
+                }
+            ]
+        },
+        {
+            "id": "SOIM",
+            "title": "Security Operations & Incident Management",
+            "category": "Attacks & Defences",
+            "description": "Covers the detection, response, and recovery processes for cyber security incidents.",
+            "topics": [
+                "SIEM",
+                "SOC",
+                "Incident response",
+                "Threat hunting",
+                "IDS/IPS"
+            ],
+            "chapters": [
+                {
+                    "id": "SOIM-1",
+                    "title": "Security Monitoring Architecture",
+                    "description": "Design of security monitoring infrastructure including log aggregation, SIEM platforms, event correlation, and alerting pipelines."
+                },
+                {
+                    "id": "SOIM-2",
+                    "title": "Intrusion Detection and Prevention",
+                    "description": "Network and host-based IDS and IPS, detection methodologies (signature, anomaly, behavioural), and tuning to reduce false positives."
+                },
+                {
+                    "id": "SOIM-3",
+                    "title": "Threat Hunting",
+                    "description": "Proactive search for threats in the environment before alerts are triggered, using hypotheses, behavioural patterns, and analytics."
+                },
+                {
+                    "id": "SOIM-4",
+                    "title": "Incident Response Lifecycle",
+                    "description": "Structured approach to handling incidents, covering preparation, identification, containment, eradication, recovery, and lessons learned (PICERL)."
+                },
+                {
+                    "id": "SOIM-5",
+                    "title": "SOC Operations and Metrics",
+                    "description": "Organisation and management of a Security Operations Centre including shift structures, tier models, KPIs, and automation through SOAR."
+                },
+                {
+                    "id": "SOIM-6",
+                    "title": "Crisis Management and Communication",
+                    "description": "Communicating during a cyber incident internally and externally, including stakeholder management, regulatory notification, and public communications."
+                }
+            ]
+        },
+        {
+            "id": "FOR",
+            "title": "Forensics",
+            "category": "Attacks & Defences",
+            "description": "Covers principles, methods, and tools used to collect, preserve, analyse, and present digital evidence.",
+            "topics": [
+                "Digital evidence",
+                "Disk forensics",
+                "Network forensics",
+                "Memory forensics",
+                "Mobile forensics"
+            ],
+            "chapters": [
+                {
+                    "id": "FOR-1",
+                    "title": "Forensic Principles and Legal Admissibility",
+                    "description": "Foundational principles of digital forensics including chain of custody, seizure procedures, evidence integrity, and court admissibility standards."
+                },
+                {
+                    "id": "FOR-2",
+                    "title": "Disk and File System Forensics",
+                    "description": "Acquisition and analysis of storage media, file system structures (NTFS, FAT, ext), deleted file recovery, and metadata analysis."
+                },
+                {
+                    "id": "FOR-3",
+                    "title": "Memory Forensics",
+                    "description": "Capturing and analysing volatile memory (RAM) to recover processes, network connections, encryption keys, and malware artefacts."
+                },
+                {
+                    "id": "FOR-4",
+                    "title": "Network Forensics",
+                    "description": "Reconstructing network activity from packet captures, flow records, and log files to support incident investigation."
+                },
+                {
+                    "id": "FOR-5",
+                    "title": "Mobile Device Forensics",
+                    "description": "Extracting and analysing data from mobile devices including logical, file system, and physical acquisition techniques."
+                },
+                {
+                    "id": "FOR-6",
+                    "title": "Cloud and Endpoint Forensics",
+                    "description": "Forensic challenges specific to cloud environments, ephemeral infrastructure, and enterprise endpoint tooling."
+                },
+                {
+                    "id": "FOR-7",
+                    "title": "Anti-Forensics",
+                    "description": "Techniques used to hinder forensic analysis, including data wiping, timestomping, steganography, and encryption, and how to address them."
+                }
+            ]
+        },
+        {
+            "id": "CRYPT",
+            "title": "Cryptography",
+            "category": "Systems Security",
+            "description": "Covers the theoretical foundations of cryptographic systems used to protect information.",
+            "topics": [
+                "Symmetric encryption",
+                "Asymmetric encryption",
+                "Hash functions",
+                "PKI",
+                "Post-quantum cryptography"
+            ],
+            "chapters": [
+                {
+                    "id": "CRYPT-1",
+                    "title": "Foundations and Security Goals",
+                    "description": "Core cryptographic goals: confidentiality, integrity, authentication, and non-repudiation. Security definitions and proof techniques."
+                },
+                {
+                    "id": "CRYPT-2",
+                    "title": "Symmetric Cryptography",
+                    "description": "Block ciphers (AES, DES), modes of operation (CBC, GCM, CTR), stream ciphers, and message authentication codes (HMAC)."
+                },
+                {
+                    "id": "CRYPT-3",
+                    "title": "Asymmetric Cryptography",
+                    "description": "Public-key cryptography foundations including RSA, Elliptic Curve Cryptography (ECC), and Diffie-Hellman key exchange."
+                },
+                {
+                    "id": "CRYPT-4",
+                    "title": "Hash Functions and MACs",
+                    "description": "Cryptographic hash functions (SHA-2, SHA-3), collision resistance, digital signatures (DSA, ECDSA), and HMAC."
+                },
+                {
+                    "id": "CRYPT-5",
+                    "title": "Key Management and PKI",
+                    "description": "Generation, distribution, storage, and revocation of cryptographic keys. Public Key Infrastructure, certificate authorities, and OCSP/CRL."
+                },
+                {
+                    "id": "CRYPT-6",
+                    "title": "Post-Quantum Cryptography",
+                    "description": "Cryptographic algorithms designed to resist quantum computing attacks, including lattice-based, hash-based, and code-based schemes. NIST PQC standardisation."
+                }
+            ]
+        },
+        {
+            "id": "OSVS",
+            "title": "Operating Systems & Virtualisation Security",
+            "category": "Systems Security",
+            "description": "Examines security features and vulnerabilities within operating systems and virtualisation platforms.",
+            "topics": [
+                "OS security",
+                "Access control",
+                "Privilege escalation",
+                "Containers",
+                "Hypervisor security"
+            ],
+            "chapters": [
+                {
+                    "id": "OSVS-1",
+                    "title": "Operating System Security Architecture",
+                    "description": "Security primitives built into modern operating systems: protection rings, system calls, memory protection, and security boundaries."
+                },
+                {
+                    "id": "OSVS-2",
+                    "title": "Access Control Mechanisms",
+                    "description": "Discretionary, mandatory, and role-based access control implemented in operating systems including POSIX permissions, SELinux, and AppArmor."
+                },
+                {
+                    "id": "OSVS-3",
+                    "title": "OS Exploitation and Kernel Vulnerabilities",
+                    "description": "Common kernel vulnerabilities, privilege escalation techniques, exploit mitigations (ASLR, NX, SMEP), and kernel patching."
+                },
+                {
+                    "id": "OSVS-4",
+                    "title": "Virtualisation Security",
+                    "description": "Security of hypervisors (Type 1/2), VM isolation, hypervisor escape attacks, and secure deployment practices for virtualised environments."
+                },
+                {
+                    "id": "OSVS-5",
+                    "title": "Container Security",
+                    "description": "Security of containerised applications using Docker, Kubernetes, and related technologies. Namespace isolation, cgroups, and container escape vulnerabilities."
+                },
+                {
+                    "id": "OSVS-6",
+                    "title": "Trusted Execution Environments",
+                    "description": "Hardware-enforced secure enclaves including Intel SGX and ARM TrustZone, their security models, and attack surfaces."
+                }
+            ]
+        },
+        {
+            "id": "DSS",
+            "title": "Distributed Systems Security",
+            "category": "Systems Security",
+            "description": "Covers security challenges in systems composed of multiple interconnected components, including cloud and microservices.",
+            "topics": [
+                "Cloud security",
+                "Zero trust",
+                "DDoS",
+                "Blockchain",
+                "Microservices"
+            ],
+            "chapters": [
+                {
+                    "id": "DSS-1",
+                    "title": "Distributed System Fundamentals and Threats",
+                    "description": "Security challenges inherent to distributed architectures including partial failures, untrusted nodes, and Byzantine fault tolerance."
+                },
+                {
+                    "id": "DSS-2",
+                    "title": "Cloud Security",
+                    "description": "Security models and threats for cloud deployments across IaaS, PaaS, and SaaS. Shared responsibility, misconfiguration risks, and cloud-native controls."
+                },
+                {
+                    "id": "DSS-3",
+                    "title": "Zero Trust Architecture",
+                    "description": "Principles and implementation of zero trust security for distributed systems, including identity-centric access, microsegmentation, and continuous verification."
+                },
+                {
+                    "id": "DSS-4",
+                    "title": "Distributed Denial of Service",
+                    "description": "DDoS attack types, amplification, reflection, botnet-driven volumetric attacks, and mitigations at network and application layers."
+                },
+                {
+                    "id": "DSS-5",
+                    "title": "Blockchain and Decentralised Systems",
+                    "description": "Security of blockchain-based systems including consensus attacks (51%, selfish mining), smart contract vulnerabilities, and wallet security."
+                },
+                {
+                    "id": "DSS-6",
+                    "title": "Microservices and API Security",
+                    "description": "Security in service-oriented and microservices architectures, including API authentication (OAuth, JWT), rate limiting, and service mesh security."
+                }
+            ]
+        },
+        {
+            "id": "FMS",
+            "title": "Formal Methods for Security",
+            "category": "Systems Security",
+            "description": "Applies mathematical and logical techniques to specify, model, and verify security properties of systems and protocols.",
+            "topics": [
+                "Protocol verification",
+                "Model checking",
+                "Type systems",
+                "Theorem proving",
+                "Information flow"
+            ],
+            "chapters": [
+                {
+                    "id": "FMS-1",
+                    "title": "Formal Specification of Security Properties",
+                    "description": "Expressing security requirements formally using languages such as Z, Alloy, and temporal logic."
+                },
+                {
+                    "id": "FMS-2",
+                    "title": "Security Protocol Modelling and Analysis",
+                    "description": "Formal modelling and automated verification of cryptographic protocols using tools like ProVerif, Tamarin, and CPSA."
+                },
+                {
+                    "id": "FMS-3",
+                    "title": "Model Checking for Security",
+                    "description": "Applying model checking (SPIN, NuSMV) to verify security properties in concurrent and distributed systems."
+                },
+                {
+                    "id": "FMS-4",
+                    "title": "Type Systems and Information Flow",
+                    "description": "Using type-theoretic techniques to enforce security policies, prevent information leakage, and verify secure information flow statically."
+                },
+                {
+                    "id": "FMS-5",
+                    "title": "Theorem Proving in Security",
+                    "description": "Application of interactive theorem provers (Coq, Isabelle/HOL) to prove correctness and security properties of algorithms and programs."
+                }
+            ]
+        },
+        {
+            "id": "AAA",
+            "title": "Authentication, Authorisation & Accountability",
+            "category": "Systems Security",
+            "description": "Covers techniques for establishing identity, enforcing permissions, and providing audit trails in information systems.",
+            "topics": [
+                "MFA",
+                "Access control models",
+                "Federated identity",
+                "SSO",
+                "Privilege management"
+            ],
+            "chapters": [
+                {
+                    "id": "AAA-1",
+                    "title": "Authentication Fundamentals",
+                    "description": "The three authentication factors (knowledge, possession, inherence), authentication protocols, and the trade-offs between security and usability."
+                },
+                {
+                    "id": "AAA-2",
+                    "title": "Password Security",
+                    "description": "Password storage (hashing, salting, bcrypt, PBKDF2), policies, credential stuffing and spraying attacks, and password managers."
+                },
+                {
+                    "id": "AAA-3",
+                    "title": "Multi-Factor and Passwordless Authentication",
+                    "description": "MFA methods including TOTP, hardware tokens (FIDO2/WebAuthn), passkeys, biometrics, and their resistance to phishing."
+                },
+                {
+                    "id": "AAA-4",
+                    "title": "Access Control Models",
+                    "description": "Discretionary (DAC), mandatory (MAC), role-based (RBAC), and attribute-based (ABAC) access control. Policy specification and enforcement."
+                },
+                {
+                    "id": "AAA-5",
+                    "title": "Federated Identity and SSO",
+                    "description": "Federation protocols including SAML, OAuth 2.0, and OpenID Connect. Single sign-on architectures, trust models, and vulnerabilities."
+                },
+                {
+                    "id": "AAA-6",
+                    "title": "Accountability and Audit Logging",
+                    "description": "Maintaining tamper-resistant audit trails to ensure accountability, including log management, integrity, and non-repudiation mechanisms."
+                }
+            ]
+        },
+        {
+            "id": "SS",
+            "title": "Software Security",
+            "category": "Software and Platform Security",
+            "description": "Covers principles, techniques, and best practices for developing secure software.",
+            "topics": [
+                "Memory safety",
+                "Input validation",
+                "Static analysis",
+                "Fuzzing",
+                "Supply chain security"
+            ],
+            "chapters": [
+                {
+                    "id": "SS-1",
+                    "title": "Memory Safety Vulnerabilities",
+                    "description": "Buffer overflows, stack and heap corruption, use-after-free, integer overflows, and format string vulnerabilities. Root causes and mitigations."
+                },
+                {
+                    "id": "SS-2",
+                    "title": "Injection Vulnerabilities",
+                    "description": "SQL injection, command injection, LDAP injection, and path traversal. Defences including parameterised queries, input validation, and output encoding."
+                },
+                {
+                    "id": "SS-3",
+                    "title": "Secure Coding Principles",
+                    "description": "Guidelines for writing secure code including least privilege, defence in depth, fail-safe defaults, and secure-by-design principles."
+                },
+                {
+                    "id": "SS-4",
+                    "title": "Static Application Security Testing (SAST)",
+                    "description": "Code analysis techniques for finding security vulnerabilities programmatically, including data flow analysis, taint tracking, and control flow analysis."
+                },
+                {
+                    "id": "SS-5",
+                    "title": "Dynamic Analysis and Fuzzing",
+                    "description": "Runtime testing approaches including coverage-guided fuzzing (AFL, libFuzzer), symbolic execution, and dynamic taint analysis."
+                },
+                {
+                    "id": "SS-6",
+                    "title": "Software Supply Chain Security",
+                    "description": "Risks from third-party dependencies, malicious packages, and build system compromise. SBOM, dependency auditing, and provenance tracking."
+                }
+            ]
+        },
+        {
+            "id": "WMS",
+            "title": "Web & Mobile Security",
+            "category": "Software and Platform Security",
+            "description": "Examines security vulnerabilities and mitigations specific to web applications and mobile platforms.",
+            "topics": [
+                "OWASP Top 10",
+                "XSS",
+                "CSRF",
+                "SQL injection",
+                "Mobile security"
+            ],
+            "chapters": [
+                {
+                    "id": "WMS-1",
+                    "title": "Web Application Threat Model",
+                    "description": "Understanding the attack surface of web applications, the browser security model, same-origin policy, CORS, and common web threat categories."
+                },
+                {
+                    "id": "WMS-2",
+                    "title": "Injection and Server-Side Attacks",
+                    "description": "SQL injection, NoSQL injection, command injection, Server-Side Template Injection (SSTI), and XXE vulnerabilities with defences."
+                },
+                {
+                    "id": "WMS-3",
+                    "title": "Client-Side Attacks",
+                    "description": "Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), clickjacking, DOM clobbering, and browser exploit techniques."
+                },
+                {
+                    "id": "WMS-4",
+                    "title": "Authentication and Session Management",
+                    "description": "Web authentication vulnerabilities including session fixation, session hijacking, insecure JWT implementation, and broken authentication patterns."
+                },
+                {
+                    "id": "WMS-5",
+                    "title": "Mobile Platform Security",
+                    "description": "Security architectures of Android and iOS including sandboxing, permissions, app signing, and secure storage. Common mobile vulnerabilities."
+                },
+                {
+                    "id": "WMS-6",
+                    "title": "Mobile App Reverse Engineering",
+                    "description": "Reverse engineering Android APKs and iOS IPAs, bypassing certificate pinning, and analysing mobile app traffic."
+                }
+            ]
+        },
+        {
+            "id": "SSL",
+            "title": "Secure Software Lifecycle",
+            "category": "Software and Platform Security",
+            "description": "Covers integration of security practices throughout the software development lifecycle (SDLC).",
+            "topics": [
+                "Security requirements",
+                "Threat modelling",
+                "DevSecOps",
+                "Secure design",
+                "Penetration testing"
+            ],
+            "chapters": [
+                {
+                    "id": "SSL-1",
+                    "title": "Security Requirements Engineering",
+                    "description": "Eliciting and documenting security and privacy requirements from stakeholders, including misuse cases, abuse stories, and security user stories."
+                },
+                {
+                    "id": "SSL-2",
+                    "title": "Threat Modelling",
+                    "description": "Structured approaches to identifying threats and selecting mitigations: STRIDE, PASTA, attack trees, and data flow diagrams."
+                },
+                {
+                    "id": "SSL-3",
+                    "title": "Secure Design Principles",
+                    "description": "Applying security principles in architecture: least privilege, separation of privilege, economy of mechanism, and secure defaults."
+                },
+                {
+                    "id": "SSL-4",
+                    "title": "DevSecOps and CI/CD Security",
+                    "description": "Integrating security into automated build and deployment pipelines, including SAST/DAST automation, secrets management, and infrastructure as code security."
+                },
+                {
+                    "id": "SSL-5",
+                    "title": "Security Testing and Penetration Testing",
+                    "description": "Methodologies for security-focused testing including OWASP WSTG, penetration testing scopes, and reporting standards."
+                },
+                {
+                    "id": "SSL-6",
+                    "title": "Vulnerability Disclosure and Patch Management",
+                    "description": "Responsible vulnerability disclosure programmes (CVD/bug bounty), patch release processes, and managing the window of exposure."
+                }
+            ]
+        },
+        {
+            "id": "AC",
+            "title": "Applied Cryptography",
+            "category": "Infrastructure Security",
+            "description": "Covers practical deployment and use of cryptographic protocols and systems in real-world applications.",
+            "topics": [
+                "TLS",
+                "PKI deployment",
+                "Key management",
+                "Secure messaging",
+                "HSMs"
+            ],
+            "chapters": [
+                {
+                    "id": "AC-1",
+                    "title": "TLS/SSL Protocol",
+                    "description": "TLS handshake, cipher suite negotiation, certificate validation, and vulnerabilities in prior versions (BEAST, POODLE, DROWN). TLS 1.3 improvements."
+                },
+                {
+                    "id": "AC-2",
+                    "title": "PKI Deployment and Certificate Management",
+                    "description": "Deploying and operating a certificate authority, certificate transparency logs, OCSP stapling, and CAA DNS records."
+                },
+                {
+                    "id": "AC-3",
+                    "title": "Secure Messaging Protocols",
+                    "description": "End-to-end encrypted messaging using the Signal Protocol, Double Ratchet, and forward secrecy. Comparison of messaging security properties."
+                },
+                {
+                    "id": "AC-4",
+                    "title": "Key Management in Practice",
+                    "description": "Operational aspects of key lifecycle management including generation, storage (HSM, KMS), rotation, backup, and revocation at scale."
+                },
+                {
+                    "id": "AC-5",
+                    "title": "Cryptographic API Design and Misuse",
+                    "description": "Common misuse of cryptographic APIs (ECB mode, nonce reuse, hardcoded keys). Principles for designing easy-to-use-securely cryptographic interfaces."
+                },
+                {
+                    "id": "AC-6",
+                    "title": "Advanced Protocols",
+                    "description": "Zero-knowledge proofs, secure multi-party computation, homomorphic encryption, and their emerging real-world applications."
+                }
+            ]
+        },
+        {
+            "id": "NS",
+            "title": "Network Security",
+            "category": "Infrastructure Security",
+            "description": "Covers security of computer networking, protocols, and infrastructure.",
+            "topics": [
+                "TCP/IP security",
+                "Firewalls",
+                "IDS/IPS",
+                "VPN",
+                "Wireless security",
+                "DDoS"
+            ],
+            "chapters": [
+                {
+                    "id": "NS-1",
+                    "title": "Network Protocol Security",
+                    "description": "Security weaknesses in foundational protocols (IP, TCP, UDP, ICMP) and routing protocols (BGP, OSPF). Spoofing, hijacking, and protocol manipulation attacks."
+                },
+                {
+                    "id": "NS-2",
+                    "title": "DNS Security",
+                    "description": "DNS cache poisoning, DNS hijacking, DNS over HTTPS/TLS, and DNSSEC deployment and operation."
+                },
+                {
+                    "id": "NS-3",
+                    "title": "Firewalls and Network Segmentation",
+                    "description": "Stateful firewalls, application-layer gateways, next-gen firewalls (NGFW), DMZ architectures, and microsegmentation strategies."
+                },
+                {
+                    "id": "NS-4",
+                    "title": "Wireless Network Security",
+                    "description": "Security of Wi-Fi standards (WPA2, WPA3, 802.1X), evil twin attacks, rogue access points, and enterprise wireless security."
+                },
+                {
+                    "id": "NS-5",
+                    "title": "VPNs and Secure Tunnelling",
+                    "description": "Site-to-site and remote access VPN technologies (IPsec, WireGuard, OpenVPN), split tunnelling, and authentication."
+                },
+                {
+                    "id": "NS-6",
+                    "title": "Network Traffic Analysis",
+                    "description": "Passive and active network monitoring for security, including flow analysis, deep packet inspection, and anomaly detection."
+                },
+                {
+                    "id": "NS-7",
+                    "title": "Software Defined Networking Security",
+                    "description": "Security implications of SDN architectures, control plane security, OpenFlow vulnerabilities, and network virtualisation security."
+                }
+            ]
+        },
+        {
+            "id": "HWS",
+            "title": "Hardware Security",
+            "category": "Infrastructure Security",
+            "description": "Covers security properties and vulnerabilities of physical computing hardware.",
+            "topics": [
+                "Hardware root of trust",
+                "Side-channel attacks",
+                "Fault injection",
+                "Hardware Trojans",
+                "Secure enclaves"
+            ],
+            "chapters": [
+                {
+                    "id": "HWS-1",
+                    "title": "Hardware Root of Trust",
+                    "description": "Establishing trust in hardware using TPMs, secure boot processes, measured boot, and hardware attestation mechanisms."
+                },
+                {
+                    "id": "HWS-2",
+                    "title": "Side-Channel Attacks",
+                    "description": "Exploiting information leaked through power consumption, timing, electromagnetic emissions, and cache behaviour to extract secrets."
+                },
+                {
+                    "id": "HWS-3",
+                    "title": "Fault Injection Attacks",
+                    "description": "Physically inducing faults via voltage glitching, clock glitching, and laser fault injection to bypass security checks."
+                },
+                {
+                    "id": "HWS-4",
+                    "title": "Hardware Trojans and Supply Chain",
+                    "description": "Malicious hardware modifications inserted during manufacturing or distribution, detection methods, and supply chain trust."
+                },
+                {
+                    "id": "HWS-5",
+                    "title": "Secure Enclaves and TEEs",
+                    "description": "Trusted Execution Environment technologies including Intel SGX, AMD SEV, and ARM TrustZone. Attacks including speculative execution (Spectre/Meltdown)."
+                },
+                {
+                    "id": "HWS-6",
+                    "title": "Embedded Systems and IoT Hardware",
+                    "description": "Hardware security of resource-constrained embedded devices, JTAG debugging interfaces, flash memory extraction, and physical hardening."
+                }
+            ]
+        },
+        {
+            "id": "CPS",
+            "title": "Cyber Physical Systems Security",
+            "category": "Infrastructure Security",
+            "description": "Covers security of systems where cyber components directly interact with and control physical processes.",
+            "topics": [
+                "ICS security",
+                "SCADA",
+                "IoT",
+                "Safety-critical systems",
+                "CNI protection"
+            ],
+            "chapters": [
+                {
+                    "id": "CPS-1",
+                    "title": "CPS Architecture and Threat Landscape",
+                    "description": "Architecture of cyber-physical systems, key differences from IT security, and the threat landscape including targeted attacks on CNI."
+                },
+                {
+                    "id": "CPS-2",
+                    "title": "Industrial Control Systems and SCADA Security",
+                    "description": "Security of SCADA, DCS, and PLC systems. Common vulnerabilities, network segmentation, Purdue model, and ICS-specific attacks (Stuxnet, Triton)."
+                },
+                {
+                    "id": "CPS-3",
+                    "title": "IoT Security",
+                    "description": "Security challenges in IoT ecosystems including insecure-by-default devices, firmware vulnerabilities, constrained network protocols, and mass deployment risks."
+                },
+                {
+                    "id": "CPS-4",
+                    "title": "Safety-Critical System Security",
+                    "description": "Intersection of functional safety and security in systems such as medical devices, automotive, and avionics (IEC 62443, DO-326A)."
+                },
+                {
+                    "id": "CPS-5",
+                    "title": "Resilience and Incident Response for CPS",
+                    "description": "Designing resilient CPS that degrade gracefully under attack. Incident response challenges and recovery for OT environments."
+                }
+            ]
+        },
+        {
+            "id": "PLT",
+            "title": "Physical Layer & Telecommunications Security",
+            "category": "Infrastructure Security",
+            "description": "Examines the security of radio and physical communication channels, including wireless protocols and telecom infrastructure.",
+            "topics": [
+                "RF security",
+                "5G security",
+                "SIGINT",
+                "Physical eavesdropping",
+                "TEMPEST"
+            ],
+            "chapters": [
+                {
+                    "id": "PLT-1",
+                    "title": "Physical Layer Fundamentals and Threats",
+                    "description": "Security of the physical transmission medium including interception, jamming, and exploitation of RF signals."
+                },
+                {
+                    "id": "PLT-2",
+                    "title": "Cellular Network Security",
+                    "description": "Security architecture and vulnerabilities of 2G, 3G, 4G LTE, and 5G networks. IMSI catchers (Stingrays), SS7 vulnerabilities, and 5G security improvements."
+                },
+                {
+                    "id": "PLT-3",
+                    "title": "TEMPEST and Emanation Security",
+                    "description": "Unintentional electromagnetic emissions from devices (TEMPEST/van Eck phreaking), shielding countermeasures, and EMSEC standards."
+                },
+                {
+                    "id": "PLT-4",
+                    "title": "Satellite and Long-Range Communication Security",
+                    "description": "Security of satellite communications, GPS spoofing, and jamming. Security in VSAT, LoRa, and other long-range wireless protocols."
+                },
+                {
+                    "id": "PLT-5",
+                    "title": "Telecommunications Regulatory and Legal Framework",
+                    "description": "Legal requirements and regulatory bodies governing telecommunications security, lawful interception, and emergency access."
+                }
+            ]
+        }
+    ]
+}
