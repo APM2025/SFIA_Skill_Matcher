@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Framework to SFIA Mapper</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
@@ -65,6 +66,7 @@
 
             <div class="button-group">
                 <button class="btn btn-primary" id="mapBtn" disabled>Map Competency to SFIA Skills</button>
+                <button class="btn btn-secondary" id="resetBtn" onclick="resetResults()" style="margin-left: 10px;">Reset</button>
             </div>
 
             <div class="loading" id="loading">
@@ -76,20 +78,45 @@
         <div class="card results" id="results">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <h2 style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">SFIA Skill Matches</h2>
-                <button class="btn btn-secondary" id="exportBtn"
-                    style="display: none; padding: 8px 16px; font-size: 14px;">Export to JSON</button>
+                <div>
+                    <button class="btn btn-secondary" id="exportBtn"
+                        style="display: none; padding: 8px 16px; font-size: 14px; margin-right: 10px;">Export to JSON</button>
+                    <button class="btn btn-secondary" id="exportPdfBtn"
+                        style="display: none; padding: 8px 16px; font-size: 14px; background-color: #ef4444; color: white;">Export to PDF</button>
+                </div>
             </div>
             <div id="skillMatches"></div>
         </div>
-
-        <div class="card">
+        <div class="card" id="howItWorksSection">
             <div class="info-box">
                 <h4>💡 How This Works</h4>
-                <p><strong>Standard-to-Standard Mapping:</strong> The framework competency is mapped directly to SFIA
-                    skills using semantic similarity based on their published texts.</p>
-                <p style="margin-top: 10px;"><strong>Context Injection:</strong> Toggling the Cyber Security context
-                    prepends a specialized focus to the competency text prior to embedding, guiding the AI to find
-                    alignment with SFIA's dedicated cyber security, risk, and governance skills.</p>
+                <p>This tool reads two different frameworks and maps which skills and concepts are talking about the same thing — even when they use completely different words.</p>
+
+                <h5 style="margin-top: 15px;">Step 1 — Semantic Matching</h5>
+                <ul style="margin-top: 5px; margin-left: 20px;">
+                    <li><strong>Reading Meaning, Not Keywords:</strong> An AI embedding model converts your chosen framework competency into a string of numbers representing its <em>underlying meaning</em>. The same has been pre-computed for every SFIA skill.</li>
+                    <li><strong>Finding the Closest Skills:</strong> The system mathematically compares your competency against all SFIA skills and retrieves the top 5 closest conceptual matches.</li>
+                    <li><strong>Confidence Scoring:</strong> Each match is awarded a qualitative rating — <strong style="color:#15803d;">High</strong>, <strong style="color:#b45309;">Medium</strong>, or <strong style="color:#b91c1c;">Low</strong> — based purely on semantic similarity, with no keyword matching involved.</li>
+                </ul>
+
+                <h5 style="margin-top: 15px;">Step 2 — Graph RAG Explanations (Local AI)</h5>
+                <ul style="margin-top: 5px; margin-left: 20px;">
+                    <li><strong>Bespoke Rationales:</strong> Each of the top 5 matched SFIA skills is sent to a local open-source LLM (Llama 3 via Ollama) which writes a bespoke explanation of <em>exactly why</em> that skill maps to the framework competency, including a specific comment on SFIA level 5 skills.</li>
+                    <li><strong>⏱ Note:</strong> Generating all 5 explanations takes several minutes on local hardware — this is expected.</li>
+                </ul>
+
+                <h5 style="margin-top: 15px;">Step 3 — 🤖 AI Strategic Advisory</h5>
+                <ul style="margin-top: 5px; margin-left: 20px;">
+                    <li><strong>Grounded in Job Role Data:</strong> All 5 candidates are passed to the LLM alongside real SFIA cybersecurity job role mapping data. The LLM knows which matched skills are formally associated with roles like Security Architect, Cloud Architect, and Enterprise Architect.</li>
+                    <li><strong>Expert Career Guidance:</strong> The LLM acts as a senior SFIA assessor and produces a structured advisory covering: which skills to prioritise, why that combination satisfies the UK-SPEC requirement for a cyber/IT professional, and what SFIA level 5 evidence looks like in practice.</li>
+                    <li>The advisory appears at the top of each indicator section in a dark blue <strong>AI Strategic Advisory</strong> card.</li>
+                </ul>
+
+                <h5 style="margin-top: 15px;">How the Cyber Security Toggle Works</h5>
+                <ul style="margin-top: 5px; margin-left: 20px;">
+                    <li><strong>Semantic Layer:</strong> Before the embedding model reads your competency, the system prepends <em>"In the context of Information and Cyber Security job families..."</em> — steering the mathematical search towards security-relevant SFIA skills.</li>
+                    <li><strong>LLM Layer:</strong> Both the individual rationales and the AI Strategic Advisory are instructed to frame all explanations through the lens of security operations, governance, risk management, and compliance.</li>
+                </ul>
             </div>
         </div>
     </div>

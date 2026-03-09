@@ -16,10 +16,12 @@ from dataclasses import dataclass
 
 import re
 import torch
+import requests
 from sentence_transformers import SentenceTransformer, util
 from flask import current_app
 
 from app.services.framework_parser import FrameworkParser, Competency
+from app.services.llm_rag import get_llm_rag_service
 
 logger = logging.getLogger(__name__)
 
@@ -174,12 +176,20 @@ class FrameworkMatchingService:
             # Level suggestion based on registration range
             suggested_level = int((sfia_level_range[0] + sfia_level_range[1]) / 2)
             
-            # Generate rationale
+            # Always generate basic rationale first for all skills for speed
             rationale = self._generate_rationale(
                 skill['name'],
                 competency_title,
                 comp_score
             )
+            
+            # Generate qualitative confidence level based on score
+            if comp_score > 0.6:
+                confidence_label = "High"
+            elif comp_score > 0.45:
+                confidence_label = "Medium"
+            else:
+                confidence_label = "Low"
             
             matches.append(FrameworkSfiaMatch(
                 skill_code=skill['code'],
@@ -189,7 +199,7 @@ class FrameworkMatchingService:
                 competency_alignment_score=comp_score,
                 evidence_score=0.0, # N/A for standard-to-standard
                 suggested_level=suggested_level,
-                level_confidence=0.7,
+                level_confidence=confidence_label,
                 rationale=rationale
             ))
         
@@ -207,7 +217,40 @@ class FrameworkMatchingService:
             if len(deduped_matches) >= top_k:
                 break
                 
-        return deduped_matches
+        # --- GRAPH RAG: Individual rationales for all top matches ---
+        for match in deduped_matches:
+            llm_service = get_llm_rag_service()
+            custom_rationale = llm_service.generate_rationale(
+                framework_competency_text=indicator_text,
+                sfia_skill_name=match.skill_name,
+                sfia_skill_desc=match.skill_description,
+                cyber_context=cyber_context
+            )
+            if custom_rationale:
+                match.rationale = custom_rationale
+        
+        # --- GRAPH RAG: LLM Judge Step ---
+        # Feed all top candidates to the LLM and ask it to decide which is the best fit
+        # and write a comprehensive, structured rationale with a type 5 skills comment.
+        best_fit_recommendation = None
+        if deduped_matches:
+            llm_service = get_llm_rag_service()
+            candidate_skills = [
+                {
+                    'code': m.skill_code,
+                    'name': m.skill_name,
+                    'description': m.skill_description,
+                    'score': m.overall_score
+                }
+                for m in deduped_matches
+            ]
+            best_fit_recommendation = llm_service.recommend_best_fit(
+                framework_competency_text=indicator_text,
+                candidate_skills=candidate_skills,
+                cyber_context=cyber_context
+            )
+        
+        return deduped_matches, best_fit_recommendation
     
     def _compute_sfia_embeddings(self):
         """Compute embeddings for all SFIA skills."""
@@ -301,13 +344,14 @@ class FrameworkMatchingService:
                 indicator_id = sc['code']
                 indicator_text = f"{comp['title']}. {sc['semantic_text']}"
                 
-                sfia_matches = self.map_indicator_to_sfia_skills(
+                sfia_matches, best_fit = self.map_indicator_to_sfia_skills(
                     indicator_text, comp['title'], sfia_level_range, cyber_context, top_k
                 )
                 
                 indicator_mappings.append({
                     'indicator_id': indicator_id,
                     'indicator_text': sc['description'],
+                    'best_fit_recommendation': best_fit,
                     'sfia_mappings': [
                         {
                             'skill_code': match.skill_code,
@@ -328,13 +372,14 @@ class FrameworkMatchingService:
                 indicator_id = f"{competency_code}{i+1}"
                 indicator_text = f"{comp['title']}. {indicator}"
                 
-                sfia_matches = self.map_indicator_to_sfia_skills(
+                sfia_matches, best_fit = self.map_indicator_to_sfia_skills(
                     indicator_text, comp['title'], sfia_level_range, cyber_context, top_k
                 )
                 
                 indicator_mappings.append({
                     'indicator_id': indicator_id,
                     'indicator_text': indicator,
+                    'best_fit_recommendation': best_fit,
                     'sfia_mappings': [
                         {
                             'skill_code': match.skill_code,

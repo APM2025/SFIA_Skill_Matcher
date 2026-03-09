@@ -27,6 +27,7 @@ import torch
 from flask import current_app
 
 from app.services.sfia import SfiaService
+from app.services.llm_rag import get_verdict_service
 
 logger = logging.getLogger(__name__)
 
@@ -684,12 +685,34 @@ class MatchingService:
                 "explanation": level_explanation.strip() if level_explanation else ""
             }
 
-        return {
+        result = {
             "matches": top_matches,
             "detected_level": detected_level,
             "level_breakdown": level_breakdown,
             "best_fit_summary": best_fit_summary,
         }
+
+        # ----------------------------------------------------------------
+        # Step 8 — LLM Final Verdict (optional, graceful fallback)
+        # ----------------------------------------------------------------
+        try:
+            # Extract the Action section from the evidence for the LLM prompt
+            action_text = evidence
+            action_match = re.search(r"Action\n(.+?)(?=\n\n|Result\n|$)", evidence, re.DOTALL)
+            if action_match:
+                action_text = action_match.group(1).strip()
+
+            llm_verdict = get_verdict_service().generate_verdict(
+                action_text=action_text,
+                top_matches=top_matches,
+                detected_level=detected_level,
+            )
+            if llm_verdict:
+                result["llm_verdict"] = llm_verdict
+        except Exception:
+            logger.debug("LLM verdict step skipped — Ollama unavailable or error.")
+
+        return result
 
     # ------------------------------------------------------------------
     # Level analysis

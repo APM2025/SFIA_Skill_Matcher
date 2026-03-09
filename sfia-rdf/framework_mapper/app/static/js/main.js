@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
     loadFrameworks();
 });
 
+function resetResults() {
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('skillMatches').innerHTML = '';
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('exportBtn').style.display = 'none';
+    document.getElementById('exportPdfBtn').style.display = 'none';
+    currentValidation = null;
+    currentMatches = null;
+}
+
 // Export button handler
 document.getElementById('exportBtn').addEventListener('click', function () {
     if (!currentMatches) return;
@@ -31,6 +41,69 @@ document.getElementById('exportBtn').addEventListener('click', function () {
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
+});
+
+// Export to PDF button handler
+document.getElementById('exportPdfBtn').addEventListener('click', function () {
+    if (!currentMatches) return;
+
+    // Create a temporary container for the PDF content
+    const container = document.createElement('div');
+    container.style.padding = '20px';
+    container.style.backgroundColor = 'white';
+    
+    // Add title
+    const title = document.createElement('h2');
+    title.textContent = 'Framework to SFIA Mapping Results';
+    title.style.color = '#1e293b';
+    title.style.borderBottom = '2px solid #e2e8f0';
+    title.style.paddingBottom = '10px';
+    title.style.marginBottom = '20px';
+    container.appendChild(title);
+    
+    // Add context info
+    const contextInfo = document.createElement('div');
+    contextInfo.innerHTML = `
+        <p><strong>Framework:</strong> ${selectedFramework}</p>
+        <p><strong>Registration:</strong> ${selectedRegistration}</p>
+        <p><strong>Competency:</strong> ${selectedCompetency} - ${document.getElementById('competencyTitle').textContent}</p>
+        <p><strong>Cyber Security Context Applied:</strong> ${document.getElementById('cyberContext').checked ? 'Yes' : 'No'}</p>
+        <hr style="margin: 20px 0; border: none; border-top: 1px solid #e2e8f0;">
+    `;
+    container.appendChild(contextInfo);
+
+    // Clone results
+    const resultsClone = document.getElementById('skillMatches').cloneNode(true);
+    container.appendChild(resultsClone);
+    
+    // Add spacing
+    const spacer = document.createElement('div');
+    spacer.style.height = '40px';
+    container.appendChild(spacer);
+    
+    // Clone 'How it works' section
+    const howItWorksClone = document.getElementById('howItWorksSection').cloneNode(true);
+    container.appendChild(howItWorksClone);
+
+    // Generate PDF
+    const opt = {
+        margin:       0.5,
+        filename:     'framework_sfia_mapping_results.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    
+    // Changing button state to show processing
+    const pdfBtn = document.getElementById('exportPdfBtn');
+    const originalText = pdfBtn.textContent;
+    pdfBtn.textContent = 'Generating PDF...';
+    pdfBtn.disabled = true;
+
+    html2pdf().set(opt).from(container).save().then(() => {
+        pdfBtn.textContent = originalText;
+        pdfBtn.disabled = false;
+    });
 });
 
 // Framework selection handler
@@ -185,6 +258,10 @@ function mapToSfia() {
 
     showLoading();
 
+    // Use AbortController to allow a very long timeout (15 min) for local LLM generation
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15 * 60 * 1000);
+
     fetch('/api/map', {
         method: 'POST',
         headers: {
@@ -196,9 +273,10 @@ function mapToSfia() {
             competency_code: selectedCompetency,
             cyber_context: isCyberContext,
             top_k: 10
-        })
+        }),
+        signal: controller.signal
     })
-        .then(response => response.json())
+        .then(response => { clearTimeout(timeoutId); return response.json(); })
         .then(data => {
             hideLoading();
             if (data.success) {
@@ -206,14 +284,20 @@ function mapToSfia() {
                 currentMatches = data.result.indicator_mappings;
                 displaySfiaMatches(currentMatches);
                 document.getElementById('exportBtn').style.display = 'inline-block';
+                document.getElementById('exportPdfBtn').style.display = 'inline-block';
             } else {
                 alert('Error: ' + data.error);
             }
         })
         .catch(error => {
+            clearTimeout(timeoutId);
             hideLoading();
-            console.error('Error:', error);
-            alert('An error occurred during mapping');
+            if (error.name === 'AbortError') {
+                alert('The request took too long (over 15 minutes) and was cancelled. Try a different competency or restart Ollama.');
+            } else {
+                console.error('Error:', error);
+                alert('An error occurred during mapping');
+            }
         });
 }
 
@@ -257,6 +341,19 @@ function displaySfiaMatches(indicatorMappings) {
             noMatches.textContent = 'No SFIA skill matches found for this indicator.';
             container.appendChild(noMatches);
         } else {
+            // --- AI JUDGE VERDICT - displayed first ---
+            if (mapping.best_fit_recommendation) {
+                const verdictDiv = document.createElement('div');
+                verdictDiv.style.cssText = 'background: linear-gradient(135deg, #0f172a, #1e3a5f); border: 1px solid #3b82f6; border-radius: 12px; padding: 20px; margin-bottom: 24px; color: #e2e8f0;';
+                verdictDiv.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
+                        <span style="font-size: 1.3em;">🤖</span>
+                        <span style="font-weight: 700; font-size: 1.05em; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.05em;">AI Strategic Advisory</span>
+                    </div>
+                    <div style="white-space: pre-wrap; line-height: 1.7; font-size: 0.95em;">${mapping.best_fit_recommendation}</div>
+                `;
+                container.appendChild(verdictDiv);
+            }
             mapping.sfia_mappings.forEach((match, index) => {
                 const matchDiv = document.createElement('div');
                 matchDiv.className = 'skill-match';
@@ -271,7 +368,10 @@ function displaySfiaMatches(indicatorMappings) {
                     <div class="skill-description">${match.skill_description}</div>
                     <div>
                         <span class="skill-level"><strong>Suggested Level:</strong> ${match.suggested_level}</span>
-                        <span class="skill-level"><strong>Confidence:</strong> ${(match.level_confidence * 100).toFixed(0)}%</span>
+                        <span class="skill-level">
+                            <strong>Match Confidence:</strong> 
+                            <span class="confidence-badge confidence-${match.level_confidence.toLowerCase()}">${match.level_confidence}</span>
+                        </span>
                     </div>
                     <div class="score-breakdown">
                         <div class="score-item"><strong>Conceptual Semantic Match Score:</strong> ${(match.competency_alignment * 100).toFixed(1)}%</div>

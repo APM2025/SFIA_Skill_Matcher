@@ -43,15 +43,16 @@ def create_app():
     # Security headers
     csp = {
         'default-src': ["'self'"],
-        'style-src': ["'self'"],
-        'script-src': ["'self'"]
+        'style-src': ["'self'", "'unsafe-inline'"],
+        'script-src': ["'self'", "https://cdnjs.cloudflare.com", "'unsafe-eval'"],
+        'img-src': ["'self'", "data:"]
     }
     Talisman(app, content_security_policy=csp, force_https=False)
 
     # Rate limiting
     limiter = Limiter(
         key_func=get_remote_address,
-        default_limits=["200 per day", "50 per hour"],
+        default_limits=["1000 per day", "200 per hour"],  # Relaxed for local LLM usage
         storage_uri=app.config['RATELIMIT_STORAGE_URI']
     )
     limiter.init_app(app)
@@ -74,4 +75,4 @@ app = create_app()
 
 if __name__ == '__main__':
     logger.info("Starting Framework-to-SFIA Mapper development server")
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5001, threaded=True)

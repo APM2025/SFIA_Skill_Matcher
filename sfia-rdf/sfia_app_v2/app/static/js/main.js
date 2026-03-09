@@ -97,12 +97,26 @@ function renderMatches(data, evidence) {
         const text = `The best skill match is <strong>${bfs.label}</strong> at <strong>Level ${bfs.level}</strong>. ${bfs.explanation}`;
         const summaryDiv = document.createElement('div');
         summaryDiv.style.padding = '1.5rem';
-        summaryDiv.style.marginBottom = '2rem';
+        summaryDiv.style.marginBottom = '1rem';
         summaryDiv.style.backgroundColor = '#fdf4ff';
         summaryDiv.style.border = '2px solid #f0abfc';
         summaryDiv.style.borderRadius = '8px';
         summaryDiv.innerHTML = `<h3 style="margin-top:0; color:#86198f;">Conclusion</h3><p style="margin:0; font-size:1.1rem; font-weight:500;">${text}</p>`;
         list.appendChild(summaryDiv);
+    }
+
+    // LLM Verdict card — only shown when Ollama returns a result
+    if (data.llm_verdict) {
+        const verdictDiv = document.createElement('div');
+        verdictDiv.style.cssText = 'background: linear-gradient(135deg, #0f172a, #1e3a5f); border: 1px solid #3b82f6; border-radius: 12px; padding: 20px; margin-bottom: 20px; color: #e2e8f0;';
+        verdictDiv.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                <span style="font-size: 1.2em;">⚖️</span>
+                <span style="font-weight: 700; font-size: 1em; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.05em;">On Balance — AI Assessor Verdict</span>
+            </div>
+            <div style="line-height: 1.7; font-size: 0.95em;">${data.llm_verdict}</div>
+        `;
+        list.appendChild(verdictDiv);
     }
 
     if (data.detected_level) {
@@ -315,6 +329,19 @@ async function refineMatch(clarification) {
             s.style.cssText = 'padding:1.5rem; margin-bottom:1rem; background:#fdf4ff; border:2px solid #f0abfc; border-radius:8px;';
             s.innerHTML = `<h3 style="margin-top:0;color:#86198f;">Conclusion</h3><p style="margin:0;font-size:1.1rem;font-weight:500;">${text}</p>`;
             list.appendChild(s);
+        }
+
+        if (data.llm_verdict) {
+            const verdictDiv = document.createElement('div');
+            verdictDiv.style.cssText = 'background: linear-gradient(135deg, #0f172a, #1e3a5f); border: 1px solid #3b82f6; border-radius: 12px; padding: 20px; margin-bottom: 20px; color: #e2e8f0;';
+            verdictDiv.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                    <span style="font-size: 1.2em;">⚖️</span>
+                    <span style="font-weight: 700; font-size: 1em; color: #93c5fd; text-transform: uppercase; letter-spacing: 0.05em;">On Balance — AI Assessor Verdict</span>
+                </div>
+                <div style="line-height: 1.7; font-size: 0.95em;">${data.llm_verdict}</div>
+            `;
+            list.appendChild(verdictDiv);
         }
 
         // Render each refined match card with its own refine panel
